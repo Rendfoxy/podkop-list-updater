@@ -64,8 +64,16 @@
       "name": "podkop-foreign-subnets",
       "kind": "subnet",
       "remote_sources": [
-        "https://core.telegram.org/resources/cidr.txt",
-        "https://www.cloudflare.com/ips-v4"
+        "https://core.telegram.org/resources/cidr.txt"
+      ],
+      "remote_source_groups": [
+        {
+          "name": "cloudflare-ipv4",
+          "sources": [
+            "https://api.cloudflare.com/client/v4/ips",
+            "https://www.cloudflare.com/ips-v4"
+          ]
+        }
       ],
       "local_sources": [
         "config/manual/podkop-foreign-seed.txt",

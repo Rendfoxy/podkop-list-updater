@@ -47,7 +47,14 @@ class OutputConfig:
     kind: str
     remote_sources: tuple[str, ...]
     local_sources: tuple[Path, ...]
+    remote_source_groups: tuple["RemoteSourceGroup", ...] = ()
     discovery: tuple["DiscoveryConfig", ...] = ()
+
+
+@dataclass(frozen=True)
+class RemoteSourceGroup:
+    name: str
+    sources: tuple[str, ...]
 
 
 @dataclass(frozen=True)
@@ -152,6 +159,7 @@ def load_config(config_path: Path) -> list[OutputConfig]:
             raise BuildError(f"Invalid output kind for {name}: {kind!r}")
 
         remote_sources = ensure_string_list(item.get("remote_sources"), "remote_sources")
+        remote_source_groups = load_remote_source_groups(item.get("remote_source_groups", []), name=name)
         local_source_strings = ensure_string_list(item.get("local_sources", []), "local_sources")
         local_sources = tuple((PROJECT_ROOT / source).resolve() for source in local_source_strings)
         discovery = load_discovery_configs(item.get("discovery", []), name=name, kind=kind)
@@ -161,12 +169,31 @@ def load_config(config_path: Path) -> list[OutputConfig]:
                 name=name,
                 kind=kind,
                 remote_sources=tuple(remote_sources),
+                remote_source_groups=tuple(remote_source_groups),
                 local_sources=local_sources,
                 discovery=tuple(discovery),
             )
         )
 
     return outputs
+
+
+def load_remote_source_groups(value: object, *, name: str) -> list[RemoteSourceGroup]:
+    if not isinstance(value, list):
+        raise BuildError(f"'remote_source_groups' for {name} must be an array.")
+
+    groups: list[RemoteSourceGroup] = []
+    for index, item in enumerate(value, start=1):
+        if not isinstance(item, dict):
+            raise BuildError(f"Each remote source group for {name} must be an object.")
+        group_name = item.get("name", f"group-{index}")
+        if not isinstance(group_name, str) or not group_name.strip():
+            raise BuildError(f"Invalid remote source group name for {name}: {group_name!r}")
+        sources = ensure_string_list(item.get("sources", []), "sources")
+        if not sources:
+            raise BuildError(f"Remote source group {group_name!r} for {name} must include at least one source.")
+        groups.append(RemoteSourceGroup(name=group_name.strip(), sources=tuple(sources)))
+    return groups
 
 
 def load_discovery_configs(value: object, *, name: str, kind: str) -> list[DiscoveryConfig]:
@@ -226,8 +253,12 @@ def build_output_with_details(config: OutputConfig, timeout: int) -> BuildResult
     discovery_reports: list[DiscoveryReportItem] = []
 
     for source in config.remote_sources:
-        text = fetch_remote_text(source, timeout=timeout)
-        extracted = extract_values(text, source, config.kind)
+        extracted = fetch_source_values(source, kind=config.kind, timeout=timeout)
+        values.update(extracted)
+        remote_values.update(extracted)
+
+    for source_group in config.remote_source_groups:
+        extracted = fetch_source_group_values(source_group, kind=config.kind, timeout=timeout)
         values.update(extracted)
         remote_values.update(extracted)
 
@@ -260,6 +291,21 @@ def build_output_with_details(config: OutputConfig, timeout: int) -> BuildResult
         discovered_count=discovered_count,
         discovery=tuple(discovery_reports),
     )
+
+
+def fetch_source_values(source: str, *, kind: str, timeout: int) -> set[str]:
+    text = fetch_remote_text(source, timeout=timeout)
+    return extract_values(text, source, kind)
+
+
+def fetch_source_group_values(source_group: RemoteSourceGroup, *, kind: str, timeout: int) -> set[str]:
+    errors: list[str] = []
+    for source in source_group.sources:
+        try:
+            return fetch_source_values(source, kind=kind, timeout=timeout)
+        except BuildError as exc:
+            errors.append(f"{source}: {exc}")
+    raise BuildError(f"All sources failed in fallback group {source_group.name}: {'; '.join(errors)}")
 
 
 def discover_domains(config: DiscoveryConfig, timeout: int) -> tuple[set[str], list[str]]:
@@ -545,23 +591,41 @@ def extract_values_from_json(text: str, source_name: str, kind: str) -> set[str]
         raise BuildError(f"Invalid JSON source {source_name}: {exc}") from exc
 
     rules = payload.get("rules")
-    if not isinstance(rules, list):
-        raise BuildError(f"JSON source {source_name} has no 'rules' array.")
+    if isinstance(rules, list):
+        values: set[str] = set()
+        for rule in rules:
+            if not isinstance(rule, dict):
+                continue
+            rule_key = "domain_suffix" if kind == "domain" else "ip_cidr"
+            items = rule.get(rule_key, [])
+            if isinstance(items, list):
+                for item in items:
+                    if not isinstance(item, str):
+                        continue
+                    normalized = normalize_value(item, kind)
+                    if normalized:
+                        values.add(normalized)
+        return values
 
-    values: set[str] = set()
-    for rule in rules:
-        if not isinstance(rule, dict):
-            continue
-        rule_key = "domain_suffix" if kind == "domain" else "ip_cidr"
-        items = rule.get(rule_key, [])
-        if isinstance(items, list):
+    if kind == "subnet":
+        values: set[str] = set()
+        result = payload.get("result")
+        candidate_lists: list[object] = []
+        if isinstance(payload.get("ipv4_cidrs"), list):
+            candidate_lists.append(payload.get("ipv4_cidrs"))
+        if isinstance(result, dict) and isinstance(result.get("ipv4_cidrs"), list):
+            candidate_lists.append(result.get("ipv4_cidrs"))
+        for items in candidate_lists:
             for item in items:
                 if not isinstance(item, str):
                     continue
                 normalized = normalize_value(item, kind)
                 if normalized:
                     values.add(normalized)
-    return values
+        if values:
+            return values
+
+    raise BuildError(f"JSON source {source_name} has no supported rules for kind {kind}.")
 
 
 def extract_values_from_text(text: str, source_name: str, kind: str) -> set[str]:

@@ -44,3 +44,22 @@ jobs:
           git add src/ config/
           git commit -m "chore: update podkop lists"
           git push
+
+      - name: Publish release assets
+        uses: ncipollo/release-action@v1
+        with:
+          allowUpdates: true
+          artifacts: "src/*.lst,src/*.json,src/manifest.json"
+          body: |
+            Latest generated Podkop domain and subnet lists.
+
+            Files:
+            - podkop-russia-domains.lst / .json
+            - podkop-russia-subnets.lst / .json
+            - podkop-foreign-domains.lst / .json
+            - podkop-foreign-subnets.lst / .json
+            - manifest.json
+          makeLatest: true
+          name: Latest Podkop Lists
+          replacesArtifacts: true
+          tag: latest

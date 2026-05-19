@@ -38,7 +38,33 @@
 - `telegram`
 - `tiktok`
 
+Это source-слой из `v2fly` geosite/geofile-экосистемы. Мы берём не бинарный `.dat`, а исходные `data/*` файлы, потому что `podkop` не потребляет `dlc.dat`, зато нормально ест `.lst` и `.json`.
 Они усиливают покрытие даже без discovery API и особенно полезны, когда внешние passive-источники временно режут rate limit.
+
+## Формат для Podkop
+
+По документации `podkop` для внешних списков поддерживаются `.json`, `.srs`, `.lst`, `.txt`.
+Источник: [Podkop Sections](https://podkop.net/docs/sections/)
+
+Этот репозиторий публикует два поддерживаемых формата:
+
+- `.lst` - одна запись на строку
+- `.json` - правило в формате sing-box:
+  - для доменов `domain_suffix`
+  - для подсетей `ip_cidr`
+
+То есть текущий формат для `podkop` корректный.
+
+## Releases
+
+Готовые файлы публикуются и в `GitHub Releases` как rolling release `latest`, чтобы удобно было забирать свежие версии по постоянным URL.
+
+Примеры:
+
+- `https://github.com/Rendfoxy/podkop-list-updater/releases/latest/download/podkop-foreign-domains.lst`
+- `https://github.com/Rendfoxy/podkop-list-updater/releases/latest/download/podkop-foreign-subnets.lst`
+- `https://github.com/Rendfoxy/podkop-list-updater/releases/latest/download/podkop-russia-domains.lst`
+- `https://github.com/Rendfoxy/podkop-list-updater/releases/latest/download/podkop-russia-subnets.lst`
 
 ## Как использовать
 
@@ -64,8 +90,9 @@ python3 scripts/build_podkop_lists.py
 - `podkop-russia-domains`: `Russia/inside-raw.lst` + часть сервисных allow-domains + `podkop-russia-seed.txt`
 - `podkop-russia-subnets`: `podkop-russia-seed.txt`
 - `podkop-foreign-domains`: сервисные allow-domains для Telegram/TikTok/Meta/Twitter/Google AI + `podkop-foreign-seed.txt`
+- `podkop-foreign-domains`: дополнительно использует бесплатные geosite-source файлы из `v2fly/domain-list-community` для OpenAI / Telegram / TikTok
 - `podkop-foreign-domains`: дополнительно делает autodiscovery поддоменов по `podkop-foreign-roots.txt`
-- `podkop-foreign-subnets`: официальный `Telegram CIDR` + официальный `Cloudflare ips-v4` + `podkop-foreign-seed.txt`
+- `podkop-foreign-subnets`: официальный `Telegram CIDR` + fallback-группа `Cloudflare API / Cloudflare ips-v4` + `podkop-foreign-seed.txt`
 
 На выходе сейчас формируются:
 

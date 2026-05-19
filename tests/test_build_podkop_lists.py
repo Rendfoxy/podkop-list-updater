@@ -44,6 +44,18 @@ class BuildPodkopListsTests(unittest.TestCase):
 
         self.assertEqual(domains, {"xn--e1afmkfd.xn--p1ai", "sub.example.com"})
 
+    def test_extract_subnets_from_cloudflare_json_api(self) -> None:
+        payload = {
+            "result": {
+                "ipv4_cidrs": ["173.245.48.0/20", "103.21.244.0/22"],
+                "ipv6_cidrs": ["2400:cb00::/32"],
+            }
+        }
+
+        subnets = build_podkop_lists.extract_values_from_json(json.dumps(payload), "inline", "subnet")
+
+        self.assertEqual(subnets, {"103.21.244.0/22", "173.245.48.0/20"})
+
     def test_extract_domains_from_text_allows_comment_only_file(self) -> None:
         domains = build_podkop_lists.extract_values_from_text("// only comments\n# and more\n", "inline", "domain")
         self.assertEqual(domains, set())
@@ -82,6 +94,37 @@ class BuildPodkopListsTests(unittest.TestCase):
                 domains = build_podkop_lists.build_output(config, timeout=1)
 
         self.assertEqual(domains, ["manual.example.com", "remote.example.com"])
+
+    def test_build_output_supports_remote_source_fallback_groups(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            project_root = Path(tmp_dir)
+            local_source = project_root / "config" / "manual.txt"
+            local_source.parent.mkdir(parents=True, exist_ok=True)
+            local_source.write_text("", encoding="utf-8")
+
+            config = build_podkop_lists.OutputConfig(
+                name="sample",
+                kind="subnet",
+                remote_sources=(),
+                remote_source_groups=(
+                    build_podkop_lists.RemoteSourceGroup(
+                        name="cloudflare",
+                        sources=("https://broken.test", "https://api.cloudflare.test"),
+                    ),
+                ),
+                local_sources=(local_source,),
+            )
+
+            def fake_fetch(source: str, *, kind: str, timeout: int) -> set[str]:
+                if source == "https://broken.test":
+                    raise build_podkop_lists.BuildError("boom")
+                self.assertEqual(kind, "subnet")
+                return {"173.245.48.0/20"}
+
+            with patch.object(build_podkop_lists, "fetch_source_values", side_effect=fake_fetch):
+                values = build_podkop_lists.build_output(config, timeout=1)
+
+        self.assertEqual(values, ["173.245.48.0/20"])
 
     def test_fetch_crtsh_domains_filters_and_limits_to_root(self) -> None:
         payload = [
