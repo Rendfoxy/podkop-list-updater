@@ -1,0 +1,113 @@
+{
+  "generated_at": "2026-05-19T21:40:10.282668+00:00",
+  "outputs": [
+    {
+      "name": "podkop-russia-domains",
+      "kind": "domain",
+      "domain_count": 2178,
+      "remote_count": 1162,
+      "local_count": 1032,
+      "discovered_count": 0,
+      "remote_sources": [
+        "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Russia/inside-raw.lst",
+        "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Services/discord.lst",
+        "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Services/meta.lst",
+        "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Services/twitter.lst",
+        "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Services/youtube.lst"
+      ],
+      "local_sources": [
+        "config/manual/podkop-russia-seed.txt",
+        "config/manual/podkop-russia-domains.txt"
+      ],
+      "discovery": []
+    },
+    {
+      "name": "podkop-russia-subnets",
+      "kind": "subnet",
+      "domain_count": 2545,
+      "remote_count": 0,
+      "local_count": 2545,
+      "discovered_count": 0,
+      "remote_sources": [],
+      "local_sources": [
+        "config/manual/podkop-russia-seed.txt",
+        "config/manual/podkop-russia-subnets.txt"
+      ],
+      "discovery": []
+    },
+    {
+      "name": "podkop-foreign-domains",
+      "kind": "domain",
+      "domain_count": 460,
+      "remote_count": 104,
+      "local_count": 385,
+      "discovered_count": 11,
+      "remote_sources": [
+        "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Services/telegram.lst",
+        "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Services/tiktok.lst",
+        "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Services/meta.lst",
+        "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Services/twitter.lst",
+        "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Services/google_ai.lst"
+      ],
+      "local_sources": [
+        "config/manual/podkop-foreign-seed.txt",
+        "config/manual/podkop-foreign-domains.txt"
+      ],
+      "discovery": [
+        {
+          "provider": "urlscan",
+          "roots": [
+            "byteoversea.com",
+            "chatgpt.com",
+            "oaistatic.com",
+            "openai.com",
+            "qwen.ai",
+            "t.me",
+            "telegram.com",
+            "telegram.me",
+            "telegram.org",
+            "tiktok.com"
+          ],
+          "added_count": 0,
+          "warnings": [
+            "discovery skipped for telegram.org: Failed to fetch https://urlscan.io/api/v1/search/?q=page.apexDomain:telegram.org&size=100: HTTP Error 429: Too Many Requests",
+            "discovery skipped for telegram.com: Failed to fetch https://urlscan.io/api/v1/search/?q=page.apexDomain:telegram.com&size=100: HTTP Error 429: Too Many Requests",
+            "discovery skipped for tiktok.com: Failed to fetch https://urlscan.io/api/v1/search/?q=page.apexDomain:tiktok.com&size=100: HTTP Error 429: Too Many Requests",
+            "discovery skipped for telegram.me: Failed to fetch https://urlscan.io/api/v1/search/?q=page.apexDomain:telegram.me&size=100: HTTP Error 429: Too Many Requests",
+            "discovery skipped for oaistatic.com: Failed to fetch https://urlscan.io/api/v1/search/?q=page.apexDomain:oaistatic.com&size=100: HTTP Error 429: Too Many Requests",
+            "discovery skipped for t.me: Failed to fetch https://urlscan.io/api/v1/search/?q=page.apexDomain:t.me&size=100: HTTP Error 429: Too Many Requests",
+            "discovery skipped for chatgpt.com: Failed to fetch https://urlscan.io/api/v1/search/?q=page.apexDomain:chatgpt.com&size=100: HTTP Error 429: Too Many Requests",
+            "discovery skipped for byteoversea.com: Failed to fetch https://urlscan.io/api/v1/search/?q=page.apexDomain:byteoversea.com&size=100: HTTP Error 429: Too Many Requests",
+            "discovery skipped for qwen.ai: Failed to fetch https://urlscan.io/api/v1/search/?q=page.apexDomain:qwen.ai&size=100: HTTP Error 429: Too Many Requests",
+            "discovery skipped for openai.com: Failed to fetch https://urlscan.io/api/v1/search/?q=page.apexDomain:openai.com&size=100: HTTP Error 429: Too Many Requests"
+          ]
+        },
+        {
+          "provider": "crtsh",
+          "roots": [
+            "forum.openai.com"
+          ],
+          "added_count": 11,
+          "warnings": []
+        }
+      ]
+    },
+    {
+      "name": "podkop-foreign-subnets",
+      "kind": "subnet",
+      "domain_count": 442,
+      "remote_count": 29,
+      "local_count": 436,
+      "discovered_count": 0,
+      "remote_sources": [
+        "https://core.telegram.org/resources/cidr.txt",
+        "https://www.cloudflare.com/ips-v4"
+      ],
+      "local_sources": [
+        "config/manual/podkop-foreign-seed.txt",
+        "config/manual/podkop-foreign-subnets.txt"
+      ],
+      "discovery": []
+    }
+  ]
+}
