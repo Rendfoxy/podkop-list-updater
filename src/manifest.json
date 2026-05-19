@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-19T21:40:10.282668+00:00",
+  "generated_at": "2026-05-19T22:06:11.723421+00:00",
   "outputs": [
     {
       "name": "podkop-russia-domains",
@@ -38,10 +38,10 @@
     {
       "name": "podkop-foreign-domains",
       "kind": "domain",
-      "domain_count": 460,
+      "domain_count": 502,
       "remote_count": 104,
       "local_count": 385,
-      "discovered_count": 11,
+      "discovered_count": 53,
       "remote_sources": [
         "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Services/telegram.lst",
         "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Services/tiktok.lst",
@@ -68,19 +68,8 @@
             "telegram.org",
             "tiktok.com"
           ],
-          "added_count": 0,
-          "warnings": [
-            "discovery skipped for telegram.org: Failed to fetch https://urlscan.io/api/v1/search/?q=page.apexDomain:telegram.org&size=100: HTTP Error 429: Too Many Requests",
-            "discovery skipped for telegram.com: Failed to fetch https://urlscan.io/api/v1/search/?q=page.apexDomain:telegram.com&size=100: HTTP Error 429: Too Many Requests",
-            "discovery skipped for tiktok.com: Failed to fetch https://urlscan.io/api/v1/search/?q=page.apexDomain:tiktok.com&size=100: HTTP Error 429: Too Many Requests",
-            "discovery skipped for telegram.me: Failed to fetch https://urlscan.io/api/v1/search/?q=page.apexDomain:telegram.me&size=100: HTTP Error 429: Too Many Requests",
-            "discovery skipped for oaistatic.com: Failed to fetch https://urlscan.io/api/v1/search/?q=page.apexDomain:oaistatic.com&size=100: HTTP Error 429: Too Many Requests",
-            "discovery skipped for t.me: Failed to fetch https://urlscan.io/api/v1/search/?q=page.apexDomain:t.me&size=100: HTTP Error 429: Too Many Requests",
-            "discovery skipped for chatgpt.com: Failed to fetch https://urlscan.io/api/v1/search/?q=page.apexDomain:chatgpt.com&size=100: HTTP Error 429: Too Many Requests",
-            "discovery skipped for byteoversea.com: Failed to fetch https://urlscan.io/api/v1/search/?q=page.apexDomain:byteoversea.com&size=100: HTTP Error 429: Too Many Requests",
-            "discovery skipped for qwen.ai: Failed to fetch https://urlscan.io/api/v1/search/?q=page.apexDomain:qwen.ai&size=100: HTTP Error 429: Too Many Requests",
-            "discovery skipped for openai.com: Failed to fetch https://urlscan.io/api/v1/search/?q=page.apexDomain:openai.com&size=100: HTTP Error 429: Too Many Requests"
-          ]
+          "added_count": 42,
+          "warnings": []
         },
         {
           "provider": "crtsh",
