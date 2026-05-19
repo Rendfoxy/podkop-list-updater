@@ -1,0 +1,73 @@
+{
+  "outputs": [
+    {
+      "name": "podkop-russia-domains",
+      "kind": "domain",
+      "remote_sources": [
+        "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Russia/inside-raw.lst",
+        "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Services/discord.lst",
+        "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Services/meta.lst",
+        "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Services/twitter.lst",
+        "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Services/youtube.lst"
+      ],
+      "local_sources": [
+        "config/manual/podkop-russia-seed.txt",
+        "config/manual/podkop-russia-domains.txt"
+      ]
+    },
+    {
+      "name": "podkop-russia-subnets",
+      "kind": "subnet",
+      "remote_sources": [],
+      "local_sources": [
+        "config/manual/podkop-russia-seed.txt",
+        "config/manual/podkop-russia-subnets.txt"
+      ]
+    },
+    {
+      "name": "podkop-foreign-domains",
+      "kind": "domain",
+      "remote_sources": [
+        "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Services/telegram.lst",
+        "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Services/tiktok.lst",
+        "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Services/meta.lst",
+        "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Services/twitter.lst",
+        "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Services/google_ai.lst"
+      ],
+      "local_sources": [
+        "config/manual/podkop-foreign-seed.txt",
+        "config/manual/podkop-foreign-domains.txt"
+      ],
+      "discovery": [
+        {
+          "provider": "urlscan",
+          "roots_files": [
+            "config/manual/podkop-foreign-roots.txt"
+          ],
+          "limit_per_root": 100,
+          "timeout_per_root": 6
+        },
+        {
+          "provider": "crtsh",
+          "roots_files": [
+            "config/manual/podkop-foreign-crtsh-roots.txt"
+          ],
+          "limit_per_root": 80,
+          "timeout_per_root": 10
+        }
+      ]
+    },
+    {
+      "name": "podkop-foreign-subnets",
+      "kind": "subnet",
+      "remote_sources": [
+        "https://core.telegram.org/resources/cidr.txt",
+        "https://www.cloudflare.com/ips-v4"
+      ],
+      "local_sources": [
+        "config/manual/podkop-foreign-seed.txt",
+        "config/manual/podkop-foreign-subnets.txt"
+      ]
+    }
+  ]
+}
