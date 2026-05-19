@@ -32,6 +32,14 @@
 - в `src/manifest.json` видно, сколько записей пришло из `remote`, `local` и `discovery`
 - если добавить `URLSCAN_API_KEY` в GitHub Secrets, `urlscan`-слой станет заметно стабильнее и меньше будет упираться в `429`
 
+Дополнительно для `foreign-domains` подключены бесплатные service-списки из `v2fly/domain-list-community`:
+
+- `openai`
+- `telegram`
+- `tiktok`
+
+Они усиливают покрытие даже без discovery API и особенно полезны, когда внешние passive-источники временно режут rate limit.
+
 ## Как использовать
 
 1. Отредактируйте `config/sources.json`.

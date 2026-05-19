@@ -32,7 +32,10 @@
         "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Services/tiktok.lst",
         "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Services/meta.lst",
         "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Services/twitter.lst",
-        "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Services/google_ai.lst"
+        "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Services/google_ai.lst",
+        "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/openai",
+        "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/telegram",
+        "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/tiktok"
       ],
       "local_sources": [
         "config/manual/podkop-foreign-seed.txt",

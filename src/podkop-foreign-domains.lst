@@ -155,6 +155,7 @@ aisandbox-pa.googleapis.com
 aistudio.google.com
 alpha.telegram.org
 analytics.telegram.org
+analytics.tiktok.com
 android.telegram.org
 antigravity-pa.googleapis.com
 antigravity-unleash.goog
@@ -170,7 +171,6 @@ api3.telegram.org
 aplus.qwen.ai
 apollo.telegram.org
 ares.telegram.org
-art-design.forum.openai.com
 assets.telegram.org
 athena.telegram.org
 aurora.telegram.org
@@ -184,7 +184,9 @@ blog.telegram.org
 bot.t.me
 bot.telegram.org
 bots.telegram.org
+browser-intake-datadoghq.com
 business.telegram.org
+bytedapm.com
 byteoversea.com
 careers.telegram.org
 cdn-telegram.org
@@ -202,8 +204,10 @@ cdn9.telegram.org
 cdninstagram.com
 changelog.telegram.org
 channels.telegram.org
+chat.com
 chat.qwen.ai
 chatgpt.com
+chatgpt.livekit.cloud
 circlecrewpinkcrowd.com
 clients6.google.com
 cms-twdigitalassets.com
@@ -216,6 +220,7 @@ contest.telegram.org
 control.telegram.org
 core.telegram.org
 corp.telegram.org
+crixet.com
 dashboard.telegram.org
 dc1.telegram.org
 dc2.telegram.org
@@ -226,7 +231,6 @@ de.telegram.org
 deepmind.com
 deepmind.google
 demo.telegram.org
-democratic-inputs.forum.openai.com
 desktop.telegram.org
 dev.t.me
 dev.telegram.org
@@ -236,10 +240,8 @@ docs.telegram.org
 donate.telegram.org
 edisoninvestor.telegram.com
 email.telegram.org
-emerging-talent.forum.openai.com
 enterprise.telegram.org
 eu.telegram.com
-expert-ai-trainers.forum.openai.com
 facebook.com
 facebook.net
 faq.telegram.org
@@ -255,7 +257,6 @@ fr.telegram.org
 fragment.com
 frontier.byteoversea.com
 ftp.telegram.org
-future-scholars.forum.openai.com
 geller-pa.googleapis.com
 gemini.google
 gemini.google.com
@@ -269,7 +270,7 @@ health.telegram.org
 help.telegram.org
 hermes.telegram.org
 hire.telegram.org
-human-data.forum.openai.com
+host.livekit.cloud
 i18n.telegram.org
 ibytedtos.com
 ig.me
@@ -297,7 +298,6 @@ macos.telegram.org
 mail.telegram.org
 makersuite.google.com
 manager.telegram.org
-math.forum.openai.com
 media.telegram.org
 merch.telegram.org
 meta.com
@@ -319,11 +319,17 @@ nicegram.app
 notebooklm.google
 notebooklm.google.com
 np.scea.com
+o33249.ingest.sentry.io
 oaistatic.com
+oaiusercontent.com
 oculus.com
-openai-projects.forum.openai.com
-openai-team.forum.openai.com
 openai.com
+openai.com.cdn.cloudflare.net
+openaiapi-site.azureedge.net
+openaicom-api-bdcpf8c6d2e9atf6.z01.azurefd.net
+openaicom.imgix.net
+openaicomproductionae4b.blob.core.windows.net
+p16-tiktokcdn-com.akamaized.net
 panel.telegram.org
 passport.telegram.org
 pc-mon-va.byteoversea.com
@@ -339,6 +345,7 @@ poseidon.telegram.org
 premium.telegram.org
 private.telegram.org
 proactivebackend-pa.googleapis.com
+production-openaicom-storage.azureedge.net
 protocol.telegram.org
 ps5update.com
 pscp.tv
@@ -349,6 +356,10 @@ qwen.ai
 report.telegram.org
 robinfrontend-pa.googleapis.com
 rockblack.su
+roovza-launches.appsflyersdk.com
+roovza.inapps.appsflyersdk.com
+roovza.launches.appsflyersdk.com
+roovza.skadsdk.appsflyersdk.com
 ru.telegram.org
 rutracker.org
 s16.byteoversea.com
@@ -362,6 +373,7 @@ sgali-mcs.byteoversea.com
 shop.telegram.org
 smtp.telegram.org
 sonyentertainmentnetwork.com
+sora.com
 specialoffer.telegram.com
 speechs3proto2-pa.googleapis.com
 ss.qwen.ai
@@ -374,7 +386,6 @@ stats.telegram.org
 status.telegram.org
 stitch.withgoogle.com
 store.telegram.org
-student-forum.forum.openai.com
 support.telegram.org
 system.telegram.org
 t.co
@@ -448,6 +459,8 @@ tiktokglobalshopv.com
 tiktokminis.us
 tiktokrow-cdn.com
 tiktokv.com
+tiktokv.com.edgekey.net
+tiktokv.com.edgesuite.net
 tiktokv.eu
 tiktokv.us
 tiktokw.eu
@@ -459,8 +472,12 @@ tos-d-alisg16-up.byteoversea.com
 tos-my16-up.byteoversea.com
 translate.telegram.org
 translations.telegram.org
+ttcdn-us.com
+ttlivecdn.com
+ttoverseaus.net
 ttwid-sg.byteoversea.com
 ttwstatic.com
+turn.livekit.cloud
 tweetdeck.com
 twimg.com
 twitpic.com
@@ -477,7 +494,6 @@ twttr.com
 twttr.net
 twvid.com
 tx.me
-ucb-dssj.forum.openai.com
 updates.telegram.org
 uptime.telegram.org
 usercontent.dev

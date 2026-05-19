@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-19T22:06:11.723421+00:00",
+  "generated_at": "2026-05-19T21:40:10.282668+00:00",
   "outputs": [
     {
       "name": "podkop-russia-domains",
@@ -38,16 +38,19 @@
     {
       "name": "podkop-foreign-domains",
       "kind": "domain",
-      "domain_count": 502,
-      "remote_count": 104,
+      "domain_count": 518,
+      "remote_count": 144,
       "local_count": 385,
-      "discovered_count": 53,
+      "discovered_count": 42,
       "remote_sources": [
         "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Services/telegram.lst",
         "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Services/tiktok.lst",
         "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Services/meta.lst",
         "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Services/twitter.lst",
-        "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Services/google_ai.lst"
+        "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Services/google_ai.lst",
+        "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/openai",
+        "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/telegram",
+        "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/tiktok"
       ],
       "local_sources": [
         "config/manual/podkop-foreign-seed.txt",
@@ -76,8 +79,10 @@
           "roots": [
             "forum.openai.com"
           ],
-          "added_count": 11,
-          "warnings": []
+          "added_count": 0,
+          "warnings": [
+            "discovery skipped for forum.openai.com: Failed to fetch https://crt.sh/?q=%25.forum.openai.com&output=json: HTTP Error 502: Bad Gateway"
+          ]
         }
       ]
     },

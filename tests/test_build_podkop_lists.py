@@ -22,6 +22,18 @@ class BuildPodkopListsTests(unittest.TestCase):
 
         self.assertEqual(domains, {"example.com", "youtube.com", "sub.example.org"})
 
+    def test_extract_domains_from_text_supports_domain_list_community_lines(self) -> None:
+        text = """
+        full:openaicom.imgix.net
+        chatgpt.com
+        tiktok.com @!cn
+        regexp:^chatgpt-async-webps-prod-\\S+-\\d+\\.webpubsub\\.azure\\.com$
+        """
+
+        domains = build_podkop_lists.extract_values_from_text(text, "inline", "domain")
+
+        self.assertEqual(domains, {"chatgpt.com", "openaicom.imgix.net", "tiktok.com"})
+
     def test_extract_domains_from_json_reads_domain_suffix_rules(self) -> None:
         payload = {
             "version": 3,
