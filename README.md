@@ -1,5 +1,7 @@
 # Podkop List Updater
 
+List update pipeline for Podkop.
+
 > [!WARNING]
 > **ОТКАЗ ОТ ОТВЕТСТВЕННОСТИ**
 >
