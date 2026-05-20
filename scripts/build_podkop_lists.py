@@ -58,6 +58,7 @@ class OutputConfig:
 class RemoteSourceGroup:
     name: str
     sources: tuple[str, ...]
+    cache_path: Path | None = None
 
 
 @dataclass(frozen=True)
@@ -195,7 +196,13 @@ def load_remote_source_groups(value: object, *, name: str) -> list[RemoteSourceG
         sources = ensure_string_list(item.get("sources", []), "sources")
         if not sources:
             raise BuildError(f"Remote source group {group_name!r} for {name} must include at least one source.")
-        groups.append(RemoteSourceGroup(name=group_name.strip(), sources=tuple(sources)))
+        cache_path_value = item.get("cache_path")
+        cache_path: Path | None = None
+        if cache_path_value is not None:
+            if not isinstance(cache_path_value, str) or not cache_path_value.strip():
+                raise BuildError(f"Invalid cache_path for remote source group {group_name!r} in {name}.")
+            cache_path = (PROJECT_ROOT / cache_path_value).resolve()
+        groups.append(RemoteSourceGroup(name=group_name.strip(), sources=tuple(sources), cache_path=cache_path))
     return groups
 
 
@@ -305,12 +312,37 @@ def fetch_source_values(source: str, *, kind: str, timeout: int) -> set[str]:
 
 def fetch_source_group_values(source_group: RemoteSourceGroup, *, kind: str, timeout: int) -> set[str]:
     errors: list[str] = []
+    cached_values: set[str] | None = None
+    cache_error: str | None = None
+    if source_group.cache_path is not None and source_group.cache_path.is_file():
+        try:
+            cached_values = extract_values(source_group.cache_path.read_text(encoding="utf-8"), str(source_group.cache_path), kind)
+        except BuildError as exc:
+            cache_error = str(exc)
     for source in source_group.sources:
         try:
-            return fetch_source_values(source, kind=kind, timeout=timeout)
+            values = fetch_source_values(source, kind=kind, timeout=timeout)
+            update_source_group_cache(source_group, values)
+            return values
         except BuildError as exc:
             errors.append(f"{source}: {exc}")
+    if cached_values is not None:
+        warning = f"using cached values for fallback group {source_group.name}"
+        if cache_error:
+            warning += f" (cache warning: {cache_error})"
+        print(f"WARN: {warning}", file=sys.stderr)
+        return cached_values
     raise BuildError(f"All sources failed in fallback group {source_group.name}: {'; '.join(errors)}")
+
+
+def update_source_group_cache(source_group: RemoteSourceGroup, values: set[str]) -> None:
+    if source_group.cache_path is None:
+        return
+    source_group.cache_path.parent.mkdir(parents=True, exist_ok=True)
+    body = "\n".join(sorted(values))
+    if body:
+        body += "\n"
+    source_group.cache_path.write_text(body, encoding="utf-8")
 
 
 def is_v2fly_data_source(source: str) -> bool:

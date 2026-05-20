@@ -81,8 +81,7 @@
         "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Subnets/IPv4/hetzner.lst",
         "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Subnets/IPv4/meta.lst",
         "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Subnets/IPv4/ovh.lst",
-        "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Subnets/IPv4/twitter.lst",
-        "https://ip-ranges.amazonaws.com/ip-ranges.json"
+        "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Subnets/IPv4/twitter.lst"
       ],
       "remote_source_groups": [
         {
@@ -90,7 +89,8 @@
           "sources": [
             "https://core.telegram.org/resources/cidr.txt",
             "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Subnets/IPv4/telegram.lst"
-          ]
+          ],
+          "cache_path": "src/_upstream_cache/telegram-ipv4.lst"
         },
         {
           "name": "cloudflare-ipv4",
@@ -98,7 +98,15 @@
             "https://api.cloudflare.com/client/v4/ips",
             "https://www.cloudflare.com/ips-v4",
             "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Subnets/IPv4/cloudflare.lst"
-          ]
+          ],
+          "cache_path": "src/_upstream_cache/cloudflare-ipv4.lst"
+        },
+        {
+          "name": "aws-ipv4",
+          "sources": [
+            "https://ip-ranges.amazonaws.com/ip-ranges.json"
+          ],
+          "cache_path": "src/_upstream_cache/aws-ipv4.lst"
         }
       ],
       "local_sources": [

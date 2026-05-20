@@ -151,6 +151,39 @@ class BuildPodkopListsTests(unittest.TestCase):
 
         self.assertEqual(values, ["173.245.48.0/20"])
 
+    def test_fetch_source_group_uses_cached_values_when_sources_fail(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            cache_path = Path(tmp_dir) / "cache.lst"
+            cache_path.write_text("173.245.48.0/20\n", encoding="utf-8")
+
+            source_group = build_podkop_lists.RemoteSourceGroup(
+                name="cloudflare",
+                sources=("https://broken-a.test", "https://broken-b.test"),
+                cache_path=cache_path,
+            )
+
+            with patch.object(build_podkop_lists, "fetch_source_values", side_effect=build_podkop_lists.BuildError("boom")):
+                values = build_podkop_lists.fetch_source_group_values(source_group, kind="subnet", timeout=1)
+
+        self.assertEqual(values, {"173.245.48.0/20"})
+
+    def test_fetch_source_group_updates_cache_after_success(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            cache_path = Path(tmp_dir) / "cache.lst"
+            source_group = build_podkop_lists.RemoteSourceGroup(
+                name="cloudflare",
+                sources=("https://api.cloudflare.test",),
+                cache_path=cache_path,
+            )
+
+            with patch.object(build_podkop_lists, "fetch_source_values", return_value={"173.245.48.0/20"}):
+                values = build_podkop_lists.fetch_source_group_values(source_group, kind="subnet", timeout=1)
+
+            cache_body = cache_path.read_text(encoding="utf-8")
+
+        self.assertEqual(values, {"173.245.48.0/20"})
+        self.assertEqual(cache_body, "173.245.48.0/20\n")
+
     def test_fetch_crtsh_domains_filters_and_limits_to_root(self) -> None:
         payload = [
             {"name_value": "*.example.com\napi.example.com"},
