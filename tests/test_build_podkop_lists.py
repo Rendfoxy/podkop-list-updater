@@ -119,6 +119,14 @@ class BuildPodkopListsTests(unittest.TestCase):
         self.assertIsNone(build_podkop_lists.normalize_subnet("2606:4700::6810:85e5"))
         self.assertEqual(build_podkop_lists.normalize_subnet("1.1.1.1"), "1.1.1.1")
 
+    def test_domain_matches_roots_covers_subdomains(self) -> None:
+        roots = {"chatgpt.com", "openai.com"}
+
+        self.assertTrue(build_podkop_lists.domain_matches_roots("chatgpt.com", roots))
+        self.assertTrue(build_podkop_lists.domain_matches_roots("status.chatgpt.com", roots))
+        self.assertTrue(build_podkop_lists.domain_matches_roots("codex.openai.com", roots))
+        self.assertFalse(build_podkop_lists.domain_matches_roots("example.com", roots))
+
     def test_build_output_merges_remote_and_local_sources(self) -> None:
         with tempfile.TemporaryDirectory() as tmp_dir:
             project_root = Path(tmp_dir)

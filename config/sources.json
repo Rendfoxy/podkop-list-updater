@@ -59,7 +59,7 @@
           "roots_files": [
             "config/manual/podkop-foreign-roots.txt"
           ],
-          "limit_per_root": 100,
+          "limit_per_root": 250,
           "timeout_per_root": 6
         },
         {

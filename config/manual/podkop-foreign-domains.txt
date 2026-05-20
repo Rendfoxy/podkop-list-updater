@@ -2,6 +2,8 @@
 api.openai.com
 platform.openai.com
 chat.openai.com
+codex.openai.com
 files.oaiusercontent.com
 chat.com
 sora.com
+chatgpt.turn.livekit.cloud

@@ -5,8 +5,10 @@ oaiusercontent.com
 api.openai.com
 platform.openai.com
 chat.openai.com
+codex.openai.com
 files.oaiusercontent.com
 chatgpt.livekit.cloud
+chatgpt.turn.livekit.cloud
 host.livekit.cloud
 turn.livekit.cloud
 livekit.cloud
