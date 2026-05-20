@@ -107,6 +107,41 @@
             "https://ip-ranges.amazonaws.com/ip-ranges.json"
           ],
           "cache_path": "src/_upstream_cache/aws-ipv4.lst"
+        },
+        {
+          "name": "hetzner-asn",
+          "sources": [
+            "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS24940&min_peers_seeing=10"
+          ],
+          "cache_path": "src/_upstream_cache/hetzner-asn.lst"
+        },
+        {
+          "name": "ovh-asn",
+          "sources": [
+            "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS16276&min_peers_seeing=10"
+          ],
+          "cache_path": "src/_upstream_cache/ovh-asn.lst"
+        },
+        {
+          "name": "digitalocean-asn",
+          "sources": [
+            "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS14061&min_peers_seeing=10"
+          ],
+          "cache_path": "src/_upstream_cache/digitalocean-asn.lst"
+        },
+        {
+          "name": "meta-asn",
+          "sources": [
+            "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS32934&min_peers_seeing=10"
+          ],
+          "cache_path": "src/_upstream_cache/meta-asn.lst"
+        },
+        {
+          "name": "twitter-asn",
+          "sources": [
+            "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS13414&min_peers_seeing=10"
+          ],
+          "cache_path": "src/_upstream_cache/twitter-asn.lst"
         }
       ],
       "local_sources": [

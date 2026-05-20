@@ -81,6 +81,22 @@ class BuildPodkopListsTests(unittest.TestCase):
 
         self.assertEqual(subnets, {"3.5.140.0/22", "13.32.0.0/15"})
 
+    def test_extract_subnets_from_ripestat_announced_prefixes_json(self) -> None:
+        payload = {
+            "status": "ok",
+            "data": {
+                "prefixes": [
+                    {"prefix": "159.69.0.0/16"},
+                    {"prefix": "88.99.0.0/16"},
+                    {"prefix": "2a01:4f8::/32"},
+                ]
+            },
+        }
+
+        subnets = build_podkop_lists.extract_values_from_json(json.dumps(payload), "inline", "subnet")
+
+        self.assertEqual(subnets, {"159.69.0.0/16", "88.99.0.0/16"})
+
     def test_extract_domains_from_text_allows_comment_only_file(self) -> None:
         domains = build_podkop_lists.extract_values_from_text("// only comments\n# and more\n", "inline", "domain")
         self.assertEqual(domains, set())

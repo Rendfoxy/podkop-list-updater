@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-20T13:12:06.208657+00:00",
+  "generated_at": "2026-05-20T13:18:57.489954+00:00",
   "outputs": [
     {
       "name": "podkop-russia-domains",
@@ -101,8 +101,8 @@
     {
       "name": "podkop-foreign-subnets",
       "kind": "subnet",
-      "domain_count": 8941,
-      "remote_count": 8528,
+      "domain_count": 10148,
+      "remote_count": 9735,
       "local_count": 436,
       "discovered_count": 0,
       "remote_sources": [

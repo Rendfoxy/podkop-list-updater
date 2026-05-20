@@ -702,6 +702,7 @@ def extract_values_from_json(text: str, source_name: str, kind: str) -> set[str]
     if kind == "subnet":
         values: set[str] = set()
         result = payload.get("result")
+        data = payload.get("data")
         candidate_lists: list[object] = []
         if isinstance(payload.get("ipv4_cidrs"), list):
             candidate_lists.append(payload.get("ipv4_cidrs"))
@@ -710,6 +711,14 @@ def extract_values_from_json(text: str, source_name: str, kind: str) -> set[str]
         prefixes = payload.get("prefixes")
         if isinstance(prefixes, list):
             candidate_lists.append([item.get("ip_prefix") for item in prefixes if isinstance(item, dict)])
+        if isinstance(data, dict) and isinstance(data.get("prefixes"), list):
+            candidate_lists.append(
+                [
+                    item.get("prefix")
+                    for item in data.get("prefixes")
+                    if isinstance(item, dict) and isinstance(item.get("prefix"), str) and ":" not in item.get("prefix")
+                ]
+            )
         for items in candidate_lists:
             for item in items:
                 if not isinstance(item, str):
