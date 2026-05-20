@@ -37,8 +37,9 @@ jobs:
         id: release_meta
         run: |
           stamp="$(date -u +'%Y%m%d-%H%M%S')"
+          msk_name="$(TZ=Europe/Moscow date +'%d.%m.%Y %H:%M MSK')"
           echo "tag=lists-${stamp}" >> "$GITHUB_OUTPUT"
-          echo "name=Podkop Lists ${stamp} UTC" >> "$GITHUB_OUTPUT"
+          echo "name=Podkop Lists ${msk_name}" >> "$GITHUB_OUTPUT"
 
       - name: Commit changes
         id: commit_changes
