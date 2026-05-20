@@ -22,6 +22,17 @@ class BuildPodkopListsTests(unittest.TestCase):
 
         self.assertEqual(domains, {"example.com", "youtube.com", "sub.example.org"})
 
+    def test_extract_domains_from_text_skips_plain_ipv4_addresses(self) -> None:
+        text = """
+        158.85.224.171
+        8.8.8.8
+        openai.com
+        """
+
+        domains = build_podkop_lists.extract_values_from_text(text, "inline", "domain")
+
+        self.assertEqual(domains, {"openai.com"})
+
     def test_extract_domains_from_text_supports_domain_list_community_lines(self) -> None:
         text = """
         full:openaicom.imgix.net
@@ -55,6 +66,20 @@ class BuildPodkopListsTests(unittest.TestCase):
         subnets = build_podkop_lists.extract_values_from_json(json.dumps(payload), "inline", "subnet")
 
         self.assertEqual(subnets, {"103.21.244.0/22", "173.245.48.0/20"})
+
+    def test_extract_subnets_from_aws_ip_ranges_json(self) -> None:
+        payload = {
+            "syncToken": "1",
+            "prefixes": [
+                {"ip_prefix": "3.5.140.0/22", "service": "AMAZON", "region": "eu-central-1"},
+                {"ip_prefix": "13.32.0.0/15", "service": "CLOUDFRONT", "region": "GLOBAL"},
+                {"ipv6_prefix": "2600:9000::/28", "service": "CLOUDFRONT", "region": "GLOBAL"},
+            ],
+        }
+
+        subnets = build_podkop_lists.extract_values_from_json(json.dumps(payload), "inline", "subnet")
+
+        self.assertEqual(subnets, {"3.5.140.0/22", "13.32.0.0/15"})
 
     def test_extract_domains_from_text_allows_comment_only_file(self) -> None:
         domains = build_podkop_lists.extract_values_from_text("// only comments\n# and more\n", "inline", "domain")
@@ -138,6 +163,25 @@ class BuildPodkopListsTests(unittest.TestCase):
 
         self.assertEqual(domains, {"api.example.com", "login.example.com"})
         self.assertEqual(warnings, [])
+
+    def test_fetch_v2fly_domain_values_follows_include_chains(self) -> None:
+        parent_url = "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/meta"
+        facebook_url = "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/facebook"
+        instagram_url = "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/instagram"
+        responses = {
+            parent_url: "include:facebook\ninclude:instagram\nmeta.ai\nmeta.com\n",
+            facebook_url: "facebook.com\nfbcdn.net\n",
+            instagram_url: "instagram.com\ncdninstagram.com\n",
+        }
+
+        def fake_fetch(source: str, *, timeout: int, retries: int = 3) -> str:
+            self.assertIn(source, responses)
+            return responses[source]
+
+        with patch.object(build_podkop_lists, "fetch_remote_text", side_effect=fake_fetch):
+            domains = build_podkop_lists.fetch_source_values(parent_url, kind="domain", timeout=1)
+
+        self.assertEqual(domains, {"cdninstagram.com", "facebook.com", "fbcdn.net", "instagram.com", "meta.ai", "meta.com"})
 
     def test_build_output_includes_discovered_domains(self) -> None:
         with tempfile.TemporaryDirectory() as tmp_dir:

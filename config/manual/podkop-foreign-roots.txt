@@ -1,6 +1,8 @@
 openai.com
 chatgpt.com
 qwen.ai
+anthropic.com
+claude.ai
 oaistatic.com
 tiktok.com
 byteoversea.com

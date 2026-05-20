@@ -28,11 +28,23 @@
       "name": "podkop-foreign-domains",
       "kind": "domain",
       "remote_sources": [
+        "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Categories/hodca.lst",
+        "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Services/cloudflare.lst",
+        "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Services/cloudfront.lst",
+        "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Services/digitalocean.lst",
+        "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Services/hetzner.lst",
+        "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Services/ovh.lst",
         "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Services/telegram.lst",
         "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Services/tiktok.lst",
         "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Services/meta.lst",
         "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Services/twitter.lst",
         "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Services/google_ai.lst",
+        "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/anthropic",
+        "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/aws",
+        "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/cloudflare",
+        "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/digitalocean",
+        "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/hetzner",
+        "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/meta",
         "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/openai",
         "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/telegram",
         "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/tiktok"
@@ -64,14 +76,28 @@
       "name": "podkop-foreign-subnets",
       "kind": "subnet",
       "remote_sources": [
-        "https://core.telegram.org/resources/cidr.txt"
+        "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Subnets/IPv4/cloudfront.lst",
+        "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Subnets/IPv4/digitalocean.lst",
+        "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Subnets/IPv4/hetzner.lst",
+        "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Subnets/IPv4/meta.lst",
+        "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Subnets/IPv4/ovh.lst",
+        "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Subnets/IPv4/twitter.lst",
+        "https://ip-ranges.amazonaws.com/ip-ranges.json"
       ],
       "remote_source_groups": [
+        {
+          "name": "telegram-ipv4",
+          "sources": [
+            "https://core.telegram.org/resources/cidr.txt",
+            "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Subnets/IPv4/telegram.lst"
+          ]
+        },
         {
           "name": "cloudflare-ipv4",
           "sources": [
             "https://api.cloudflare.com/client/v4/ips",
-            "https://www.cloudflare.com/ips-v4"
+            "https://www.cloudflare.com/ips-v4",
+            "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Subnets/IPv4/cloudflare.lst"
           ]
         }
       ],

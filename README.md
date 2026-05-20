@@ -1,104 +1,129 @@
-# Podkop list updater
+# Podkop List Updater
 
-Этот проект каждый день собирает свежие списки доменов и подсетей для `podkop` и складывает их в папку `src/`.
-Логика разделена на 4 внешних списка:
+Это репозиторий, который каждый день собирает списки доменов и подсетей для `podkop`.
 
-- `russia-domains`
-- `russia-subnets`
-- `foreign-domains`
-- `foreign-subnets`
-
-## Что внутри
-
-- `config/sources.json` - какие списки тянуть, какого они типа и как называть готовые файлы
-- `config/manual/podkop-russia-seed.txt` - основной seed для маршрутизации через российские серверы
-- `config/manual/podkop-foreign-seed.txt` - основной seed для маршрутизации через иностранные серверы
-- `config/manual/podkop-russia-roots.txt` - запасной набор root-доменов, если позже понадобится autodiscovery для russian-профиля
-- `config/manual/podkop-foreign-roots.txt` - root-домены для автодобора поддоменов через внешние passive-источники
-- `config/manual/podkop-foreign-crtsh-roots.txt` - точечные AI-root'ы для более глубокого CT-поиска
-- `scripts/build_podkop_lists.py` - сборка, валидация, дедупликация и генерация файлов
-- `src/` - готовые `.lst` и `.json`, которые можно отдавать в `podkop`
-- `.github/workflows/update-podkop-lists.yml` - ежедневный запуск в GitHub Actions
-
-## Автодобор
-
-Для `foreign-domains` включен autodiscovery новых поддоменов по root-доменам.
-Сейчас по умолчанию используются два источника:
-
-- `urlscan.io` для свежих публично замеченных поддоменов
-- `crt.sh` точечно для AI-веток, где нужен более глубокий certificate transparency поиск
-
-- сборка больше не зависит от одного rate-limited API
-- в `src/manifest.json` видно, сколько записей пришло из `remote`, `local` и `discovery`
-- если добавить `URLSCAN_API_KEY` в GitHub Secrets, `urlscan`-слой станет заметно стабильнее и меньше будет упираться в `429`
-
-Дополнительно для `foreign-domains` подключены бесплатные service-списки из `v2fly/domain-list-community`:
-
-- `openai`
-- `telegram`
-- `tiktok`
-
-Это source-слой из `v2fly` geosite/geofile-экосистемы. Мы берём не бинарный `.dat`, а исходные `data/*` файлы, потому что `podkop` не потребляет `dlc.dat`, зато нормально ест `.lst` и `.json`.
-Они усиливают покрытие даже без discovery API и особенно полезны, когда внешние passive-источники временно режут rate limit.
-
-## Формат для Podkop
-
-По документации `podkop` для внешних списков поддерживаются `.json`, `.srs`, `.lst`, `.txt`.
-Источник: [Podkop Sections](https://podkop.net/docs/sections/)
-
-Этот репозиторий публикует два поддерживаемых формата:
-
-- `.lst` - одна запись на строку
-- `.json` - правило в формате sing-box:
-  - для доменов `domain_suffix`
-  - для подсетей `ip_cidr`
-
-То есть текущий формат для `podkop` корректный.
-
-## Releases
-
-Готовые файлы публикуются и в `GitHub Releases` как rolling release `latest`, чтобы удобно было забирать свежие версии по постоянным URL.
-
-Примеры:
-
-- `https://github.com/Rendfoxy/podkop-list-updater/releases/latest/download/podkop-foreign-domains.lst`
-- `https://github.com/Rendfoxy/podkop-list-updater/releases/latest/download/podkop-foreign-subnets.lst`
-- `https://github.com/Rendfoxy/podkop-list-updater/releases/latest/download/podkop-russia-domains.lst`
-- `https://github.com/Rendfoxy/podkop-list-updater/releases/latest/download/podkop-russia-subnets.lst`
-
-## Как использовать
-
-1. Отредактируйте `config/sources.json`.
-2. При необходимости добавьте свои домены или подсети в `config/manual/*.txt`.
-3. Запустите локально:
-
-```bash
-python3 scripts/build_podkop_lists.py
-```
-
-После сборки появятся файлы для каждого выхода:
-
-- `src/<name>.lst`
-- `src/<name>.json`
-
-Для `podkop` можно использовать raw-ссылку на любой из них.
-
-## Стартовый профиль
-
-По умолчанию уже настроен сбор:
-
-- `podkop-russia-domains`: `Russia/inside-raw.lst` + часть сервисных allow-domains + `podkop-russia-seed.txt`
-- `podkop-russia-subnets`: `podkop-russia-seed.txt`
-- `podkop-foreign-domains`: сервисные allow-domains для Telegram/TikTok/Meta/Twitter/Google AI + `podkop-foreign-seed.txt`
-- `podkop-foreign-domains`: дополнительно использует бесплатные geosite-source файлы из `v2fly/domain-list-community` для OpenAI / Telegram / TikTok
-- `podkop-foreign-domains`: дополнительно делает autodiscovery поддоменов по `podkop-foreign-roots.txt`
-- `podkop-foreign-subnets`: официальный `Telegram CIDR` + fallback-группа `Cloudflare API / Cloudflare ips-v4` + `podkop-foreign-seed.txt`
-
-На выходе сейчас формируются:
+На выходе всегда есть 4 набора:
 
 - `podkop-russia-domains`
 - `podkop-russia-subnets`
 - `podkop-foreign-domains`
 - `podkop-foreign-subnets`
 
-Если нужен другой набор, просто поменяйте URL в `config/sources.json`.
+Сборка идёт из нескольких слоёв:
+
+- ручные seed-списки
+- готовые сервисные списки
+- geosite-source файлы из `v2fly/domain-list-community`
+- autodiscovery через бесплатные внешние источники
+
+Идея простая: руками держим только базу, всё остальное стараемся подтягивать автоматически.
+
+## Что где лежит
+
+- [config/sources.json](/Users/rendfoxy/Documents/автоскрипт/config/sources.json) — главный конфиг сборки
+- [config/manual/podkop-russia-seed.txt](/Users/rendfoxy/Documents/автоскрипт/config/manual/podkop-russia-seed.txt) — ручная база для российского маршрута
+- [config/manual/podkop-foreign-seed.txt](/Users/rendfoxy/Documents/автоскрипт/config/manual/podkop-foreign-seed.txt) — ручная база для иностранного маршрута
+- [config/manual/podkop-foreign-roots.txt](/Users/rendfoxy/Documents/автоскрипт/config/manual/podkop-foreign-roots.txt) — root-домены для autodiscovery
+- [config/manual/podkop-foreign-crtsh-roots.txt](/Users/rendfoxy/Documents/автоскрипт/config/manual/podkop-foreign-crtsh-roots.txt) — точечные root-домены для `crt.sh`
+- [scripts/build_podkop_lists.py](/Users/rendfoxy/Documents/автоскрипт/scripts/build_podkop_lists.py) — сама сборка
+- [src](/Users/rendfoxy/Documents/автоскрипт/src) — готовые файлы
+- [.github/workflows/update-podkop-lists.yml](/Users/rendfoxy/Documents/автоскрипт/.github/workflows/update-podkop-lists.yml) — daily workflow
+
+## Что именно собирается
+
+### Russia
+
+- `podkop-russia-domains` — домены, которые должны идти через российский маршрут
+- `podkop-russia-subnets` — подсети для российского маршрута
+
+### Foreign
+
+- `podkop-foreign-domains` — домены, которые должны идти через иностранный маршрут
+- `podkop-foreign-subnets` — подсети для иностранного маршрута
+
+Для `foreign-domains` сейчас дополнительно подключены:
+
+- `HODCA` и сервисные списки из `allow-domains`
+- geosite-source файлы из `v2fly/domain-list-community`
+- AI и CDN/hosting категории вроде `OpenAI`, `Anthropic`, `Cloudflare`, `DigitalOcean`, `Hetzner`, `Meta`, `Telegram`, `TikTok`
+
+Для `foreign-subnets` отдельно тянутся официальные и сервисные IPv4-источники для `Telegram`, `Cloudflare`, `AWS/CloudFront`, `DigitalOcean`, `Hetzner`, `OVH`, `Meta`, `Twitter`.
+
+Это полезно, потому что такие списки часто обновляются и дают покрытие даже тогда, когда discovery API временно тупят или режут rate limit.
+
+## Autodiscovery
+
+Автодобор включён только там, где он реально нужен и даёт пользу.
+
+Сейчас используются:
+
+- `urlscan.io` — основной бесплатный источник
+- `crt.sh` — точечно для отдельных AI-веток
+
+Если добавить `URLSCAN_API_KEY` в GitHub Secrets, `urlscan` работает заметно стабильнее.
+
+## Формат для podkop
+
+По документации `podkop` внешние списки можно подключать в форматах `.json`, `.srs`, `.lst`, `.txt`:
+
+- [Podkop Sections](https://podkop.net/docs/sections/)
+
+Этот репозиторий публикует:
+
+- `.lst` — одна запись на строку
+- `.json` — rule-set в совместимом формате:
+  - домены через `domain_suffix`
+  - подсети через `ip_cidr`
+
+То есть по формату здесь всё нормально для `podkop`.
+
+## Откуда брать готовые файлы
+
+Есть два варианта.
+
+### 1. GitHub Releases
+
+Это самый удобный вариант, если нужна всегда свежая версия по стабильной ссылке.
+
+- [podkop-foreign-domains.lst](https://github.com/Rendfoxy/podkop-list-updater/releases/latest/download/podkop-foreign-domains.lst)
+- [podkop-foreign-subnets.lst](https://github.com/Rendfoxy/podkop-list-updater/releases/latest/download/podkop-foreign-subnets.lst)
+- [podkop-russia-domains.lst](https://github.com/Rendfoxy/podkop-list-updater/releases/latest/download/podkop-russia-domains.lst)
+- [podkop-russia-subnets.lst](https://github.com/Rendfoxy/podkop-list-updater/releases/latest/download/podkop-russia-subnets.lst)
+
+При желании можно брать и `.json`-версии из того же `latest` release.
+
+### 2. Файлы из `src/`
+
+Если работаешь локально, итоговые файлы всегда лежат в [src](/Users/rendfoxy/Documents/автоскрипт/src).
+
+## Как запустить локально
+
+```bash
+python3 scripts/build_podkop_lists.py
+```
+
+После сборки обновятся:
+
+- `src/<name>.lst`
+- `src/<name>.json`
+- `src/manifest.json`
+
+## Что делает workflow
+
+GitHub Actions каждый день:
+
+1. проверяет Python-файлы
+2. запускает тесты
+3. собирает списки
+4. коммитит обновления, если они есть
+5. обновляет `latest` release с готовыми файлами
+
+## Если хочешь поменять логику
+
+Обычно правится одно из трёх:
+
+- [config/sources.json](/Users/rendfoxy/Documents/автоскрипт/config/sources.json) — если нужно добавить или убрать внешние источники
+- `config/manual/*.txt` — если нужно поправить ручную базу
+- [scripts/build_podkop_lists.py](/Users/rendfoxy/Documents/автоскрипт/scripts/build_podkop_lists.py) — если нужно менять саму механику сборки
+
+Если коротко: это не “один статичный список”, а маленький сборщик, который старается держать `podkop`-файлы живыми без постоянного ручного копания.

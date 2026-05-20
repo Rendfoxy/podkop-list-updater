@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-05-20T06:18:45.558411+00:00",
+  "generated_at": "2026-05-19T23:09:25.421696+00:00",
   "outputs": [
     {
       "name": "podkop-russia-domains",
       "kind": "domain",
-      "domain_count": 2178,
+      "domain_count": 2177,
       "remote_count": 1162,
-      "local_count": 1032,
+      "local_count": 1031,
       "discovered_count": 0,
       "remote_sources": [
         "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Russia/inside-raw.lst",
@@ -38,16 +38,28 @@
     {
       "name": "podkop-foreign-domains",
       "kind": "domain",
-      "domain_count": 516,
-      "remote_count": 144,
-      "local_count": 385,
-      "discovered_count": 40,
+      "domain_count": 1316,
+      "remote_count": 1075,
+      "local_count": 243,
+      "discovered_count": 52,
       "remote_sources": [
+        "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Categories/hodca.lst",
+        "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Services/cloudflare.lst",
+        "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Services/cloudfront.lst",
+        "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Services/digitalocean.lst",
+        "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Services/hetzner.lst",
+        "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Services/ovh.lst",
         "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Services/telegram.lst",
         "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Services/tiktok.lst",
         "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Services/meta.lst",
         "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Services/twitter.lst",
         "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Services/google_ai.lst",
+        "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/anthropic",
+        "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/aws",
+        "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/cloudflare",
+        "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/digitalocean",
+        "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/hetzner",
+        "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/meta",
         "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/openai",
         "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/telegram",
         "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/tiktok"
@@ -60,8 +72,10 @@
         {
           "provider": "urlscan",
           "roots": [
+            "anthropic.com",
             "byteoversea.com",
             "chatgpt.com",
+            "claude.ai",
             "oaistatic.com",
             "openai.com",
             "qwen.ai",
@@ -71,7 +85,7 @@
             "telegram.org",
             "tiktok.com"
           ],
-          "added_count": 40,
+          "added_count": 52,
           "warnings": []
         },
         {
@@ -81,7 +95,7 @@
           ],
           "added_count": 0,
           "warnings": [
-            "discovery skipped for forum.openai.com: Failed to fetch https://crt.sh/?q=%25.forum.openai.com&output=json: HTTP Error 404: Not Found"
+            "discovery skipped for forum.openai.com: Failed to fetch https://crt.sh/?q=%25.forum.openai.com&output=json: The read operation timed out"
           ]
         }
       ]
@@ -89,12 +103,18 @@
     {
       "name": "podkop-foreign-subnets",
       "kind": "subnet",
-      "domain_count": 442,
-      "remote_count": 29,
+      "domain_count": 8940,
+      "remote_count": 8527,
       "local_count": 436,
       "discovered_count": 0,
       "remote_sources": [
-        "https://core.telegram.org/resources/cidr.txt"
+        "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Subnets/IPv4/cloudfront.lst",
+        "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Subnets/IPv4/digitalocean.lst",
+        "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Subnets/IPv4/hetzner.lst",
+        "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Subnets/IPv4/meta.lst",
+        "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Subnets/IPv4/ovh.lst",
+        "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Subnets/IPv4/twitter.lst",
+        "https://ip-ranges.amazonaws.com/ip-ranges.json"
       ],
       "local_sources": [
         "config/manual/podkop-foreign-seed.txt",

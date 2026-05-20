@@ -32,6 +32,9 @@ DEFAULT_FETCH_RETRIES = 3
 USER_AGENT = "podkop-list-updater/1.0"
 VALID_KINDS = {"domain", "subnet"}
 VALID_DISCOVERY_PROVIDERS = {"crtsh", "certspotter", "urlscan", "wayback"}
+V2FLY_DATA_SOURCE_RE = re.compile(
+    r"^https://raw\.githubusercontent\.com/v2fly/domain-list-community/([^/]+)/data/([a-z0-9._-]+)$"
+)
 DOMAIN_RE = re.compile(
     r"^(?=.{1,253}$)(?!-)(?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])$"
 )
@@ -294,6 +297,8 @@ def build_output_with_details(config: OutputConfig, timeout: int) -> BuildResult
 
 
 def fetch_source_values(source: str, *, kind: str, timeout: int) -> set[str]:
+    if kind == "domain" and is_v2fly_data_source(source):
+        return fetch_v2fly_domain_values(source, timeout=timeout, visited=set())
     text = fetch_remote_text(source, timeout=timeout)
     return extract_values(text, source, kind)
 
@@ -306,6 +311,61 @@ def fetch_source_group_values(source_group: RemoteSourceGroup, *, kind: str, tim
         except BuildError as exc:
             errors.append(f"{source}: {exc}")
     raise BuildError(f"All sources failed in fallback group {source_group.name}: {'; '.join(errors)}")
+
+
+def is_v2fly_data_source(source: str) -> bool:
+    return bool(V2FLY_DATA_SOURCE_RE.fullmatch(source))
+
+
+def fetch_v2fly_domain_values(source: str, *, timeout: int, visited: set[str]) -> set[str]:
+    if source in visited:
+        return set()
+    visited.add(source)
+
+    text = fetch_remote_text(source, timeout=timeout)
+    values: set[str] = set()
+    direct_lines: list[str] = []
+    branch = resolve_v2fly_branch(source)
+
+    for raw_line in text.splitlines():
+        include_target = parse_v2fly_include(raw_line)
+        if include_target:
+            include_source = build_v2fly_data_source(branch, include_target)
+            values.update(fetch_v2fly_domain_values(include_source, timeout=timeout, visited=visited))
+            continue
+        direct_lines.append(raw_line)
+
+    direct_text = "\n".join(direct_lines)
+    if direct_text.strip():
+        values.update(extract_values_from_text(direct_text, source, "domain"))
+    return values
+
+
+def resolve_v2fly_branch(source: str) -> str:
+    match = V2FLY_DATA_SOURCE_RE.fullmatch(source)
+    if not match:
+        raise BuildError(f"Unsupported v2fly data source: {source}")
+    return match.group(1)
+
+
+def build_v2fly_data_source(branch: str, name: str) -> str:
+    return f"https://raw.githubusercontent.com/v2fly/domain-list-community/{branch}/data/{name}"
+
+
+def parse_v2fly_include(line: str) -> str | None:
+    cleaned = line.strip()
+    if not cleaned or cleaned.startswith("#") or cleaned.startswith("//"):
+        return None
+    if "//" in cleaned:
+        cleaned = cleaned.split("//", 1)[0].strip()
+    if "#" in cleaned:
+        cleaned = cleaned.split("#", 1)[0].strip()
+    if not cleaned.startswith("include:"):
+        return None
+    include_target = cleaned.split(":", 1)[1].split(",", 1)[0].split()[0].strip().lower()
+    if not include_target:
+        return None
+    return include_target
 
 
 def discover_domains(config: DiscoveryConfig, timeout: int) -> tuple[set[str], list[str]]:
@@ -615,6 +675,9 @@ def extract_values_from_json(text: str, source_name: str, kind: str) -> set[str]
             candidate_lists.append(payload.get("ipv4_cidrs"))
         if isinstance(result, dict) and isinstance(result.get("ipv4_cidrs"), list):
             candidate_lists.append(result.get("ipv4_cidrs"))
+        prefixes = payload.get("prefixes")
+        if isinstance(prefixes, list):
+            candidate_lists.append([item.get("ip_prefix") for item in prefixes if isinstance(item, dict)])
         for items in candidate_lists:
             for item in items:
                 if not isinstance(item, str):
@@ -676,6 +739,12 @@ def normalize_domain(value: str) -> str | None:
 
     if "/" in candidate or ":" in candidate or "_" in candidate:
         return None
+
+    try:
+        ipaddress.ip_address(candidate)
+        return None
+    except ValueError:
+        pass
 
     try:
         candidate = candidate.encode("idna").decode("ascii")
