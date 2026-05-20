@@ -1,1 +1,7 @@
 // Дополнительные домены для списка маршрутизации через иностранные серверы.
+api.openai.com
+platform.openai.com
+chat.openai.com
+files.oaiusercontent.com
+chat.com
+sora.com

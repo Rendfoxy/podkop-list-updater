@@ -2,6 +2,14 @@ openai.com
 chatgpt.com
 oaistatic.com
 oaiusercontent.com
+api.openai.com
+platform.openai.com
+chat.openai.com
+files.oaiusercontent.com
+chatgpt.livekit.cloud
+host.livekit.cloud
+turn.livekit.cloud
+livekit.cloud
 sora.com
 qwen.ai
 anthropic.com

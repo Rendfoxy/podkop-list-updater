@@ -107,11 +107,17 @@ class BuildPodkopListsTests(unittest.TestCase):
         5.28.192.0/21
         144.31.14.104
         invalid.cidr/999
+        2001:db8::/32
         """
 
         subnets = build_podkop_lists.extract_values_from_text(text, "inline", "subnet")
 
         self.assertEqual(subnets, {"5.28.192.0/21", "144.31.14.104"})
+
+    def test_normalize_subnet_skips_ipv6_values(self) -> None:
+        self.assertIsNone(build_podkop_lists.normalize_subnet("2001:db8::/32"))
+        self.assertIsNone(build_podkop_lists.normalize_subnet("2606:4700::6810:85e5"))
+        self.assertEqual(build_podkop_lists.normalize_subnet("1.1.1.1"), "1.1.1.1")
 
     def test_build_output_merges_remote_and_local_sources(self) -> None:
         with tempfile.TemporaryDirectory() as tmp_dir:

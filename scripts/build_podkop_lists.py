@@ -977,8 +977,12 @@ def normalize_subnet(value: str) -> str | None:
     try:
         if "/" in candidate:
             network = ipaddress.ip_network(candidate, strict=False)
+            if network.version != 4:
+                return None
             return str(network)
         address = ipaddress.ip_address(candidate)
+        if address.version != 4:
+            return None
         return str(address)
     except ValueError:
         return None
