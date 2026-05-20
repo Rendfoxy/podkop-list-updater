@@ -200,6 +200,124 @@ class BuildPodkopListsTests(unittest.TestCase):
         self.assertEqual(values, {"173.245.48.0/20"})
         self.assertEqual(cache_body, "173.245.48.0/20\n")
 
+    def test_resolve_output_domains_adds_ipv4_as_32_routes(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            cache_path = Path(tmp_dir) / "resolved.lst"
+            resolve_config = build_podkop_lists.ResolveConfig(
+                output="foreign-domains",
+                roots=("openai.com", "telegram.org"),
+                roots_files=(),
+                cache_path=cache_path,
+                limit=10,
+                timeout_per_lookup=1,
+            )
+            built_outputs = {
+                "foreign-domains": build_podkop_lists.BuildResult(
+                    values=("api.openai.com", "cdn.telegram.org", "example.com"),
+                    remote_count=0,
+                    local_count=0,
+                    resolved_count=0,
+                    discovered_count=0,
+                    discovery=(),
+                )
+            }
+
+            def fake_resolve(domain: str, timeout: int) -> set[str]:
+                self.assertEqual(timeout, 1)
+                mapping = {
+                    "api.openai.com": {"1.1.1.1"},
+                    "cdn.telegram.org": {"2.2.2.2", "2.2.2.3"},
+                }
+                return mapping.get(domain, set())
+
+            with patch.object(build_podkop_lists, "resolve_domain_ipv4", side_effect=fake_resolve):
+                values = build_podkop_lists.resolve_output_domains(resolve_config, built_outputs)
+
+            cache_body = cache_path.read_text(encoding="utf-8")
+
+        self.assertEqual(values, {"1.1.1.1/32", "2.2.2.2/32", "2.2.2.3/32"})
+        self.assertEqual(cache_body, "1.1.1.1/32\n2.2.2.2/32\n2.2.2.3/32\n")
+
+    def test_resolve_output_domains_uses_cache_when_dns_returns_nothing(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            cache_path = Path(tmp_dir) / "resolved.lst"
+            cache_path.write_text("3.3.3.3/32\n", encoding="utf-8")
+            resolve_config = build_podkop_lists.ResolveConfig(
+                output="foreign-domains",
+                roots=("openai.com",),
+                roots_files=(),
+                cache_path=cache_path,
+                limit=10,
+                timeout_per_lookup=1,
+            )
+            built_outputs = {
+                "foreign-domains": build_podkop_lists.BuildResult(
+                    values=("api.openai.com",),
+                    remote_count=0,
+                    local_count=0,
+                    resolved_count=0,
+                    discovered_count=0,
+                    discovery=(),
+                )
+            }
+
+            with patch.object(build_podkop_lists, "resolve_domain_ipv4", return_value=set()):
+                values = build_podkop_lists.resolve_output_domains(resolve_config, built_outputs)
+
+        self.assertEqual(values, {"3.3.3.3/32"})
+
+    def test_load_resolve_cache_filters_non_global_ipv4(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            cache_path = Path(tmp_dir) / "resolved.lst"
+            cache_path.write_text("3.3.3.3/32\n198.18.0.1/32\n10.0.0.1/32\n", encoding="utf-8")
+            resolve_config = build_podkop_lists.ResolveConfig(
+                output="foreign-domains",
+                roots=(),
+                roots_files=(),
+                cache_path=cache_path,
+            )
+
+            values = build_podkop_lists.load_resolve_cache(resolve_config)
+
+        self.assertEqual(values, {"3.3.3.3/32"})
+
+    def test_resolve_output_domains_returns_empty_when_no_public_ip_and_no_cache(self) -> None:
+        resolve_config = build_podkop_lists.ResolveConfig(
+            output="foreign-domains",
+            roots=("openai.com",),
+            roots_files=(),
+            cache_path=None,
+            limit=10,
+            timeout_per_lookup=1,
+        )
+        built_outputs = {
+            "foreign-domains": build_podkop_lists.BuildResult(
+                values=("api.openai.com",),
+                remote_count=0,
+                local_count=0,
+                resolved_count=0,
+                discovered_count=0,
+                discovery=(),
+            )
+        }
+
+        with patch.object(build_podkop_lists, "resolve_domain_ipv4", return_value=set()):
+            values = build_podkop_lists.resolve_output_domains(resolve_config, built_outputs)
+
+        self.assertEqual(values, set())
+
+    def test_resolve_domain_ipv4_skips_non_global_addresses(self) -> None:
+        fake_infos = [
+            (None, None, None, None, ("1.1.1.1", 0)),
+            (None, None, None, None, ("198.18.0.1", 0)),
+            (None, None, None, None, ("10.0.0.1", 0)),
+        ]
+
+        with patch("socket.getaddrinfo", return_value=fake_infos):
+            values = build_podkop_lists.resolve_domain_ipv4("example.com", timeout=1)
+
+        self.assertEqual(values, {"1.1.1.1"})
+
     def test_fetch_crtsh_domains_filters_and_limits_to_root(self) -> None:
         payload = [
             {"name_value": "*.example.com\napi.example.com"},

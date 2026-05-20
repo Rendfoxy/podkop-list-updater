@@ -147,6 +147,18 @@
       "local_sources": [
         "config/manual/podkop-foreign-seed.txt",
         "config/manual/podkop-foreign-subnets.txt"
+      ],
+      "resolve_from_outputs": [
+        {
+          "output": "podkop-foreign-domains",
+          "roots_files": [
+            "config/manual/podkop-foreign-resolve-roots.txt",
+            "config/manual/podkop-foreign-crtsh-roots.txt"
+          ],
+          "cache_path": "src/_upstream_cache/foreign-domain-resolved.lst",
+          "limit": 800,
+          "timeout_per_lookup": 2
+        }
       ]
     }
   ]

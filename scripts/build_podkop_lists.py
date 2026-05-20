@@ -5,6 +5,7 @@ import json
 import ipaddress
 import os
 import re
+import socket
 import ssl
 import sys
 import time
@@ -51,6 +52,7 @@ class OutputConfig:
     remote_sources: tuple[str, ...]
     local_sources: tuple[Path, ...]
     remote_source_groups: tuple["RemoteSourceGroup", ...] = ()
+    resolve_from_outputs: tuple["ResolveConfig", ...] = ()
     discovery: tuple["DiscoveryConfig", ...] = ()
 
 
@@ -71,6 +73,16 @@ class DiscoveryConfig:
 
 
 @dataclass(frozen=True)
+class ResolveConfig:
+    output: str
+    roots: tuple[str, ...]
+    roots_files: tuple[Path, ...]
+    cache_path: Path | None = None
+    limit: int = 500
+    timeout_per_lookup: int = 2
+
+
+@dataclass(frozen=True)
 class DiscoveryReportItem:
     provider: str
     roots: tuple[str, ...]
@@ -83,6 +95,7 @@ class BuildResult:
     values: tuple[str, ...]
     remote_count: int
     local_count: int
+    resolved_count: int
     discovered_count: int
     discovery: tuple[DiscoveryReportItem, ...]
 
@@ -108,9 +121,11 @@ def main() -> int:
         "outputs": [],
     }
 
+    built_outputs: dict[str, BuildResult] = {}
     for output in outputs:
-        result = build_output_with_details(output, timeout=args.timeout)
+        result = build_output_with_details(output, timeout=args.timeout, built_outputs=built_outputs)
         write_output_files(output_dir, output.name, list(result.values), output.kind)
+        built_outputs[output.name] = result
         manifest["outputs"].append(
             {
                 "name": output.name,
@@ -118,6 +133,7 @@ def main() -> int:
                 "domain_count": len(result.values),
                 "remote_count": result.remote_count,
                 "local_count": result.local_count,
+                "resolved_count": result.resolved_count,
                 "discovered_count": result.discovered_count,
                 "remote_sources": list(output.remote_sources),
                 "local_sources": [str(path.relative_to(PROJECT_ROOT)) for path in output.local_sources],
@@ -166,6 +182,7 @@ def load_config(config_path: Path) -> list[OutputConfig]:
         remote_source_groups = load_remote_source_groups(item.get("remote_source_groups", []), name=name)
         local_source_strings = ensure_string_list(item.get("local_sources", []), "local_sources")
         local_sources = tuple((PROJECT_ROOT / source).resolve() for source in local_source_strings)
+        resolve_from_outputs = load_resolve_configs(item.get("resolve_from_outputs", []), name=name, kind=kind)
         discovery = load_discovery_configs(item.get("discovery", []), name=name, kind=kind)
 
         outputs.append(
@@ -175,6 +192,7 @@ def load_config(config_path: Path) -> list[OutputConfig]:
                 remote_sources=tuple(remote_sources),
                 remote_source_groups=tuple(remote_source_groups),
                 local_sources=local_sources,
+                resolve_from_outputs=tuple(resolve_from_outputs),
                 discovery=tuple(discovery),
             )
         )
@@ -240,6 +258,47 @@ def load_discovery_configs(value: object, *, name: str, kind: str) -> list[Disco
     return configs
 
 
+def load_resolve_configs(value: object, *, name: str, kind: str) -> list[ResolveConfig]:
+    if not isinstance(value, list):
+        raise BuildError(f"'resolve_from_outputs' for {name} must be an array.")
+    if kind != "subnet" and value:
+        raise BuildError(f"Output resolution is only supported for subnet outputs: {name}")
+
+    configs: list[ResolveConfig] = []
+    for item in value:
+        if not isinstance(item, dict):
+            raise BuildError(f"Each resolve_from_outputs item for {name} must be an object.")
+        output = item.get("output")
+        if not isinstance(output, str) or not output.strip():
+            raise BuildError(f"Each resolve_from_outputs item for {name} must define a non-empty output.")
+        roots = tuple(ensure_string_list(item.get("roots", []), "roots"))
+        roots_file_strings = ensure_string_list(item.get("roots_files", []), "roots_files")
+        roots_files = tuple((PROJECT_ROOT / source).resolve() for source in roots_file_strings)
+        cache_path_value = item.get("cache_path")
+        cache_path: Path | None = None
+        if cache_path_value is not None:
+            if not isinstance(cache_path_value, str) or not cache_path_value.strip():
+                raise BuildError(f"Invalid cache_path for resolve_from_outputs item in {name}.")
+            cache_path = (PROJECT_ROOT / cache_path_value).resolve()
+        limit = item.get("limit", 500)
+        if not isinstance(limit, int) or limit < 1 or limit > 10000:
+            raise BuildError(f"Invalid resolve limit for {name}: {limit!r}")
+        timeout_per_lookup = item.get("timeout_per_lookup", 2)
+        if not isinstance(timeout_per_lookup, int) or timeout_per_lookup < 1 or timeout_per_lookup > 30:
+            raise BuildError(f"Invalid timeout_per_lookup for {name}: {timeout_per_lookup!r}")
+        configs.append(
+            ResolveConfig(
+                output=output.strip(),
+                roots=roots,
+                roots_files=roots_files,
+                cache_path=cache_path,
+                limit=limit,
+                timeout_per_lookup=timeout_per_lookup,
+            )
+        )
+    return configs
+
+
 def ensure_string_list(value: object, field_name: str) -> list[str]:
     if not isinstance(value, list):
         raise BuildError(f"'{field_name}' must be an array.")
@@ -256,10 +315,16 @@ def build_output(config: OutputConfig, timeout: int) -> list[str]:
     return list(build_output_with_details(config, timeout=timeout).values)
 
 
-def build_output_with_details(config: OutputConfig, timeout: int) -> BuildResult:
+def build_output_with_details(
+    config: OutputConfig,
+    timeout: int,
+    built_outputs: dict[str, BuildResult] | None = None,
+) -> BuildResult:
+    built_outputs = built_outputs or {}
     values: set[str] = set()
     remote_values: set[str] = set()
     local_values: set[str] = set()
+    resolved_count = 0
     discovery_reports: list[DiscoveryReportItem] = []
 
     for source in config.remote_sources:
@@ -278,6 +343,13 @@ def build_output_with_details(config: OutputConfig, timeout: int) -> BuildResult
         extracted = extract_values(local_path.read_text(encoding="utf-8"), str(local_path), config.kind)
         values.update(extracted)
         local_values.update(extracted)
+
+    if config.kind == "subnet":
+        for resolve_config in config.resolve_from_outputs:
+            resolved_values = resolve_output_domains(resolve_config, built_outputs)
+            added_values = resolved_values - values
+            values.update(resolved_values)
+            resolved_count += len(added_values)
 
     if config.kind == "domain":
         for discovery in config.discovery:
@@ -298,9 +370,121 @@ def build_output_with_details(config: OutputConfig, timeout: int) -> BuildResult
         values=tuple(sorted(values)),
         remote_count=len(remote_values),
         local_count=len(local_values),
+        resolved_count=resolved_count,
         discovered_count=discovered_count,
         discovery=tuple(discovery_reports),
     )
+
+
+def resolve_output_domains(config: ResolveConfig, built_outputs: dict[str, BuildResult]) -> set[str]:
+    source_output = built_outputs.get(config.output)
+    if source_output is None:
+        raise BuildError(f"resolve_from_outputs references unknown output: {config.output}")
+
+    roots = load_roots(config.roots, config.roots_files, missing_message="Resolve roots file not found")
+    candidate_domains = [
+        domain
+        for domain in source_output.values
+        if not roots or domain_matches_roots(domain, roots)
+    ]
+    candidate_domains = sorted(candidate_domains)[: config.limit]
+
+    resolved_values: set[str] = set()
+    failed_domains: list[str] = []
+    for domain in candidate_domains:
+        addresses = resolve_domain_ipv4(domain, timeout=config.timeout_per_lookup)
+        if not addresses:
+            failed_domains.append(domain)
+            continue
+        for address in addresses:
+            resolved_values.add(f"{address}/32")
+
+    if resolved_values:
+        update_resolve_cache(config, resolved_values)
+        if failed_domains:
+            print(
+                f"WARN: DNS resolution missed {len(failed_domains)} domains for {config.output}",
+                file=sys.stderr,
+            )
+        return resolved_values
+
+    cached_values = load_resolve_cache(config)
+    if cached_values is not None:
+        print(f"WARN: using cached resolved IPs for {config.output}", file=sys.stderr)
+        return cached_values
+
+    print(f"WARN: no public resolved IPs available for {config.output}", file=sys.stderr)
+    return set()
+
+
+def load_resolve_cache(config: ResolveConfig) -> set[str] | None:
+    if config.cache_path is None or not config.cache_path.is_file():
+        return None
+    values = extract_values(config.cache_path.read_text(encoding="utf-8"), str(config.cache_path), "subnet")
+    filtered = {value for value in values if is_public_ipv4_subnet(value)}
+    return filtered or None
+
+
+def update_resolve_cache(config: ResolveConfig, values: set[str]) -> None:
+    if config.cache_path is None:
+        return
+    config.cache_path.parent.mkdir(parents=True, exist_ok=True)
+    body = "\n".join(sorted(values))
+    if body:
+        body += "\n"
+    config.cache_path.write_text(body, encoding="utf-8")
+
+
+def load_roots(roots: Iterable[str], roots_files: Iterable[Path], *, missing_message: str) -> set[str]:
+    loaded_roots: set[str] = set()
+    for root in roots:
+        normalized = normalize_domain(root)
+        if normalized:
+            loaded_roots.add(normalized)
+    for roots_file in roots_files:
+        if not roots_file.is_file():
+            raise BuildError(f"{missing_message}: {roots_file}")
+        for domain in extract_values_from_text(roots_file.read_text(encoding='utf-8'), str(roots_file), "domain"):
+            loaded_roots.add(domain)
+    return loaded_roots
+
+
+def domain_matches_roots(domain: str, roots: set[str]) -> bool:
+    return any(domain == root or domain.endswith(f".{root}") for root in roots)
+
+
+def resolve_domain_ipv4(domain: str, timeout: int) -> set[str]:
+    previous_timeout = socket.getdefaulttimeout()
+    socket.setdefaulttimeout(timeout)
+    try:
+        infos = socket.getaddrinfo(domain, None, family=socket.AF_INET, type=socket.SOCK_STREAM)
+    except (socket.gaierror, TimeoutError, OSError):
+        return set()
+    finally:
+        socket.setdefaulttimeout(previous_timeout)
+
+    addresses: set[str] = set()
+    for info in infos:
+        sockaddr = info[4]
+        if isinstance(sockaddr, tuple) and sockaddr:
+            try:
+                address = ipaddress.ip_address(sockaddr[0])
+            except ValueError:
+                continue
+            if address.version != 4 or not address.is_global:
+                continue
+            normalized = normalize_subnet(str(address))
+            if normalized:
+                addresses.add(normalized)
+    return addresses
+
+
+def is_public_ipv4_subnet(value: str) -> bool:
+    try:
+        network = ipaddress.ip_network(value, strict=False)
+    except ValueError:
+        return False
+    return network.version == 4 and network.network_address.is_global
 
 
 def fetch_source_values(source: str, *, kind: str, timeout: int) -> set[str]:
@@ -425,19 +609,7 @@ def discover_domains(config: DiscoveryConfig, timeout: int) -> tuple[set[str], l
 
 
 def load_discovery_roots(config: DiscoveryConfig) -> set[str]:
-    roots: set[str] = set()
-    for root in config.roots:
-        normalized = normalize_domain(root)
-        if normalized:
-            roots.add(normalized)
-
-    for roots_file in config.roots_files:
-        if not roots_file.is_file():
-            raise BuildError(f"Discovery roots file not found: {roots_file}")
-        for domain in extract_values_from_text(roots_file.read_text(encoding="utf-8"), str(roots_file), "domain"):
-            roots.add(domain)
-
-    return roots
+    return load_roots(config.roots, config.roots_files, missing_message="Discovery roots file not found")
 
 
 def fetch_crtsh_domains(root: str, timeout: int, limit: int) -> tuple[set[str], list[str]]:
