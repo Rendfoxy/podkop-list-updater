@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-20T13:01:36.965681+00:00",
+  "generated_at": "2026-05-20T13:12:06.208657+00:00",
   "outputs": [
     {
       "name": "podkop-russia-domains",
@@ -38,10 +38,10 @@
     {
       "name": "podkop-foreign-domains",
       "kind": "domain",
-      "domain_count": 1372,
+      "domain_count": 1383,
       "remote_count": 1075,
       "local_count": 243,
-      "discovered_count": 108,
+      "discovered_count": 119,
       "remote_sources": [
         "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Categories/hodca.lst",
         "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Services/cloudflare.lst",
@@ -93,10 +93,8 @@
           "roots": [
             "forum.openai.com"
           ],
-          "added_count": 0,
-          "warnings": [
-            "discovery skipped for forum.openai.com: Failed to fetch https://crt.sh/?q=%25.forum.openai.com&output=json: The read operation timed out"
-          ]
+          "added_count": 11,
+          "warnings": []
         }
       ]
     },
