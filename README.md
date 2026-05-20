@@ -29,14 +29,15 @@
 
 ## Что где лежит
 
-- [config/sources.json](/Users/rendfoxy/Documents/автоскрипт/config/sources.json) — главный конфиг сборки
-- [config/manual/podkop-russia-seed.txt](/Users/rendfoxy/Documents/автоскрипт/config/manual/podkop-russia-seed.txt) — ручная база для набора `russia`
-- [config/manual/podkop-foreign-seed.txt](/Users/rendfoxy/Documents/автоскрипт/config/manual/podkop-foreign-seed.txt) — ручная база для набора `foreign`
-- [config/manual/podkop-foreign-roots.txt](/Users/rendfoxy/Documents/автоскрипт/config/manual/podkop-foreign-roots.txt) — root-домены для autodiscovery
-- [config/manual/podkop-foreign-crtsh-roots.txt](/Users/rendfoxy/Documents/автоскрипт/config/manual/podkop-foreign-crtsh-roots.txt) — точечные root-домены для `crt.sh`
-- [scripts/build_podkop_lists.py](/Users/rendfoxy/Documents/автоскрипт/scripts/build_podkop_lists.py) — сама сборка
-- [src](/Users/rendfoxy/Documents/автоскрипт/src) — готовые файлы
-- [.github/workflows/update-podkop-lists.yml](/Users/rendfoxy/Documents/автоскрипт/.github/workflows/update-podkop-lists.yml) — workflow обновления
+- [config/sources.json](config/sources.json) — главный конфиг сборки
+- [config/manual/podkop-russia-seed.txt](config/manual/podkop-russia-seed.txt) — ручная база для набора `russia`
+- [config/manual/podkop-foreign-seed.txt](config/manual/podkop-foreign-seed.txt) — ручная база для набора `foreign`
+- [config/manual/podkop-foreign-roots.txt](config/manual/podkop-foreign-roots.txt) — root-домены для autodiscovery
+- [config/manual/podkop-foreign-crtsh-roots.txt](config/manual/podkop-foreign-crtsh-roots.txt) — точечные root-домены для `crt.sh`
+- [config/manual/podkop-foreign-resolve-roots.txt](config/manual/podkop-foreign-resolve-roots.txt) — домены для `DNS -> /32` слоя
+- [scripts/build_podkop_lists.py](scripts/build_podkop_lists.py) — сама сборка
+- [src](src) — готовые файлы
+- [.github/workflows/update-podkop-lists.yml](.github/workflows/update-podkop-lists.yml) — workflow обновления
 
 ## Что именно собирается
 
@@ -99,18 +100,6 @@
 
 То есть по формату здесь всё сведено к нормальному внешнему списку для `podkop`.
 
-## Лицензия
-
-Материалы этого репозитория распространяются на условиях лицензии `CC BY-NC 4.0`.
-
-Это значит:
-
-- использовать, копировать и адаптировать материалы можно свободно
-- обязательна ссылка на источник
-- коммерческое использование без отдельного письменного разрешения не допускается
-
-Текст лицензии лежит в [LICENSE](/Users/rendfoxy/Documents/автоскрипт/LICENSE).
-
 ## Откуда брать готовые файлы
 
 Есть два варианта.
@@ -128,7 +117,7 @@
 
 ### 2. Файлы из `src/`
 
-Если работаешь локально, итоговые файлы всегда лежат в [src](/Users/rendfoxy/Documents/автоскрипт/src).
+Если работаешь локально, итоговые файлы всегда лежат в [src](src).
 
 ## Как запустить локально
 
@@ -158,8 +147,20 @@ GitHub Actions регулярно:
 
 Обычно правится одно из трёх:
 
-- [config/sources.json](/Users/rendfoxy/Documents/автоскрипт/config/sources.json) — если нужно добавить или убрать внешние источники
+- [config/sources.json](config/sources.json) — если нужно добавить или убрать внешние источники
 - `config/manual/*.txt` — если нужно поправить ручную базу
-- [scripts/build_podkop_lists.py](/Users/rendfoxy/Documents/автоскрипт/scripts/build_podkop_lists.py) — если нужно менять саму механику сборки
+- [scripts/build_podkop_lists.py](scripts/build_podkop_lists.py) — если нужно менять саму механику сборки
 
 Если коротко: это не статичный набор файлов, а сборщик, который старается держать списки актуальными без постоянной ручной правки.
+
+## Лицензия
+
+Материалы этого репозитория распространяются на условиях лицензии `CC BY-NC 4.0`.
+
+Это значит:
+
+- использовать, копировать и адаптировать материалы можно свободно
+- обязательна ссылка на источник
+- коммерческое использование без отдельного письменного разрешения не допускается
+
+Текст лицензии лежит в [LICENSE](LICENSE).
