@@ -933,6 +933,12 @@ def tokenize_line(line: str) -> Iterable[str]:
     if not cleaned:
         return ()
 
+    if cleaned == "payload:":
+        return ()
+
+    if cleaned.startswith("- "):
+        cleaned = cleaned[2:].strip()
+
     if cleaned.startswith("DOMAIN-SUFFIX,"):
         cleaned = cleaned.split(",", 1)[1]
     elif cleaned.startswith("full:"):
@@ -946,7 +952,7 @@ def normalize_domain(value: str) -> str | None:
     if not candidate:
         return None
 
-    for prefix in ("*.", ".", "domain:"):
+    for prefix in ("+.", "*.", ".", "domain:"):
         if candidate.startswith(prefix):
             candidate = candidate[len(prefix):]
 

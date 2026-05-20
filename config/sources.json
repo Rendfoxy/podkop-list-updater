@@ -47,7 +47,11 @@
         "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/meta",
         "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/openai",
         "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/telegram",
-        "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/tiktok"
+        "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/tiktok",
+        "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/openai.yaml",
+        "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/anthropic.yaml",
+        "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/telegram.yaml",
+        "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/tiktok.yaml"
       ],
       "local_sources": [
         "config/manual/podkop-foreign-seed.txt",
@@ -59,7 +63,7 @@
           "roots_files": [
             "config/manual/podkop-foreign-roots.txt"
           ],
-          "limit_per_root": 250,
+          "limit_per_root": 100,
           "timeout_per_root": 6
         },
         {

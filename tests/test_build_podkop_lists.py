@@ -45,6 +45,19 @@ class BuildPodkopListsTests(unittest.TestCase):
 
         self.assertEqual(domains, {"chatgpt.com", "openaicom.imgix.net", "tiktok.com"})
 
+    def test_extract_domains_from_text_supports_metacubex_yaml_payload(self) -> None:
+        text = """
+        payload:
+          - +.chatgpt.com
+          - +.openai.com
+          - chat.com
+          - +.turn.livekit.cloud
+        """
+
+        domains = build_podkop_lists.extract_values_from_text(text, "inline", "domain")
+
+        self.assertEqual(domains, {"chat.com", "chatgpt.com", "openai.com", "turn.livekit.cloud"})
+
     def test_extract_domains_from_json_reads_domain_suffix_rules(self) -> None:
         payload = {
             "version": 3,
