@@ -33,10 +33,19 @@ jobs:
           URLSCAN_API_KEY: ${{ secrets.URLSCAN_API_KEY }}
         run: python3 scripts/build_podkop_lists.py
 
+      - name: Prepare release metadata
+        id: release_meta
+        run: |
+          stamp="$(date -u +'%Y%m%d-%H%M%S')"
+          echo "tag=lists-${stamp}" >> "$GITHUB_OUTPUT"
+          echo "name=Podkop Lists ${stamp} UTC" >> "$GITHUB_OUTPUT"
+
       - name: Commit changes
+        id: commit_changes
         run: |
           if git diff --quiet; then
             echo "No changes"
+            echo "changed=false" >> "$GITHUB_OUTPUT"
             exit 0
           fi
           git config user.name "github-actions[bot]"
@@ -44,14 +53,15 @@ jobs:
           git add src/ config/
           git commit -m "chore: update podkop lists"
           git push
+          echo "changed=true" >> "$GITHUB_OUTPUT"
 
       - name: Publish release assets
+        if: steps.commit_changes.outputs.changed == 'true'
         uses: ncipollo/release-action@v1
         with:
-          allowUpdates: true
           artifacts: "src/*.lst,src/*.json"
           body: |
-            Latest generated Podkop domain and subnet lists.
+            Generated Podkop domain and subnet lists.
 
             Files:
             - podkop-russia-domains.lst / .json
@@ -60,6 +70,5 @@ jobs:
             - podkop-foreign-subnets.lst / .json
             - manifest.json
           makeLatest: true
-          name: Latest Podkop Lists
-          replacesArtifacts: true
-          tag: latest
+          name: ${{ steps.release_meta.outputs.name }}
+          tag: ${{ steps.release_meta.outputs.tag }}
