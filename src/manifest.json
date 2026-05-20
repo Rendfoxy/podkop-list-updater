@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-20T17:08:10.124218+00:00",
+  "generated_at": "2026-05-20T18:07:34.474008+00:00",
   "outputs": [
     {
       "name": "podkop-russia-domains",
@@ -40,11 +40,11 @@
     {
       "name": "podkop-foreign-domains",
       "kind": "domain",
-      "domain_count": 1449,
+      "domain_count": 1425,
       "remote_count": 1075,
-      "local_count": 249,
+      "local_count": 251,
       "resolved_count": 0,
-      "discovered_count": 181,
+      "discovered_count": 155,
       "remote_sources": [
         "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Categories/hodca.lst",
         "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Services/cloudflare.lst",
@@ -90,28 +90,36 @@
             "telegram.org",
             "tiktok.com"
           ],
-          "added_count": 181,
-          "warnings": []
+          "added_count": 144,
+          "warnings": [
+            "discovery skipped for chatgpt.com: Failed to fetch https://urlscan.io/api/v1/search/?q=page.apexDomain:chatgpt.com&size=100&search_after=1776077964279%2C019d867e-ed81-714e-9184-83a21c6b6558: The read operation timed out",
+            "discovery skipped for telegram.org: Failed to fetch https://urlscan.io/api/v1/search/?q=page.apexDomain:telegram.org&size=100&search_after=1777596012277%2C019de0fa-7bc9-74c0-a170-bdaed58f7b5d: HTTP Error 503: Service Unavailable",
+            "discovery skipped for tiktok.com: Failed to fetch https://urlscan.io/api/v1/search/?q=page.apexDomain:tiktok.com&size=100&search_after=1751890478050%2C0197e4cf-125b-700e-9f6f-c9aaa04f8ff3: HTTP Error 503: Service Unavailable",
+            "discovery skipped for t.me: Failed to fetch https://urlscan.io/api/v1/search/?q=page.apexDomain:t.me&size=100&search_after=1776136953594%2C019d8a03-0567-70df-9efe-7a7e086888a4: HTTP Error 429: Too Many Requests",
+            "discovery skipped for telegram.me: Failed to fetch https://urlscan.io/api/v1/search/?q=page.apexDomain:telegram.me&size=100: HTTP Error 429: Too Many Requests",
+            "discovery skipped for telegram.com: Failed to fetch https://urlscan.io/api/v1/search/?q=page.apexDomain:telegram.com&size=100: HTTP Error 429: Too Many Requests",
+            "discovery skipped for claude.ai: Failed to fetch https://urlscan.io/api/v1/search/?q=page.apexDomain:claude.ai&size=100: HTTP Error 429: Too Many Requests",
+            "discovery skipped for livekit.cloud: Failed to fetch https://urlscan.io/api/v1/search/?q=page.apexDomain:livekit.cloud&size=100: HTTP Error 429: Too Many Requests",
+            "discovery skipped for openai.com: Failed to fetch https://urlscan.io/api/v1/search/?q=page.apexDomain:openai.com&size=100: HTTP Error 429: Too Many Requests"
+          ]
         },
         {
           "provider": "crtsh",
           "roots": [
             "forum.openai.com"
           ],
-          "added_count": 0,
-          "warnings": [
-            "discovery skipped for forum.openai.com: Failed to fetch https://crt.sh/?q=%25.forum.openai.com&output=json: HTTP Error 502: Bad Gateway"
-          ]
+          "added_count": 11,
+          "warnings": []
         }
       ]
     },
     {
       "name": "podkop-foreign-subnets",
       "kind": "subnet",
-      "domain_count": 10385,
+      "domain_count": 10431,
       "remote_count": 9725,
       "local_count": 436,
-      "resolved_count": 247,
+      "resolved_count": 293,
       "discovered_count": 0,
       "remote_sources": [
         "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Subnets/IPv4/cloudfront.lst",
