@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-22T09:50:16.895141+00:00",
+  "generated_at": "2026-05-22T15:23:13.307847+00:00",
   "outputs": [
     {
       "name": "podkop-russia-domains",
@@ -40,11 +40,11 @@
     {
       "name": "podkop-foreign-domains",
       "kind": "domain",
-      "domain_count": 1416,
+      "domain_count": 1442,
       "remote_count": 1075,
       "local_count": 251,
       "resolved_count": 0,
-      "discovered_count": 146,
+      "discovered_count": 172,
       "remote_sources": [
         "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Categories/hodca.lst",
         "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Services/cloudflare.lst",
@@ -94,10 +94,8 @@
             "telegram.org",
             "tiktok.com"
           ],
-          "added_count": 146,
-          "warnings": [
-            "discovery skipped for oaiusercontent.com: Failed to fetch https://urlscan.io/api/v1/search/?q=page.apexDomain:oaiusercontent.com&size=100: HTTP Error 400: Bad Request"
-          ]
+          "added_count": 172,
+          "warnings": []
         },
         {
           "provider": "crtsh",
@@ -106,7 +104,7 @@
           ],
           "added_count": 0,
           "warnings": [
-            "discovery skipped for forum.openai.com: Failed to fetch https://crt.sh/?q=%25.forum.openai.com&output=json: The read operation timed out"
+            "discovery skipped for forum.openai.com: Failed to fetch https://crt.sh/?q=%25.forum.openai.com&output=json: HTTP Error 404: Not Found"
           ]
         }
       ]
@@ -114,10 +112,10 @@
     {
       "name": "podkop-foreign-subnets",
       "kind": "subnet",
-      "domain_count": 10357,
-      "remote_count": 9731,
+      "domain_count": 10389,
+      "remote_count": 9733,
       "local_count": 436,
-      "resolved_count": 213,
+      "resolved_count": 243,
       "discovered_count": 0,
       "remote_sources": [
         "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Subnets/IPv4/cloudfront.lst",
