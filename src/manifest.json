@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-24T04:39:19.455006+00:00",
+  "generated_at": "2026-05-24T08:44:40.352493+00:00",
   "outputs": [
     {
       "name": "podkop-russia-domains",
@@ -40,11 +40,11 @@
     {
       "name": "podkop-foreign-domains",
       "kind": "domain",
-      "domain_count": 1418,
+      "domain_count": 1439,
       "remote_count": 1075,
       "local_count": 251,
       "resolved_count": 0,
-      "discovered_count": 148,
+      "discovered_count": 169,
       "remote_sources": [
         "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Categories/hodca.lst",
         "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Services/cloudflare.lst",
@@ -94,10 +94,8 @@
             "telegram.org",
             "tiktok.com"
           ],
-          "added_count": 148,
-          "warnings": [
-            "discovery skipped for oaiusercontent.com: Failed to fetch https://urlscan.io/api/v1/search/?q=page.apexDomain:oaiusercontent.com&size=100: HTTP Error 400: Bad Request"
-          ]
+          "added_count": 169,
+          "warnings": []
         },
         {
           "provider": "crtsh",
@@ -114,10 +112,10 @@
     {
       "name": "podkop-foreign-subnets",
       "kind": "subnet",
-      "domain_count": 10382,
+      "domain_count": 10390,
       "remote_count": 9733,
       "local_count": 436,
-      "resolved_count": 236,
+      "resolved_count": 244,
       "discovered_count": 0,
       "remote_sources": [
         "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Subnets/IPv4/cloudfront.lst",
