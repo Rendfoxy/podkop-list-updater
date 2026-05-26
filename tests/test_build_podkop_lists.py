@@ -163,6 +163,34 @@ class BuildPodkopListsTests(unittest.TestCase):
 
         self.assertEqual(domains, ["manual.example.com", "remote.example.com"])
 
+    def test_build_output_excludes_values_from_remote_exclude_sources(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            project_root = Path(tmp_dir)
+            local_source = project_root / "config" / "manual.txt"
+            local_source.parent.mkdir(parents=True, exist_ok=True)
+            local_source.write_text("", encoding="utf-8")
+
+            config = build_podkop_lists.OutputConfig(
+                name="sample",
+                kind="domain",
+                remote_sources=("https://example.test/include.lst",),
+                local_sources=(local_source,),
+                exclude_remote_sources=("https://example.test/exclude.lst",),
+            )
+
+            def fake_fetch(source: str, *, kind: str, timeout: int) -> set[str]:
+                self.assertEqual(kind, "domain")
+                mapping = {
+                    "https://example.test/include.lst": {"discord.com", "example.com", "youtube.com"},
+                    "https://example.test/exclude.lst": {"discord.com", "youtube.com"},
+                }
+                return mapping[source]
+
+            with patch.object(build_podkop_lists, "fetch_source_values", side_effect=fake_fetch):
+                domains = build_podkop_lists.build_output(config, timeout=1)
+
+        self.assertEqual(domains, ["example.com"])
+
     def test_build_output_supports_remote_source_fallback_groups(self) -> None:
         with tempfile.TemporaryDirectory() as tmp_dir:
             project_root = Path(tmp_dir)

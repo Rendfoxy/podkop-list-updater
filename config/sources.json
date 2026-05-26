@@ -57,6 +57,10 @@
         "config/manual/podkop-foreign-seed.txt",
         "config/manual/podkop-foreign-domains.txt"
       ],
+      "exclude_remote_sources": [
+        "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Services/discord.lst",
+        "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Services/youtube.lst"
+      ],
       "discovery": [
         {
           "provider": "urlscan",

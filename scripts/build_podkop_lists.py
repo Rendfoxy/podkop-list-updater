@@ -51,6 +51,8 @@ class OutputConfig:
     kind: str
     remote_sources: tuple[str, ...]
     local_sources: tuple[Path, ...]
+    exclude_remote_sources: tuple[str, ...] = ()
+    exclude_local_sources: tuple[Path, ...] = ()
     remote_source_groups: tuple["RemoteSourceGroup", ...] = ()
     resolve_from_outputs: tuple["ResolveConfig", ...] = ()
     discovery: tuple["DiscoveryConfig", ...] = ()
@@ -182,6 +184,9 @@ def load_config(config_path: Path) -> list[OutputConfig]:
         remote_source_groups = load_remote_source_groups(item.get("remote_source_groups", []), name=name)
         local_source_strings = ensure_string_list(item.get("local_sources", []), "local_sources")
         local_sources = tuple((PROJECT_ROOT / source).resolve() for source in local_source_strings)
+        exclude_remote_sources = ensure_string_list(item.get("exclude_remote_sources", []), "exclude_remote_sources")
+        exclude_local_source_strings = ensure_string_list(item.get("exclude_local_sources", []), "exclude_local_sources")
+        exclude_local_sources = tuple((PROJECT_ROOT / source).resolve() for source in exclude_local_source_strings)
         resolve_from_outputs = load_resolve_configs(item.get("resolve_from_outputs", []), name=name, kind=kind)
         discovery = load_discovery_configs(item.get("discovery", []), name=name, kind=kind)
 
@@ -192,6 +197,8 @@ def load_config(config_path: Path) -> list[OutputConfig]:
                 remote_sources=tuple(remote_sources),
                 remote_source_groups=tuple(remote_source_groups),
                 local_sources=local_sources,
+                exclude_remote_sources=tuple(exclude_remote_sources),
+                exclude_local_sources=exclude_local_sources,
                 resolve_from_outputs=tuple(resolve_from_outputs),
                 discovery=tuple(discovery),
             )
@@ -364,6 +371,16 @@ def build_output_with_details(
                     warnings=tuple(warnings),
                 )
             )
+
+    excluded_values: set[str] = set()
+    for source in config.exclude_remote_sources:
+        excluded_values.update(fetch_source_values(source, kind=config.kind, timeout=timeout))
+    for local_path in config.exclude_local_sources:
+        if not local_path.is_file():
+            raise BuildError(f"Exclude local source not found: {local_path}")
+        excluded_values.update(extract_values(local_path.read_text(encoding="utf-8"), str(local_path), config.kind))
+    if excluded_values:
+        values.difference_update(excluded_values)
 
     discovered_count = sum(item.added_count for item in discovery_reports)
     return BuildResult(
