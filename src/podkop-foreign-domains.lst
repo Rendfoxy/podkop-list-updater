@@ -74,7 +74,6 @@ antigravity.google
 antigravity.googleapis.com
 api-docs.telegram.org
 api.anthropic.com
-api.console.anthropic.com
 api.openai.com
 api.t.me
 api.telegram.com
@@ -1167,6 +1166,7 @@ sdmntprpolandcentral.oaiusercontent.com
 sdmntprseasia.oaiusercontent.com
 sdmntprsouthcentralus.oaiusercontent.com
 sdmntprsoutheastus3.oaiusercontent.com
+sdmntprukwest.oaiusercontent.com
 sdmntprwestus.oaiusercontent.com
 sdmntprwestus3.oaiusercontent.com
 second-ns.com
