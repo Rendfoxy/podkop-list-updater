@@ -61,6 +61,9 @@
         "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Services/discord.lst",
         "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Services/youtube.lst"
       ],
+      "exclude_local_sources": [
+        "config/manual/podkop-foreign-exclude-domains.txt"
+      ],
       "discovery": [
         {
           "provider": "urlscan",

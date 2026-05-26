@@ -40,7 +40,7 @@
     {
       "name": "podkop-foreign-domains",
       "kind": "domain",
-      "domain_count": 1433,
+      "domain_count": 1431,
       "remote_count": 1075,
       "local_count": 251,
       "resolved_count": 0,

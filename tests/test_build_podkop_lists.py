@@ -191,6 +191,33 @@ class BuildPodkopListsTests(unittest.TestCase):
 
         self.assertEqual(domains, ["example.com"])
 
+    def test_build_output_excludes_values_from_local_exclude_sources(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            project_root = Path(tmp_dir)
+            local_source = project_root / "config" / "manual.txt"
+            exclude_source = project_root / "config" / "exclude.txt"
+            local_source.parent.mkdir(parents=True, exist_ok=True)
+            local_source.write_text(
+                "clients6.google.com\nfirebaseinstallations.googleapis.com\naistudio.google.com\n",
+                encoding="utf-8",
+            )
+            exclude_source.write_text(
+                "clients6.google.com\nfirebaseinstallations.googleapis.com\n",
+                encoding="utf-8",
+            )
+
+            config = build_podkop_lists.OutputConfig(
+                name="sample",
+                kind="domain",
+                remote_sources=(),
+                local_sources=(local_source,),
+                exclude_local_sources=(exclude_source,),
+            )
+
+            domains = build_podkop_lists.build_output(config, timeout=1)
+
+        self.assertEqual(domains, ["aistudio.google.com"])
+
     def test_build_output_supports_remote_source_fallback_groups(self) -> None:
         with tempfile.TemporaryDirectory() as tmp_dir:
             project_root = Path(tmp_dir)
