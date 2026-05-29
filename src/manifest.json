@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-28T20:37:27.394650+00:00",
+  "generated_at": "2026-05-29T04:42:55.827800+00:00",
   "outputs": [
     {
       "name": "podkop-russia-domains",
@@ -40,11 +40,11 @@
     {
       "name": "podkop-foreign-domains",
       "kind": "domain",
-      "domain_count": 1414,
+      "domain_count": 1431,
       "remote_count": 1075,
       "local_count": 251,
       "resolved_count": 0,
-      "discovered_count": 147,
+      "discovered_count": 164,
       "remote_sources": [
         "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Categories/hodca.lst",
         "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Services/cloudflare.lst",
@@ -94,7 +94,7 @@
             "telegram.org",
             "tiktok.com"
           ],
-          "added_count": 147,
+          "added_count": 153,
           "warnings": []
         },
         {
@@ -102,20 +102,18 @@
           "roots": [
             "forum.openai.com"
           ],
-          "added_count": 0,
-          "warnings": [
-            "discovery skipped for forum.openai.com: Failed to fetch https://crt.sh/?q=%25.forum.openai.com&output=json: HTTP Error 502: Bad Gateway"
-          ]
+          "added_count": 11,
+          "warnings": []
         }
       ]
     },
     {
       "name": "podkop-foreign-subnets",
       "kind": "subnet",
-      "domain_count": 10397,
+      "domain_count": 10362,
       "remote_count": 9744,
       "local_count": 436,
-      "resolved_count": 240,
+      "resolved_count": 205,
       "discovered_count": 0,
       "remote_sources": [
         "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Subnets/IPv4/cloudfront.lst",
