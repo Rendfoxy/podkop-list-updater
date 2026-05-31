@@ -1,0 +1,2 @@
+# Exclude broad shared Google IPv4 from foreign ipset.
+64.233.162.141

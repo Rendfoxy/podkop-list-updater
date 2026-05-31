@@ -159,6 +159,9 @@
         "config/manual/podkop-foreign-seed.txt",
         "config/manual/podkop-foreign-subnets.txt"
       ],
+      "exclude_local_sources": [
+        "config/manual/podkop-foreign-exclude-subnets.txt"
+      ],
       "resolve_from_outputs": [
         {
           "output": "podkop-foreign-domains",

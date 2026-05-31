@@ -112,7 +112,7 @@
     {
       "name": "podkop-foreign-subnets",
       "kind": "subnet",
-      "domain_count": 10390,
+      "domain_count": 10389,
       "remote_count": 9749,
       "local_count": 436,
       "resolved_count": 228,

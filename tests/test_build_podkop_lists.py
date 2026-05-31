@@ -218,6 +218,30 @@ class BuildPodkopListsTests(unittest.TestCase):
 
         self.assertEqual(domains, ["aistudio.google.com"])
 
+    def test_build_output_excludes_subnets_from_local_exclude_sources(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            project_root = Path(tmp_dir)
+            local_source = project_root / "config" / "manual-subnets.txt"
+            exclude_source = project_root / "config" / "exclude-subnets.txt"
+            local_source.parent.mkdir(parents=True, exist_ok=True)
+            local_source.write_text(
+                "64.233.162.141\n1.1.1.1\n",
+                encoding="utf-8",
+            )
+            exclude_source.write_text("64.233.162.141\n", encoding="utf-8")
+
+            config = build_podkop_lists.OutputConfig(
+                name="sample",
+                kind="subnet",
+                remote_sources=(),
+                local_sources=(local_source,),
+                exclude_local_sources=(exclude_source,),
+            )
+
+            subnets = build_podkop_lists.build_output(config, timeout=1)
+
+        self.assertEqual(subnets, ["1.1.1.1"])
+
     def test_build_output_supports_remote_source_fallback_groups(self) -> None:
         with tempfile.TemporaryDirectory() as tmp_dir:
             project_root = Path(tmp_dir)
