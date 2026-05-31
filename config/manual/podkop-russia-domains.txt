@@ -1,1 +1,17 @@
 // Дополнительные домены для списка маршрутизации через российские серверы.
+doubleclick.net
+g.doubleclick.net
+ad.doubleclick.net
+static.doubleclick.net
+googleadservices.com
+googletagmanager.com
+googletagservices.com
+googleads.g.doubleclick.net
+pagead2.googlesyndication.com
+tpc.googlesyndication.com
+securepubads.g.doubleclick.net
+partnerad.l.doubleclick.net
+stats.g.doubleclick.net
+adservice.google.com
+adservice.google.ru
+2mdn.net
