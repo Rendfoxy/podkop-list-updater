@@ -1,0 +1,12 @@
+anthropic.com
+chat.com
+chat.openai.com.cdn.cloudflare.net
+chatgpt.com
+claude.ai
+copilot.microsoft.com
+oaistatic.com
+oaiusercontent.com
+openai.com
+openrouter.ai
+sora.com
+windsurf.com

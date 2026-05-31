@@ -6,6 +6,9 @@ qwen.ai
 anthropic.com
 claude.ai
 oaistatic.com
+openrouter.ai
+windsurf.com
+copilot.microsoft.com
 tiktok.com
 byteoversea.com
 t.me

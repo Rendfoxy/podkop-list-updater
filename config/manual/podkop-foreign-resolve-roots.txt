@@ -18,6 +18,9 @@ anthropic.com
 claude.ai
 claude.com
 claudeusercontent.com
+openrouter.ai
+windsurf.com
+copilot.microsoft.com
 byteoversea.com
 tiktok.com
 tiktokcdn.com

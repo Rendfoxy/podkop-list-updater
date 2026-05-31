@@ -4,6 +4,10 @@ platform.openai.com
 chat.openai.com
 codex.openai.com
 files.oaiusercontent.com
+chat.openai.com.cdn.cloudflare.net
 chat.com
 sora.com
 chatgpt.turn.livekit.cloud
+openrouter.ai
+windsurf.com
+copilot.microsoft.com

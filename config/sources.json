@@ -13,6 +13,9 @@
       "local_sources": [
         "config/manual/podkop-russia-seed.txt",
         "config/manual/podkop-russia-domains.txt"
+      ],
+      "exclude_local_sources": [
+        "config/manual/podkop-russia-exclude-domains.txt"
       ]
     },
     {
