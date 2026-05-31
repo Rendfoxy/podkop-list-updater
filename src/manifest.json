@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-05-31T19:41:04.765404+00:00",
+  "generated_at": "2026-05-31T19:44:53.857336+00:00",
   "outputs": [
     {
       "name": "podkop-russia-domains",
       "kind": "domain",
-      "domain_count": 2189,
+      "domain_count": 2190,
       "remote_count": 1162,
-      "local_count": 1055,
+      "local_count": 1056,
       "resolved_count": 0,
       "discovered_count": 0,
       "remote_sources": [
@@ -40,7 +40,7 @@
     {
       "name": "podkop-foreign-domains",
       "kind": "domain",
-      "domain_count": 1424,
+      "domain_count": 1423,
       "remote_count": 1075,
       "local_count": 255,
       "resolved_count": 0,
@@ -107,7 +107,7 @@
           ],
           "added_count": 0,
           "warnings": [
-            "discovery skipped for forum.openai.com: Failed to fetch https://crt.sh/?q=%25.forum.openai.com&output=json: HTTP Error 502: Bad Gateway"
+            "discovery skipped for forum.openai.com: Failed to fetch https://crt.sh/?q=%25.forum.openai.com&output=json: <urlopen error [Errno 101] Network is unreachable>"
           ]
         }
       ]
@@ -115,10 +115,10 @@
     {
       "name": "podkop-foreign-subnets",
       "kind": "subnet",
-      "domain_count": 10409,
+      "domain_count": 10406,
       "remote_count": 9749,
       "local_count": 436,
-      "resolved_count": 248,
+      "resolved_count": 245,
       "discovered_count": 0,
       "remote_sources": [
         "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Subnets/IPv4/cloudfront.lst",
