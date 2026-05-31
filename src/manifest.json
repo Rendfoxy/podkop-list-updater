@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-30T19:41:15.497415+00:00",
+  "generated_at": "2026-05-31T04:51:34.367060+00:00",
   "outputs": [
     {
       "name": "podkop-russia-domains",
@@ -40,11 +40,11 @@
     {
       "name": "podkop-foreign-domains",
       "kind": "domain",
-      "domain_count": 1376,
+      "domain_count": 1414,
       "remote_count": 1075,
       "local_count": 251,
       "resolved_count": 0,
-      "discovered_count": 109,
+      "discovered_count": 147,
       "remote_sources": [
         "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Categories/hodca.lst",
         "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Services/cloudflare.lst",
@@ -94,15 +94,8 @@
             "telegram.org",
             "tiktok.com"
           ],
-          "added_count": 109,
-          "warnings": [
-            "discovery skipped for telegram.com: Failed to fetch https://urlscan.io/api/v1/search/?q=page.apexDomain:telegram.com&size=100: HTTP Error 502: Bad Gateway",
-            "discovery skipped for claude.ai: Failed to fetch https://urlscan.io/api/v1/search/?q=page.apexDomain:claude.ai&size=100: HTTP Error 502: Bad Gateway",
-            "discovery skipped for byteoversea.com: Failed to fetch https://urlscan.io/api/v1/search/?q=page.apexDomain:byteoversea.com&size=100: HTTP Error 502: Bad Gateway",
-            "discovery skipped for telegram.me: Failed to fetch https://urlscan.io/api/v1/search/?q=page.apexDomain:telegram.me&size=100: HTTP Error 502: Bad Gateway",
-            "discovery skipped for qwen.ai: Failed to fetch https://urlscan.io/api/v1/search/?q=page.apexDomain:qwen.ai&size=100: HTTP Error 502: Bad Gateway",
-            "discovery skipped for oaistatic.com: Failed to fetch https://urlscan.io/api/v1/search/?q=page.apexDomain:oaistatic.com&size=100: HTTP Error 502: Bad Gateway"
-          ]
+          "added_count": 147,
+          "warnings": []
         },
         {
           "provider": "crtsh",
@@ -111,7 +104,7 @@
           ],
           "added_count": 0,
           "warnings": [
-            "discovery skipped for forum.openai.com: Failed to fetch https://crt.sh/?q=%25.forum.openai.com&output=json: The read operation timed out"
+            "discovery skipped for forum.openai.com: Failed to fetch https://crt.sh/?q=%25.forum.openai.com&output=json: HTTP Error 502: Bad Gateway"
           ]
         }
       ]
@@ -119,10 +112,10 @@
     {
       "name": "podkop-foreign-subnets",
       "kind": "subnet",
-      "domain_count": 10285,
+      "domain_count": 10390,
       "remote_count": 9749,
       "local_count": 436,
-      "resolved_count": 123,
+      "resolved_count": 228,
       "discovered_count": 0,
       "remote_sources": [
         "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Subnets/IPv4/cloudfront.lst",
