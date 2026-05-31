@@ -1,6 +1,7 @@
 # Exclude overly broad Google hosts that can affect generic services/ads.
 clients6.google.com
 firebaseinstallations.googleapis.com
+iot334.com
 doubleclick.net
 g.doubleclick.net
 ad.doubleclick.net
