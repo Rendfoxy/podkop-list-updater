@@ -4,9 +4,9 @@
     {
       "name": "podkop-russia-domains",
       "kind": "domain",
-      "domain_count": 2193,
+      "domain_count": 2201,
       "remote_count": 1162,
-      "local_count": 1047,
+      "local_count": 1055,
       "resolved_count": 0,
       "discovered_count": 0,
       "remote_sources": [

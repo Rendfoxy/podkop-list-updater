@@ -17,3 +17,11 @@ stats.g.doubleclick.net
 adservice.google.com
 adservice.google.ru
 2mdn.net
+clients4.google.com
+clients.l.google.com
+fonts.googleapis.com
+fonts.gstatic.com
+mobile-gtalk.l.google.com
+mtalk.google.com
+optimizationguide-pa.googleapis.com
+update.googleapis.com
