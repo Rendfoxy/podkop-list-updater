@@ -276,6 +276,37 @@ class BuildPodkopListsTests(unittest.TestCase):
         self.assertEqual(russia_domains, ["iot334.com"])
         self.assertEqual(foreign_domains, [])
 
+    def test_build_output_can_move_google_ai_domain_from_foreign_to_russia(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            project_root = Path(tmp_dir)
+            russia_source = project_root / "config" / "russia.txt"
+            foreign_source = project_root / "config" / "foreign.txt"
+            foreign_exclude = project_root / "config" / "foreign-exclude.txt"
+            russia_source.parent.mkdir(parents=True, exist_ok=True)
+            russia_source.write_text("generativelanguage.googleapis.com\n", encoding="utf-8")
+            foreign_source.write_text("generativelanguage.googleapis.com\n", encoding="utf-8")
+            foreign_exclude.write_text("generativelanguage.googleapis.com\n", encoding="utf-8")
+
+            russia_config = build_podkop_lists.OutputConfig(
+                name="russia",
+                kind="domain",
+                remote_sources=(),
+                local_sources=(russia_source,),
+            )
+            foreign_config = build_podkop_lists.OutputConfig(
+                name="foreign",
+                kind="domain",
+                remote_sources=(),
+                local_sources=(foreign_source,),
+                exclude_local_sources=(foreign_exclude,),
+            )
+
+            russia_domains = build_podkop_lists.build_output(russia_config, timeout=1)
+            foreign_domains = build_podkop_lists.build_output(foreign_config, timeout=1)
+
+        self.assertEqual(russia_domains, ["generativelanguage.googleapis.com"])
+        self.assertEqual(foreign_domains, [])
+
     def test_build_output_excludes_subnets_from_local_exclude_sources(self) -> None:
         with tempfile.TemporaryDirectory() as tmp_dir:
             project_root = Path(tmp_dir)
