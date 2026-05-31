@@ -172,6 +172,9 @@
             "config/manual/podkop-foreign-resolve-roots.txt",
             "config/manual/podkop-foreign-crtsh-roots.txt"
           ],
+          "exclude_roots_files": [
+            "config/manual/podkop-foreign-resolve-exclude-roots.txt"
+          ],
           "cache_path": "src/_upstream_cache/foreign-domain-resolved.lst",
           "limit": 800,
           "timeout_per_lookup": 2

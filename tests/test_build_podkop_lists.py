@@ -402,6 +402,48 @@ class BuildPodkopListsTests(unittest.TestCase):
         self.assertEqual(values, {"1.1.1.1/32", "2.2.2.2/32", "2.2.2.3/32"})
         self.assertEqual(cache_body, "1.1.1.1/32\n2.2.2.2/32\n2.2.2.3/32\n")
 
+    def test_resolve_output_domains_can_exclude_roots(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            cache_path = Path(tmp_dir) / "resolved.lst"
+            exclude_roots_file = Path(tmp_dir) / "exclude-roots.txt"
+            exclude_roots_file.write_text("googleapis.com\ngoogle.com\n", encoding="utf-8")
+            resolve_config = build_podkop_lists.ResolveConfig(
+                output="foreign-domains",
+                roots=("openai.com", "googleapis.com", "google.com"),
+                roots_files=(),
+                exclude_roots_files=(exclude_roots_file,),
+                cache_path=cache_path,
+                limit=10,
+                timeout_per_lookup=1,
+            )
+            built_outputs = {
+                "foreign-domains": build_podkop_lists.BuildResult(
+                    values=("api.openai.com", "aida.googleapis.com", "bard.google.com"),
+                    remote_count=0,
+                    local_count=0,
+                    resolved_count=0,
+                    discovered_count=0,
+                    discovery=(),
+                )
+            }
+
+            def fake_resolve(domain: str, timeout: int) -> set[str]:
+                self.assertEqual(timeout, 1)
+                mapping = {
+                    "api.openai.com": {"1.1.1.1"},
+                    "aida.googleapis.com": {"2.2.2.2"},
+                    "bard.google.com": {"3.3.3.3"},
+                }
+                return mapping.get(domain, set())
+
+            with patch.object(build_podkop_lists, "resolve_domain_ipv4", side_effect=fake_resolve):
+                values = build_podkop_lists.resolve_output_domains(resolve_config, built_outputs)
+
+            cache_body = cache_path.read_text(encoding="utf-8")
+
+        self.assertEqual(values, {"1.1.1.1/32"})
+        self.assertEqual(cache_body, "1.1.1.1/32\n")
+
     def test_resolve_output_domains_uses_cache_when_dns_returns_nothing(self) -> None:
         with tempfile.TemporaryDirectory() as tmp_dir:
             cache_path = Path(tmp_dir) / "resolved.lst"

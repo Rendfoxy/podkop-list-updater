@@ -79,6 +79,8 @@ class ResolveConfig:
     output: str
     roots: tuple[str, ...]
     roots_files: tuple[Path, ...]
+    exclude_roots: tuple[str, ...] = ()
+    exclude_roots_files: tuple[Path, ...] = ()
     cache_path: Path | None = None
     limit: int = 500
     timeout_per_lookup: int = 2
@@ -281,6 +283,9 @@ def load_resolve_configs(value: object, *, name: str, kind: str) -> list[Resolve
         roots = tuple(ensure_string_list(item.get("roots", []), "roots"))
         roots_file_strings = ensure_string_list(item.get("roots_files", []), "roots_files")
         roots_files = tuple((PROJECT_ROOT / source).resolve() for source in roots_file_strings)
+        exclude_roots = tuple(ensure_string_list(item.get("exclude_roots", []), "exclude_roots"))
+        exclude_roots_file_strings = ensure_string_list(item.get("exclude_roots_files", []), "exclude_roots_files")
+        exclude_roots_files = tuple((PROJECT_ROOT / source).resolve() for source in exclude_roots_file_strings)
         cache_path_value = item.get("cache_path")
         cache_path: Path | None = None
         if cache_path_value is not None:
@@ -298,6 +303,8 @@ def load_resolve_configs(value: object, *, name: str, kind: str) -> list[Resolve
                 output=output.strip(),
                 roots=roots,
                 roots_files=roots_files,
+                exclude_roots=exclude_roots,
+                exclude_roots_files=exclude_roots_files,
                 cache_path=cache_path,
                 limit=limit,
                 timeout_per_lookup=timeout_per_lookup,
@@ -399,10 +406,16 @@ def resolve_output_domains(config: ResolveConfig, built_outputs: dict[str, Build
         raise BuildError(f"resolve_from_outputs references unknown output: {config.output}")
 
     roots = load_roots(config.roots, config.roots_files, missing_message="Resolve roots file not found")
+    excluded_roots = load_roots(
+        config.exclude_roots,
+        config.exclude_roots_files,
+        missing_message="Resolve exclude roots file not found",
+    )
     candidate_domains = [
         domain
         for domain in source_output.values
-        if not roots or domain_matches_roots(domain, roots)
+        if (not roots or domain_matches_roots(domain, roots))
+        and (not excluded_roots or not domain_matches_roots(domain, excluded_roots))
     ]
     candidate_domains = sorted(candidate_domains)[: config.limit]
 

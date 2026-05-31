@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-31T19:44:53.857336+00:00",
+  "generated_at": "2026-05-31T21:10:51.389817+00:00",
   "outputs": [
     {
       "name": "podkop-russia-domains",
@@ -107,7 +107,7 @@
           ],
           "added_count": 0,
           "warnings": [
-            "discovery skipped for forum.openai.com: Failed to fetch https://crt.sh/?q=%25.forum.openai.com&output=json: <urlopen error [Errno 101] Network is unreachable>"
+            "discovery skipped for forum.openai.com: Failed to fetch https://crt.sh/?q=%25.forum.openai.com&output=json: HTTP Error 502: Bad Gateway"
           ]
         }
       ]
@@ -115,7 +115,7 @@
     {
       "name": "podkop-foreign-subnets",
       "kind": "subnet",
-      "domain_count": 10406,
+      "domain_count": 10396,
       "remote_count": 9749,
       "local_count": 436,
       "resolved_count": 245,
