@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-04T10:12:35.478931+00:00",
+  "generated_at": "2026-06-04T15:44:05.098803+00:00",
   "outputs": [
     {
       "name": "podkop-russia-domains",
@@ -40,11 +40,11 @@
     {
       "name": "podkop-foreign-domains",
       "kind": "domain",
-      "domain_count": 1354,
+      "domain_count": 1378,
       "remote_count": 1076,
       "local_count": 255,
       "resolved_count": 0,
-      "discovered_count": 109,
+      "discovered_count": 133,
       "remote_sources": [
         "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Categories/hodca.lst",
         "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Services/cloudflare.lst",
@@ -97,10 +97,8 @@
             "tiktok.com",
             "windsurf.com"
           ],
-          "added_count": 109,
-          "warnings": [
-            "discovery skipped for byteoversea.com: Failed to fetch https://urlscan.io/api/v1/search/?q=page.apexDomain:byteoversea.com&size=100: The read operation timed out"
-          ]
+          "added_count": 133,
+          "warnings": []
         },
         {
           "provider": "crtsh",
@@ -117,10 +115,10 @@
     {
       "name": "podkop-foreign-subnets",
       "kind": "subnet",
-      "domain_count": 10283,
+      "domain_count": 10334,
       "remote_count": 9770,
       "local_count": 436,
-      "resolved_count": 106,
+      "resolved_count": 159,
       "discovered_count": 0,
       "remote_sources": [
         "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Subnets/IPv4/cloudfront.lst",
