@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-05T04:47:03.002990+00:00",
+  "generated_at": "2026-06-05T10:16:09.899328+00:00",
   "outputs": [
     {
       "name": "podkop-russia-domains",
@@ -40,11 +40,11 @@
     {
       "name": "podkop-foreign-domains",
       "kind": "domain",
-      "domain_count": 1375,
-      "remote_count": 1076,
+      "domain_count": 1345,
+      "remote_count": 1077,
       "local_count": 255,
       "resolved_count": 0,
-      "discovered_count": 130,
+      "discovered_count": 99,
       "remote_sources": [
         "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Categories/hodca.lst",
         "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Services/cloudflare.lst",
@@ -97,9 +97,13 @@
             "tiktok.com",
             "windsurf.com"
           ],
-          "added_count": 130,
+          "added_count": 99,
           "warnings": [
-            "discovery skipped for telegram.org: Failed to fetch https://urlscan.io/api/v1/search/?q=page.apexDomain:telegram.org&size=100: HTTP Error 503: Service Unavailable"
+            "discovery skipped for tiktok.com: Failed to fetch https://urlscan.io/api/v1/search/?q=page.apexDomain:tiktok.com&size=100: The read operation timed out",
+            "discovery skipped for oaistatic.com: Failed to fetch https://urlscan.io/api/v1/search/?q=page.apexDomain:oaistatic.com&size=100: The read operation timed out",
+            "discovery skipped for byteoversea.com: Failed to fetch https://urlscan.io/api/v1/search/?q=page.apexDomain:byteoversea.com&size=100: HTTP Error 400: Bad Request",
+            "discovery skipped for chatgpt.com: Failed to fetch https://urlscan.io/api/v1/search/?q=page.apexDomain:chatgpt.com&size=100: The read operation timed out",
+            "discovery skipped for claude.ai: Failed to fetch https://urlscan.io/api/v1/search/?q=page.apexDomain:claude.ai&size=100: HTTP Error 503: Service Unavailable"
           ]
         },
         {
@@ -109,7 +113,7 @@
           ],
           "added_count": 0,
           "warnings": [
-            "discovery skipped for forum.openai.com: Failed to fetch https://crt.sh/?q=%25.forum.openai.com&output=json: HTTP Error 502: Bad Gateway"
+            "discovery skipped for forum.openai.com: Failed to fetch https://crt.sh/?q=%25.forum.openai.com&output=json: The read operation timed out"
           ]
         }
       ]
@@ -117,10 +121,10 @@
     {
       "name": "podkop-foreign-subnets",
       "kind": "subnet",
-      "domain_count": 10378,
+      "domain_count": 10281,
       "remote_count": 9771,
       "local_count": 436,
-      "resolved_count": 202,
+      "resolved_count": 104,
       "discovered_count": 0,
       "remote_sources": [
         "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Subnets/IPv4/cloudfront.lst",
