@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-10T16:08:21.680809+00:00",
+  "generated_at": "2026-06-10T20:45:27.007720+00:00",
   "outputs": [
     {
       "name": "podkop-russia-domains",
@@ -40,11 +40,11 @@
     {
       "name": "podkop-foreign-domains",
       "kind": "domain",
-      "domain_count": 1377,
+      "domain_count": 1369,
       "remote_count": 1078,
       "local_count": 255,
       "resolved_count": 0,
-      "discovered_count": 130,
+      "discovered_count": 122,
       "remote_sources": [
         "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Categories/hodca.lst",
         "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Services/cloudflare.lst",
@@ -97,8 +97,11 @@
             "tiktok.com",
             "windsurf.com"
           ],
-          "added_count": 130,
+          "added_count": 122,
           "warnings": [
+            "discovery skipped for telegram.me: Failed to fetch https://urlscan.io/api/v1/search/?q=page.apexDomain:telegram.me&size=100: The read operation timed out",
+            "discovery skipped for tiktok.com: Failed to fetch https://urlscan.io/api/v1/search/?q=page.apexDomain:tiktok.com&size=100: The read operation timed out",
+            "discovery skipped for qwen.ai: Failed to fetch https://urlscan.io/api/v1/search/?q=page.apexDomain:qwen.ai&size=100: The read operation timed out",
             "discovery skipped for telegram.com: Failed to fetch https://urlscan.io/api/v1/search/?q=page.apexDomain:telegram.com&size=100: HTTP Error 400: Bad Request"
           ]
         },
@@ -109,7 +112,7 @@
           ],
           "added_count": 0,
           "warnings": [
-            "discovery skipped for forum.openai.com: Failed to fetch https://crt.sh/?q=%25.forum.openai.com&output=json: The read operation timed out"
+            "discovery skipped for forum.openai.com: Failed to fetch https://crt.sh/?q=%25.forum.openai.com&output=json: HTTP Error 502: Bad Gateway"
           ]
         }
       ]
@@ -117,10 +120,10 @@
     {
       "name": "podkop-foreign-subnets",
       "kind": "subnet",
-      "domain_count": 10432,
+      "domain_count": 10413,
       "remote_count": 9806,
       "local_count": 436,
-      "resolved_count": 220,
+      "resolved_count": 201,
       "discovered_count": 0,
       "remote_sources": [
         "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Subnets/IPv4/cloudfront.lst",
