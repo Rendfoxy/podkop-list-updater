@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-10T04:48:45.304936+00:00",
+  "generated_at": "2026-06-10T10:32:43.344037+00:00",
   "outputs": [
     {
       "name": "podkop-russia-domains",
@@ -40,11 +40,11 @@
     {
       "name": "podkop-foreign-domains",
       "kind": "domain",
-      "domain_count": 1383,
+      "domain_count": 1375,
       "remote_count": 1078,
       "local_count": 255,
       "resolved_count": 0,
-      "discovered_count": 136,
+      "discovered_count": 128,
       "remote_sources": [
         "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Categories/hodca.lst",
         "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Services/cloudflare.lst",
@@ -97,8 +97,10 @@
             "tiktok.com",
             "windsurf.com"
           ],
-          "added_count": 136,
-          "warnings": []
+          "added_count": 128,
+          "warnings": [
+            "discovery skipped for anthropic.com: Failed to fetch https://urlscan.io/api/v1/search/?q=page.apexDomain:anthropic.com&size=100: The read operation timed out"
+          ]
         },
         {
           "provider": "crtsh",
@@ -107,7 +109,7 @@
           ],
           "added_count": 0,
           "warnings": [
-            "discovery skipped for forum.openai.com: Failed to fetch https://crt.sh/?q=%25.forum.openai.com&output=json: The read operation timed out"
+            "discovery skipped for forum.openai.com: Failed to fetch https://crt.sh/?q=%25.forum.openai.com&output=json: HTTP Error 502: Bad Gateway"
           ]
         }
       ]
@@ -115,10 +117,10 @@
     {
       "name": "podkop-foreign-subnets",
       "kind": "subnet",
-      "domain_count": 10428,
+      "domain_count": 10432,
       "remote_count": 9804,
       "local_count": 436,
-      "resolved_count": 218,
+      "resolved_count": 221,
       "discovered_count": 0,
       "remote_sources": [
         "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Subnets/IPv4/cloudfront.lst",
