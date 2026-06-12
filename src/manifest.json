@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-12T10:39:57.203763+00:00",
+  "generated_at": "2026-06-12T15:39:38.617068+00:00",
   "outputs": [
     {
       "name": "podkop-russia-domains",
@@ -40,11 +40,11 @@
     {
       "name": "podkop-foreign-domains",
       "kind": "domain",
-      "domain_count": 1386,
+      "domain_count": 1384,
       "remote_count": 1078,
       "local_count": 255,
       "resolved_count": 0,
-      "discovered_count": 139,
+      "discovered_count": 137,
       "remote_sources": [
         "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Categories/hodca.lst",
         "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Services/cloudflare.lst",
@@ -97,8 +97,10 @@
             "tiktok.com",
             "windsurf.com"
           ],
-          "added_count": 139,
-          "warnings": []
+          "added_count": 137,
+          "warnings": [
+            "discovery skipped for claude.ai: Failed to fetch https://urlscan.io/api/v1/search/?q=page.apexDomain:claude.ai&size=100: HTTP Error 400: Bad Request"
+          ]
         },
         {
           "provider": "crtsh",
@@ -107,7 +109,7 @@
           ],
           "added_count": 0,
           "warnings": [
-            "discovery skipped for forum.openai.com: Failed to fetch https://crt.sh/?q=%25.forum.openai.com&output=json: HTTP Error 502: Bad Gateway"
+            "discovery skipped for forum.openai.com: Failed to fetch https://crt.sh/?q=%25.forum.openai.com&output=json: <urlopen error [Errno 101] Network is unreachable>"
           ]
         }
       ]
@@ -116,9 +118,9 @@
       "name": "podkop-foreign-subnets",
       "kind": "subnet",
       "domain_count": 10434,
-      "remote_count": 9811,
+      "remote_count": 9812,
       "local_count": 436,
-      "resolved_count": 219,
+      "resolved_count": 217,
       "discovered_count": 0,
       "remote_sources": [
         "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Subnets/IPv4/cloudfront.lst",
