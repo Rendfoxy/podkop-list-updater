@@ -852,8 +852,10 @@ ip-158-180-57-21.host.livekit.cloud
 ip-161-115-161-0.host.livekit.cloud
 ip-161-115-161-135.host.livekit.cloud
 ip-161-115-161-149.host.livekit.cloud
+ip-161-115-161-179.host.livekit.cloud
 ip-161-115-161-190.host.livekit.cloud
 ip-161-115-161-51.host.livekit.cloud
+ip-161-115-161-57.host.livekit.cloud
 ip-161-115-161-62.host.livekit.cloud
 ip-161-115-161-74.host.livekit.cloud
 ip-161-115-181-103.host.livekit.cloud
@@ -897,7 +899,6 @@ local.telegram.org
 localsend.org
 login-account.net
 login.telegram.org
-lp.tiktok.com
 luadns.com
 m.me
 macos.telegram.org
@@ -956,6 +957,8 @@ nginxconfig.io
 nicegram.app
 nintendo.com
 nixos.org
+nous-34ylkaql.livekit.cloud
+nous-34ylkaql.oashburn1b.production.livekit.cloud
 np.scea.com
 nuxt.com
 nvidia.com
@@ -988,6 +991,8 @@ oculusrift.com
 oculusvr.com
 ofrankfurt1a.turn.livekit.cloud
 ogp.me
+omarseille1a.turn.livekit.cloud
+omarseille1b.turn.livekit.cloud
 omumbai1a.mock-whatsapp-api.staging.livekit.cloud
 ondigitalocean.com
 one.one.one
@@ -1070,6 +1075,7 @@ react.com
 reactjs.com
 reactjs.org
 recoiljs.org
+red.anthropic.com
 reddit.com
 redkix.com
 redux.js.org
