@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-13T04:51:27.559588+00:00",
+  "generated_at": "2026-06-13T09:33:55.388815+00:00",
   "outputs": [
     {
       "name": "podkop-russia-domains",
@@ -40,11 +40,11 @@
     {
       "name": "podkop-foreign-domains",
       "kind": "domain",
-      "domain_count": 1399,
+      "domain_count": 1311,
       "remote_count": 1078,
       "local_count": 255,
       "resolved_count": 0,
-      "discovered_count": 152,
+      "discovered_count": 64,
       "remote_sources": [
         "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Categories/hodca.lst",
         "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Services/cloudflare.lst",
@@ -97,26 +97,32 @@
             "tiktok.com",
             "windsurf.com"
           ],
-          "added_count": 141,
-          "warnings": []
+          "added_count": 64,
+          "warnings": [
+            "discovery skipped for livekit.cloud: Failed to fetch https://urlscan.io/api/v1/search/?q=page.apexDomain:livekit.cloud&size=100: HTTP Error 400: Bad Request",
+            "discovery skipped for oaiusercontent.com: Failed to fetch https://urlscan.io/api/v1/search/?q=page.apexDomain:oaiusercontent.com&size=100: The read operation timed out",
+            "discovery skipped for openrouter.ai: Failed to fetch https://urlscan.io/api/v1/search/?q=page.apexDomain:openrouter.ai&size=100: The read operation timed out"
+          ]
         },
         {
           "provider": "crtsh",
           "roots": [
             "forum.openai.com"
           ],
-          "added_count": 11,
-          "warnings": []
+          "added_count": 0,
+          "warnings": [
+            "discovery skipped for forum.openai.com: Failed to fetch https://crt.sh/?q=%25.forum.openai.com&output=json: HTTP Error 404: Not Found"
+          ]
         }
       ]
     },
     {
       "name": "podkop-foreign-subnets",
       "kind": "subnet",
-      "domain_count": 10417,
+      "domain_count": 10400,
       "remote_count": 9817,
       "local_count": 436,
-      "resolved_count": 195,
+      "resolved_count": 178,
       "discovered_count": 0,
       "remote_sources": [
         "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Subnets/IPv4/cloudfront.lst",
