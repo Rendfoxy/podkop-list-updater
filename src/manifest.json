@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-13T19:54:10.803002+00:00",
+  "generated_at": "2026-06-14T05:07:14.441334+00:00",
   "outputs": [
     {
       "name": "podkop-russia-domains",
@@ -40,11 +40,11 @@
     {
       "name": "podkop-foreign-domains",
       "kind": "domain",
-      "domain_count": 1399,
+      "domain_count": 1385,
       "remote_count": 1078,
       "local_count": 255,
       "resolved_count": 0,
-      "discovered_count": 152,
+      "discovered_count": 138,
       "remote_sources": [
         "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Categories/hodca.lst",
         "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Services/cloudflare.lst",
@@ -97,26 +97,31 @@
             "tiktok.com",
             "windsurf.com"
           ],
-          "added_count": 141,
-          "warnings": []
+          "added_count": 138,
+          "warnings": [
+            "discovery skipped for openai.com: Failed to fetch https://urlscan.io/api/v1/search/?q=page.apexDomain:openai.com&size=100: The read operation timed out",
+            "discovery skipped for oaistatic.com: Failed to fetch https://urlscan.io/api/v1/search/?q=page.apexDomain:oaistatic.com&size=100: The read operation timed out"
+          ]
         },
         {
           "provider": "crtsh",
           "roots": [
             "forum.openai.com"
           ],
-          "added_count": 11,
-          "warnings": []
+          "added_count": 0,
+          "warnings": [
+            "discovery skipped for forum.openai.com: Failed to fetch https://crt.sh/?q=%25.forum.openai.com&output=json: <urlopen error [Errno 101] Network is unreachable>"
+          ]
         }
       ]
     },
     {
       "name": "podkop-foreign-subnets",
       "kind": "subnet",
-      "domain_count": 10426,
+      "domain_count": 10425,
       "remote_count": 9817,
       "local_count": 436,
-      "resolved_count": 204,
+      "resolved_count": 203,
       "discovered_count": 0,
       "remote_sources": [
         "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Subnets/IPv4/cloudfront.lst",
