@@ -54,6 +54,7 @@ activity.ea.com
 actual.battle.net
 ad-log-upload-os.hoyoverse.com
 ad.doubleclick.net
+adguard-vpn.com
 adguard.com
 adidas.com
 adjust.com
@@ -241,7 +242,6 @@ api3.origin.com
 apkmirror.com
 apm-log-upload-os.hoyoverse.com
 app.remote.it
-app.zerossl.com
 arbat.media
 arc.net
 archive.ph
@@ -550,6 +550,9 @@ csskor.ill.in.ua
 cub.red
 cubicmotion.com
 currenttime.tv
+cursor-cdn.com
+cursor.sh
+cursorapi.com
 cursorinfo.co.il
 cvedetails.com
 cyberghostvpn.com
@@ -735,6 +738,7 @@ eu.api.ovh.com
 eu.auth.battle.net
 eulatracking-public-service-prod06.ol.epicgames.com
 euronews.com
+europesays.com
 euroradio.fm
 eutrp.eu
 everand.com
@@ -813,7 +817,12 @@ forum.remote.it
 forum.ru-board.com
 foxnews.com
 fpt.live.com
+framer.app
 framer.com
+framercanvas.com
+framercdn.com
+framerstatic.com
+framerusercontent.com
 frankerfacez.com
 freedomletters.org
 freeimages.com
@@ -1013,6 +1022,7 @@ image.tmdb.org
 images-amazon.com
 imgur.com
 important-stories.com
+incy.cc
 indeed.com
 indiehackers.com
 infineon.com
@@ -1048,6 +1058,7 @@ jamf.com
 jamfaaddsatvi.com
 jetbrains.com
 jetbrains.space
+jetbrains.team
 jnn-pa.googleapis.com
 joesandbox.com
 joined.services
@@ -1061,8 +1072,6 @@ jules.google.com
 jupiterlauncher.com
 jut-su.net
 jut.su
-jw-russia.org
-jw.org
 kaktus.media
 kaleido.ai
 kamatera.com
@@ -1194,6 +1203,7 @@ majorleaguegaming.com
 make.com
 makersuite.google.com
 malwarebytes.com
+manga-chan.me
 mangadex.org
 mangahub.ru
 mangapark.net
@@ -1258,6 +1268,7 @@ mixcloud.com
 mlg.com
 mlgqa.com
 mlgstaging.com
+mmcdn.com
 mobile-gtalk.l.google.com
 modrinth.com
 modules-cdn.eac-prod.on.epicgames.com
@@ -1432,6 +1443,7 @@ partnerad.l.doubleclick.net
 patreon.com
 patreonusercontent.com
 patriot.dp.ua
+paywithmoon.com
 pb.wtf
 pcgamesn.com
 pcmag.com
@@ -1513,6 +1525,7 @@ pusher.com
 pvp.net
 pvp.tv
 pvpessence.com
+qobuz.com
 qodana.cloud
 qoder.com
 qq.com
@@ -1684,6 +1697,8 @@ severreal.org
 sfdcopens.com
 sg-public-data-api.hoyoverse.com
 shadowcomplex.com
+sharefile.com
+sharefile.io
 shikimori.me
 shikimori.one
 shinyhardware.co.uk
@@ -1699,6 +1714,7 @@ signaling-service-prod.eun1.live.rtcp.on.epicgames.com
 signaling-service-prod.use1a.live.rtcp.on.epicgames.com
 signin.aws.amazon.com
 signin.ea.com
+sigsauer.com
 simplex.chat
 simplex.im
 simplix.info
@@ -1856,6 +1872,7 @@ swagger.io
 swapd.co
 swissinfo.ch
 synoforum.com
+syslog-ng.com
 t-invariant.org
 t.co
 tableau.com
@@ -1897,6 +1914,7 @@ thetruestory.news
 thetvdb.com
 thewitchwood.com
 thinkboxsoftware.com
+threads.com
 threads.net
 threema.ch
 ti.com
@@ -2070,6 +2088,7 @@ watchguard.com
 watermarkremover.io
 wbagora.com
 wbgames.com
+wdfiles.com
 weather.com
 webmd.com
 webn.mobi
@@ -2211,5 +2230,6 @@ zedge.net
 zendesk.com
 zenlesszonezero.com
 zerkalo.io
+zerossl.com
 zmifi.com
 zona.media
