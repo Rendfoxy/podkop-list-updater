@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-18T05:02:14.349578+00:00",
+  "generated_at": "2026-06-18T10:47:49.449222+00:00",
   "outputs": [
     {
       "name": "podkop-russia-domains",
@@ -40,11 +40,11 @@
     {
       "name": "podkop-foreign-domains",
       "kind": "domain",
-      "domain_count": 1415,
+      "domain_count": 1413,
       "remote_count": 1107,
       "local_count": 255,
       "resolved_count": 0,
-      "discovered_count": 139,
+      "discovered_count": 137,
       "remote_sources": [
         "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Categories/hodca.lst",
         "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Services/cloudflare.lst",
@@ -97,8 +97,10 @@
             "tiktok.com",
             "windsurf.com"
           ],
-          "added_count": 139,
-          "warnings": []
+          "added_count": 137,
+          "warnings": [
+            "discovery skipped for t.me: Failed to fetch https://urlscan.io/api/v1/search/?q=page.apexDomain:t.me&size=100: HTTP Error 503: Service Unavailable"
+          ]
         },
         {
           "provider": "crtsh",
@@ -107,7 +109,7 @@
           ],
           "added_count": 0,
           "warnings": [
-            "discovery skipped for forum.openai.com: Failed to fetch https://crt.sh/?q=%25.forum.openai.com&output=json: HTTP Error 404: Not Found"
+            "discovery skipped for forum.openai.com: Failed to fetch https://crt.sh/?q=%25.forum.openai.com&output=json: HTTP Error 502: Bad Gateway"
           ]
         }
       ]
@@ -115,10 +117,10 @@
     {
       "name": "podkop-foreign-subnets",
       "kind": "subnet",
-      "domain_count": 10438,
-      "remote_count": 9849,
+      "domain_count": 10407,
+      "remote_count": 9850,
       "local_count": 436,
-      "resolved_count": 184,
+      "resolved_count": 152,
       "discovered_count": 0,
       "remote_sources": [
         "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Subnets/IPv4/cloudfront.lst",
