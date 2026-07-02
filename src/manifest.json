@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-02T09:31:48.265688+00:00",
+  "generated_at": "2026-07-02T14:28:56.213556+00:00",
   "outputs": [
     {
       "name": "podkop-russia-domains",
@@ -40,8 +40,8 @@
     {
       "name": "podkop-foreign-domains",
       "kind": "domain",
-      "domain_count": 1416,
-      "remote_count": 1107,
+      "domain_count": 1418,
+      "remote_count": 1109,
       "local_count": 255,
       "resolved_count": 0,
       "discovered_count": 140,
@@ -107,7 +107,7 @@
           ],
           "added_count": 0,
           "warnings": [
-            "discovery skipped for forum.openai.com: Failed to fetch https://crt.sh/?q=%25.forum.openai.com&output=json: HTTP Error 404: Not Found"
+            "discovery skipped for forum.openai.com: Failed to fetch https://crt.sh/?q=%25.forum.openai.com&output=json: The read operation timed out"
           ]
         }
       ]
@@ -115,10 +115,10 @@
     {
       "name": "podkop-foreign-subnets",
       "kind": "subnet",
-      "domain_count": 10546,
-      "remote_count": 9959,
+      "domain_count": 10571,
+      "remote_count": 9960,
       "local_count": 436,
-      "resolved_count": 180,
+      "resolved_count": 204,
       "discovered_count": 0,
       "remote_sources": [
         "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Subnets/IPv4/cloudfront.lst",
