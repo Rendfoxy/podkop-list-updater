@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-10T04:14:35.279293+00:00",
+  "generated_at": "2026-07-10T09:52:28.412462+00:00",
   "outputs": [
     {
       "name": "podkop-russia-domains",
@@ -40,11 +40,11 @@
     {
       "name": "podkop-foreign-domains",
       "kind": "domain",
-      "domain_count": 1413,
+      "domain_count": 1427,
       "remote_count": 1110,
       "local_count": 255,
       "resolved_count": 0,
-      "discovered_count": 134,
+      "discovered_count": 148,
       "remote_sources": [
         "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Categories/hodca.lst",
         "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Services/cloudflare.lst",
@@ -97,30 +97,26 @@
             "tiktok.com",
             "windsurf.com"
           ],
-          "added_count": 134,
-          "warnings": [
-            "discovery skipped for oaistatic.com: Failed to fetch https://urlscan.io/api/v1/search/?q=page.apexDomain:oaistatic.com&size=100: HTTP Error 503: Service Unavailable"
-          ]
+          "added_count": 137,
+          "warnings": []
         },
         {
           "provider": "crtsh",
           "roots": [
             "forum.openai.com"
           ],
-          "added_count": 0,
-          "warnings": [
-            "discovery skipped for forum.openai.com: Failed to fetch https://crt.sh/?q=%25.forum.openai.com&output=json: HTTP Error 404: Not Found"
-          ]
+          "added_count": 11,
+          "warnings": []
         }
       ]
     },
     {
       "name": "podkop-foreign-subnets",
       "kind": "subnet",
-      "domain_count": 10533,
-      "remote_count": 9929,
+      "domain_count": 10497,
+      "remote_count": 9894,
       "local_count": 436,
-      "resolved_count": 197,
+      "resolved_count": 196,
       "discovered_count": 0,
       "remote_sources": [
         "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Subnets/IPv4/cloudfront.lst",
