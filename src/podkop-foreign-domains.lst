@@ -4,6 +4,7 @@
 5t4n6j0wnrl.sip.livekit.cloud
 a-api.anthropic.com
 a-cdn.anthropic.com
+a.claude.ai
 a2z.org.cn
 ab.chatgpt.com
 aboutfacebook.com
@@ -336,7 +337,6 @@ donate.telegram.org
 dosvid.tk
 dotfacebook.com
 dotfacebook.net
-downloads.claude.ai
 draftjs.org
 dragons.nintendo.net
 drpool.io
@@ -858,7 +858,6 @@ ip-140-245-122-194.host.livekit.cloud
 ip-140-245-83-252.host.livekit.cloud
 ip-143-223-88-147.host.livekit.cloud
 ip-143-223-92-35.host.livekit.cloud
-ip-143-223-92-77.host.livekit.cloud
 ip-143-223-92-90.host.livekit.cloud
 ip-149-130-209-74.host.livekit.cloud
 ip-152-67-12-237.host.livekit.cloud
@@ -1044,6 +1043,7 @@ pages.dev
 panel.telegram.org
 pantone.com
 parse.com
+partnerportal.anthropic.com
 passport.telegram.org
 pastebin.com
 patterns.dev
@@ -1125,8 +1125,6 @@ scea.com
 schema.telegram.org
 scira.ai
 scribd.com
-sdfp-sg.byteoversea.com
-sdfp-va.byteoversea.com
 sdmntpraustraliaeast.oaiusercontent.com
 sdmntprbrazilsouth.oaiusercontent.com
 sdmntprcentralindia.oaiusercontent.com
@@ -1144,7 +1142,6 @@ sdmntprsouthcentralus.oaiusercontent.com
 sdmntprsoutheastus3.oaiusercontent.com
 sdmntprukwest.oaiusercontent.com
 sdmntprwestcentralus.oaiusercontent.com
-sdmntprwestus.oaiusercontent.com
 sdmntprwestus2.oaiusercontent.com
 sdmntprwestus3.oaiusercontent.com
 second-ns.com
@@ -1177,7 +1174,6 @@ springhealth-hh48msjr.livekit.cloud
 srv.nintendo.net
 ssh.telegram.org
 staging.telegram.org
-starling-oversea.byteoversea.com
 starling-sg.byteoversea.com
 static.telegram.org
 static.wixstatic.com
@@ -1340,6 +1336,7 @@ userbenchmark.com
 usercontent.dev
 utils.docs.rw
 v16-ad.byteoversea.com
+vas-alisg16.byteoversea.com
 vecpea.com
 venus.telegram.org
 verify.telegram.org
@@ -1380,11 +1377,11 @@ whyfacebook.com
 windows.telegram.org
 windowsupdate.com
 windsurf.com
-wj.byteoversea.com
 workers.dev
 workplace.com
 workplaceusecases.com
 worldhack.com
+ws.chatgpt.com
 wwnd.space
 www-cdn.anthropic.com
 www-facebook.com
@@ -1392,7 +1389,6 @@ www.anthropic.com
 www.livekit.cloud
 www.telegram.com
 www.telegram.me
-www.telegram.org
 www.tiktok.com
 wwwfacebok.com
 wwwfacebook.com
@@ -1413,5 +1409,3 @@ zerotier.com
 zeus.telegram.org
 zuckerberg.com
 zuckerberg.net
-zws2-1.web.telegram.org
-zws5.web.telegram.org
