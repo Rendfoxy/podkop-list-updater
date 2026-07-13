@@ -95,6 +95,7 @@
         "askfacebook.net",
         "askfacebook.org",
         "assets-proxy.anthropic.com",
+        "assets.claude.ai",
         "assets.telegram.org",
         "atdmt2.com",
         "athena.telegram.org",
@@ -863,6 +864,7 @@
         "ip-140-245-83-252.host.livekit.cloud",
         "ip-143-223-88-147.host.livekit.cloud",
         "ip-143-223-92-35.host.livekit.cloud",
+        "ip-143-223-92-77.host.livekit.cloud",
         "ip-143-223-92-90.host.livekit.cloud",
         "ip-149-130-209-74.host.livekit.cloud",
         "ip-152-67-12-237.host.livekit.cloud",
@@ -1130,6 +1132,8 @@
         "schema.telegram.org",
         "scira.ai",
         "scribd.com",
+        "sdfp-sg.byteoversea.com",
+        "sdfp-va.byteoversea.com",
         "sdmntpraustraliaeast.oaiusercontent.com",
         "sdmntprbrazilsouth.oaiusercontent.com",
         "sdmntprcentralindia.oaiusercontent.com",
@@ -1179,6 +1183,7 @@
         "srv.nintendo.net",
         "ssh.telegram.org",
         "staging.telegram.org",
+        "starling-oversea.byteoversea.com",
         "starling-sg.byteoversea.com",
         "static.telegram.org",
         "static.wixstatic.com",
@@ -1301,6 +1306,7 @@
         "translations.telegram.org",
         "tremendous.com",
         "trueachievements.com",
+        "trust.anthropic.com",
         "trycloudflare.com",
         "ttcdn-us.com",
         "ttlivecdn.com",
@@ -1341,7 +1347,6 @@
         "usercontent.dev",
         "utils.docs.rw",
         "v16-ad.byteoversea.com",
-        "vas-alisg16.byteoversea.com",
         "vecpea.com",
         "venus.telegram.org",
         "verify.telegram.org",
@@ -1382,6 +1387,7 @@
         "windows.telegram.org",
         "windowsupdate.com",
         "windsurf.com",
+        "wj.byteoversea.com",
         "workers.dev",
         "workplace.com",
         "workplaceusecases.com",
@@ -1413,7 +1419,9 @@
         "zerotier.com",
         "zeus.telegram.org",
         "zuckerberg.com",
-        "zuckerberg.net"
+        "zuckerberg.net",
+        "zws2-1.web.telegram.org",
+        "zws5.web.telegram.org"
       ]
     }
   ]
