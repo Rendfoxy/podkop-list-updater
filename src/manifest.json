@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-14T08:27:29.961382+00:00",
+  "generated_at": "2026-07-14T14:13:10.204184+00:00",
   "outputs": [
     {
       "name": "podkop-russia-domains",
@@ -40,11 +40,11 @@
     {
       "name": "podkop-foreign-domains",
       "kind": "domain",
-      "domain_count": 1422,
+      "domain_count": 1412,
       "remote_count": 1111,
       "local_count": 255,
       "resolved_count": 0,
-      "discovered_count": 142,
+      "discovered_count": 132,
       "remote_sources": [
         "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Categories/hodca.lst",
         "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Services/cloudflare.lst",
@@ -97,8 +97,11 @@
             "tiktok.com",
             "windsurf.com"
           ],
-          "added_count": 142,
-          "warnings": []
+          "added_count": 132,
+          "warnings": [
+            "discovery skipped for openai.com: Failed to fetch https://urlscan.io/api/v1/search/?q=page.apexDomain:openai.com&size=100: HTTP Error 503: Service Unavailable",
+            "discovery skipped for anthropic.com: Failed to fetch https://urlscan.io/api/v1/search/?q=page.apexDomain:anthropic.com&size=100: HTTP Error 503: Service Unavailable"
+          ]
         },
         {
           "provider": "crtsh",
@@ -115,10 +118,10 @@
     {
       "name": "podkop-foreign-subnets",
       "kind": "subnet",
-      "domain_count": 10500,
+      "domain_count": 10493,
       "remote_count": 9899,
       "local_count": 436,
-      "resolved_count": 194,
+      "resolved_count": 187,
       "discovered_count": 0,
       "remote_sources": [
         "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Subnets/IPv4/cloudfront.lst",
