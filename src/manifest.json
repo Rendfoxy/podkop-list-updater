@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-18T19:31:19.961236+00:00",
+  "generated_at": "2026-07-19T03:54:14.116559+00:00",
   "outputs": [
     {
       "name": "podkop-russia-domains",
@@ -40,11 +40,11 @@
     {
       "name": "podkop-foreign-domains",
       "kind": "domain",
-      "domain_count": 1421,
+      "domain_count": 1420,
       "remote_count": 1111,
       "local_count": 255,
       "resolved_count": 0,
-      "discovered_count": 141,
+      "discovered_count": 140,
       "remote_sources": [
         "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Categories/hodca.lst",
         "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Services/cloudflare.lst",
@@ -97,7 +97,7 @@
             "tiktok.com",
             "windsurf.com"
           ],
-          "added_count": 141,
+          "added_count": 140,
           "warnings": []
         },
         {
@@ -115,10 +115,10 @@
     {
       "name": "podkop-foreign-subnets",
       "kind": "subnet",
-      "domain_count": 10553,
-      "remote_count": 9922,
+      "domain_count": 10564,
+      "remote_count": 9929,
       "local_count": 436,
-      "resolved_count": 225,
+      "resolved_count": 229,
       "discovered_count": 0,
       "remote_sources": [
         "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Subnets/IPv4/cloudfront.lst",
