@@ -9,6 +9,7 @@
         "5t4n6j0wnrl.sip.livekit.cloud",
         "a-cdn.anthropic.com",
         "a2z.org.cn",
+        "ab.chatgpt.com",
         "aboutfacebook.com",
         "abtest-sg-tiktok.byteoversea.com",
         "abtest-va-tiktok.byteoversea.com",
@@ -80,6 +81,7 @@
         "api1.telegram.org",
         "api2.telegram.org",
         "api3.telegram.org",
+        "aplus.qwen.ai",
         "apollo.telegram.org",
         "archlinux.org",
         "ares.telegram.org",
@@ -209,6 +211,7 @@
         "chat.com",
         "chat.openai.com",
         "chat.openai.com.cdn.cloudflare.net",
+        "chat.qwen.ai",
         "chatgpt.com",
         "chatgpt.livekit.cloud",
         "chatgpt.site",
@@ -283,6 +286,7 @@
         "clubtv.pro",
         "cms-twdigitalassets.com",
         "cochrane.org",
+        "coder.qwen.ai",
         "coderabbit.ai",
         "codex.openai.com",
         "comments.app",
@@ -990,7 +994,6 @@
         "oaiusercontent.com",
         "oashburn1a.turn.livekit.cloud",
         "oashburn1b.turn.livekit.cloud",
-        "oauth.telegram.org",
         "ocbase.com",
         "ochicago1a.turn.livekit.cloud",
         "ochicago1b.turn.livekit.cloud",
@@ -1068,6 +1071,7 @@
         "pluto.telegram.org",
         "pop.telegram.org",
         "porkbun.com",
+        "portal.qwen.ai",
         "poseidon.telegram.org",
         "powersunitedvr.com",
         "pplx-res.cloudinary.com",
@@ -1417,7 +1421,8 @@
         "zerotier.com",
         "zeus.telegram.org",
         "zuckerberg.com",
-        "zuckerberg.net"
+        "zuckerberg.net",
+        "zws4-1.web.telegram.org"
       ]
     }
   ]
