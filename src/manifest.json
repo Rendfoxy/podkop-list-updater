@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-03T10:05:03.357332+00:00",
+  "generated_at": "2026-08-03T15:15:33.445923+00:00",
   "outputs": [
     {
       "name": "podkop-russia-domains",
@@ -40,11 +40,11 @@
     {
       "name": "podkop-foreign-domains",
       "kind": "domain",
-      "domain_count": 1418,
+      "domain_count": 1415,
       "remote_count": 1111,
       "local_count": 255,
       "resolved_count": 0,
-      "discovered_count": 138,
+      "discovered_count": 135,
       "remote_sources": [
         "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Categories/hodca.lst",
         "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Services/cloudflare.lst",
@@ -97,8 +97,10 @@
             "tiktok.com",
             "windsurf.com"
           ],
-          "added_count": 138,
-          "warnings": []
+          "added_count": 135,
+          "warnings": [
+            "discovery skipped for qwen.ai: Failed to fetch https://urlscan.io/api/v1/search/?q=page.apexDomain:qwen.ai&size=100: HTTP Error 503: Service Unavailable"
+          ]
         },
         {
           "provider": "crtsh",
@@ -115,10 +117,10 @@
     {
       "name": "podkop-foreign-subnets",
       "kind": "subnet",
-      "domain_count": 10633,
-      "remote_count": 10031,
+      "domain_count": 10611,
+      "remote_count": 10029,
       "local_count": 436,
-      "resolved_count": 195,
+      "resolved_count": 175,
       "discovered_count": 0,
       "remote_sources": [
         "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Subnets/IPv4/cloudfront.lst",
