@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-03T19:57:18.084320+00:00",
+  "generated_at": "2026-08-04T03:36:20.626992+00:00",
   "outputs": [
     {
       "name": "podkop-russia-domains",
@@ -40,11 +40,11 @@
     {
       "name": "podkop-foreign-domains",
       "kind": "domain",
-      "domain_count": 1420,
+      "domain_count": 1417,
       "remote_count": 1111,
       "local_count": 255,
       "resolved_count": 0,
-      "discovered_count": 140,
+      "discovered_count": 137,
       "remote_sources": [
         "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Categories/hodca.lst",
         "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Services/cloudflare.lst",
@@ -97,8 +97,10 @@
             "tiktok.com",
             "windsurf.com"
           ],
-          "added_count": 140,
-          "warnings": []
+          "added_count": 137,
+          "warnings": [
+            "discovery skipped for oaistatic.com: Failed to fetch https://urlscan.io/api/v1/search/?q=page.apexDomain:oaistatic.com&size=100: The read operation timed out"
+          ]
         },
         {
           "provider": "crtsh",
@@ -115,10 +117,10 @@
     {
       "name": "podkop-foreign-subnets",
       "kind": "subnet",
-      "domain_count": 10664,
-      "remote_count": 10030,
+      "domain_count": 10645,
+      "remote_count": 10033,
       "local_count": 436,
-      "resolved_count": 227,
+      "resolved_count": 205,
       "discovered_count": 0,
       "remote_sources": [
         "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Subnets/IPv4/cloudfront.lst",
