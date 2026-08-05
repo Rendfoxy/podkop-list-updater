@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-05T14:32:13.825696+00:00",
+  "generated_at": "2026-08-05T19:54:08.062954+00:00",
   "outputs": [
     {
       "name": "podkop-russia-domains",
@@ -40,11 +40,11 @@
     {
       "name": "podkop-foreign-domains",
       "kind": "domain",
-      "domain_count": 1412,
-      "remote_count": 1112,
+      "domain_count": 1419,
+      "remote_count": 1113,
       "local_count": 255,
       "resolved_count": 0,
-      "discovered_count": 131,
+      "discovered_count": 137,
       "remote_sources": [
         "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Categories/hodca.lst",
         "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Services/cloudflare.lst",
@@ -97,11 +97,8 @@
             "tiktok.com",
             "windsurf.com"
           ],
-          "added_count": 131,
-          "warnings": [
-            "discovery skipped for telegram.me: Failed to fetch https://urlscan.io/api/v1/search/?q=page.apexDomain:telegram.me&size=100: The read operation timed out",
-            "discovery skipped for telegram.com: Failed to fetch https://urlscan.io/api/v1/search/?q=page.apexDomain:telegram.com&size=100: The read operation timed out"
-          ]
+          "added_count": 137,
+          "warnings": []
         },
         {
           "provider": "crtsh",
@@ -110,7 +107,7 @@
           ],
           "added_count": 0,
           "warnings": [
-            "discovery skipped for forum.openai.com: Failed to fetch https://crt.sh/?q=%25.forum.openai.com&output=json: HTTP Error 502: Bad Gateway"
+            "discovery skipped for forum.openai.com: Failed to fetch https://crt.sh/?q=%25.forum.openai.com&output=json: <urlopen error [Errno 101] Network is unreachable>"
           ]
         }
       ]
@@ -118,8 +115,8 @@
     {
       "name": "podkop-foreign-subnets",
       "kind": "subnet",
-      "domain_count": 10650,
-      "remote_count": 10035,
+      "domain_count": 10652,
+      "remote_count": 10037,
       "local_count": 436,
       "resolved_count": 208,
       "discovered_count": 0,
