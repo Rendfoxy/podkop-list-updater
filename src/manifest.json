@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-16T01:56:48.319161+00:00",
+  "generated_at": "2026-08-16T06:58:41.724834+00:00",
   "outputs": [
     {
       "name": "podkop-russia-domains",
@@ -40,11 +40,11 @@
     {
       "name": "podkop-foreign-domains",
       "kind": "domain",
-      "domain_count": 1431,
+      "domain_count": 1420,
       "remote_count": 1113,
       "local_count": 255,
       "resolved_count": 0,
-      "discovered_count": 149,
+      "discovered_count": 138,
       "remote_sources": [
         "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Categories/hodca.lst",
         "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Services/cloudflare.lst",
@@ -105,18 +105,20 @@
           "roots": [
             "forum.openai.com"
           ],
-          "added_count": 11,
-          "warnings": []
+          "added_count": 0,
+          "warnings": [
+            "discovery skipped for forum.openai.com: Failed to fetch https://crt.sh/?q=%25.forum.openai.com&output=json: HTTP Error 503: Service Unavailable"
+          ]
         }
       ]
     },
     {
       "name": "podkop-foreign-subnets",
       "kind": "subnet",
-      "domain_count": 10661,
-      "remote_count": 10056,
+      "domain_count": 10692,
+      "remote_count": 10057,
       "local_count": 436,
-      "resolved_count": 198,
+      "resolved_count": 228,
       "discovered_count": 0,
       "remote_sources": [
         "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Subnets/IPv4/cloudfront.lst",
