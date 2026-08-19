@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-18T18:55:47.260506+00:00",
+  "generated_at": "2026-08-19T01:52:32.262172+00:00",
   "outputs": [
     {
       "name": "podkop-russia-domains",
@@ -107,7 +107,7 @@
           ],
           "added_count": 0,
           "warnings": [
-            "discovery skipped for forum.openai.com: Failed to fetch https://crt.sh/?q=%25.forum.openai.com&output=json: HTTP Error 404: Not Found"
+            "discovery skipped for forum.openai.com: Failed to fetch https://crt.sh/?q=%25.forum.openai.com&output=json: The read operation timed out"
           ]
         }
       ]
@@ -115,8 +115,8 @@
     {
       "name": "podkop-foreign-subnets",
       "kind": "subnet",
-      "domain_count": 10690,
-      "remote_count": 10060,
+      "domain_count": 10692,
+      "remote_count": 10062,
       "local_count": 436,
       "resolved_count": 223,
       "discovered_count": 0,
