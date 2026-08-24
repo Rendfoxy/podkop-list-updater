@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-23T18:47:53.078480+00:00",
+  "generated_at": "2026-08-24T01:57:18.195809+00:00",
   "outputs": [
     {
       "name": "podkop-russia-domains",
@@ -115,10 +115,10 @@
     {
       "name": "podkop-foreign-subnets",
       "kind": "subnet",
-      "domain_count": 10709,
-      "remote_count": 10084,
+      "domain_count": 10680,
+      "remote_count": 10083,
       "local_count": 436,
-      "resolved_count": 218,
+      "resolved_count": 190,
       "discovered_count": 0,
       "remote_sources": [
         "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Subnets/IPv4/cloudfront.lst",
