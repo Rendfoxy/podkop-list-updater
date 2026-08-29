@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-29T07:04:29.511887+00:00",
+  "generated_at": "2026-08-29T16:43:18.564151+00:00",
   "outputs": [
     {
       "name": "podkop-russia-domains",
@@ -40,11 +40,11 @@
     {
       "name": "podkop-foreign-domains",
       "kind": "domain",
-      "domain_count": 1429,
+      "domain_count": 1430,
       "remote_count": 1116,
       "local_count": 255,
       "resolved_count": 0,
-      "discovered_count": 144,
+      "discovered_count": 145,
       "remote_sources": [
         "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Categories/hodca.lst",
         "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Services/cloudflare.lst",
@@ -97,10 +97,8 @@
             "tiktok.com",
             "windsurf.com"
           ],
-          "added_count": 144,
-          "warnings": [
-            "discovery skipped for t.me: Failed to fetch https://urlscan.io/api/v1/search/?q=page.apexDomain:t.me&size=100: The read operation timed out"
-          ]
+          "added_count": 145,
+          "warnings": []
         },
         {
           "provider": "crtsh",
@@ -109,7 +107,7 @@
           ],
           "added_count": 0,
           "warnings": [
-            "discovery skipped for forum.openai.com: Failed to fetch https://crt.sh/?q=%25.forum.openai.com&output=json: The read operation timed out"
+            "discovery skipped for forum.openai.com: Failed to fetch https://crt.sh/?q=%25.forum.openai.com&output=json: HTTP Error 502: Bad Gateway"
           ]
         }
       ]
@@ -117,10 +115,10 @@
     {
       "name": "podkop-foreign-subnets",
       "kind": "subnet",
-      "domain_count": 10636,
+      "domain_count": 10649,
       "remote_count": 10008,
       "local_count": 436,
-      "resolved_count": 222,
+      "resolved_count": 235,
       "discovered_count": 0,
       "remote_sources": [
         "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Subnets/IPv4/cloudfront.lst",
