@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-02T16:34:25.241018+00:00",
+  "generated_at": "2026-09-02T21:03:14.613447+00:00",
   "outputs": [
     {
       "name": "podkop-russia-domains",
@@ -40,11 +40,11 @@
     {
       "name": "podkop-foreign-domains",
       "kind": "domain",
-      "domain_count": 1426,
+      "domain_count": 1429,
       "remote_count": 1116,
       "local_count": 255,
       "resolved_count": 0,
-      "discovered_count": 141,
+      "discovered_count": 144,
       "remote_sources": [
         "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Categories/hodca.lst",
         "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Services/cloudflare.lst",
@@ -97,9 +97,9 @@
             "tiktok.com",
             "windsurf.com"
           ],
-          "added_count": 141,
+          "added_count": 144,
           "warnings": [
-            "discovery skipped for openrouter.ai: Failed to fetch https://urlscan.io/api/v1/search/?q=page.apexDomain:openrouter.ai&size=100: The read operation timed out"
+            "discovery skipped for telegram.me: Failed to fetch https://urlscan.io/api/v1/search/?q=page.apexDomain:telegram.me&size=100: The read operation timed out"
           ]
         },
         {
@@ -109,7 +109,7 @@
           ],
           "added_count": 0,
           "warnings": [
-            "discovery skipped for forum.openai.com: Failed to fetch https://crt.sh/?q=%25.forum.openai.com&output=json: HTTP Error 502: Bad Gateway"
+            "discovery skipped for forum.openai.com: Failed to fetch https://crt.sh/?q=%25.forum.openai.com&output=json: The read operation timed out"
           ]
         }
       ]
@@ -117,10 +117,10 @@
     {
       "name": "podkop-foreign-subnets",
       "kind": "subnet",
-      "domain_count": 10657,
-      "remote_count": 10007,
+      "domain_count": 10662,
+      "remote_count": 10009,
       "local_count": 436,
-      "resolved_count": 244,
+      "resolved_count": 247,
       "discovered_count": 0,
       "remote_sources": [
         "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Subnets/IPv4/cloudfront.lst",
