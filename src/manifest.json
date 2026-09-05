@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-05T04:29:05.100635+00:00",
+  "generated_at": "2026-09-05T10:35:18.870696+00:00",
   "outputs": [
     {
       "name": "podkop-russia-domains",
@@ -40,11 +40,11 @@
     {
       "name": "podkop-foreign-domains",
       "kind": "domain",
-      "domain_count": 1432,
+      "domain_count": 1438,
       "remote_count": 1116,
       "local_count": 255,
       "resolved_count": 0,
-      "discovered_count": 147,
+      "discovered_count": 153,
       "remote_sources": [
         "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Categories/hodca.lst",
         "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Services/cloudflare.lst",
@@ -97,10 +97,9 @@
             "tiktok.com",
             "windsurf.com"
           ],
-          "added_count": 136,
+          "added_count": 142,
           "warnings": [
-            "discovery skipped for qwen.ai: Failed to fetch https://urlscan.io/api/v1/search/?q=page.apexDomain:qwen.ai&size=100: The read operation timed out",
-            "discovery skipped for openrouter.ai: Failed to fetch https://urlscan.io/api/v1/search/?q=page.apexDomain:openrouter.ai&size=100: The read operation timed out"
+            "discovery skipped for tiktok.com: Failed to fetch https://urlscan.io/api/v1/search/?q=page.apexDomain:tiktok.com&size=100: The read operation timed out"
           ]
         },
         {
@@ -116,10 +115,10 @@
     {
       "name": "podkop-foreign-subnets",
       "kind": "subnet",
-      "domain_count": 10576,
-      "remote_count": 9974,
+      "domain_count": 10618,
+      "remote_count": 9975,
       "local_count": 436,
-      "resolved_count": 196,
+      "resolved_count": 237,
       "discovered_count": 0,
       "remote_sources": [
         "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Subnets/IPv4/cloudfront.lst",

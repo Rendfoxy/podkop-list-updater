@@ -77,6 +77,7 @@ api.telegram.org
 api1.telegram.org
 api2.telegram.org
 api3.telegram.org
+aplus.qwen.ai
 apollo.telegram.org
 archlinux.org
 ares.telegram.org
@@ -208,6 +209,7 @@ channels.telegram.org
 chat.com
 chat.openai.com
 chat.openai.com.cdn.cloudflare.net
+chat.qwen.ai
 chatgpt.com
 chatgpt.livekit.cloud
 chatgpt.site
@@ -226,6 +228,7 @@ claudemcpcontent.com
 claudeusercontent.com
 clerk.com
 clerk.dev
+clerk.openrouter.ai
 click-url.com
 clickup-attachments.com
 cloudflare-cn.com
@@ -283,6 +286,7 @@ cloudns.net
 clubtv.pro
 cms-twdigitalassets.com
 cochrane.org
+coder.qwen.ai
 coderabbit.ai
 codex.openai.com
 comments.app
@@ -963,6 +967,7 @@ mongodb.com
 monitor.telegram.org
 monochrome.tf
 mtproto.telegram.org
+multimedia-explorer.openrouter.ai
 muscdn.com
 music.apple.com
 musical.ly
@@ -1077,6 +1082,7 @@ pluto.telegram.org
 pop.telegram.org
 porkbun.com
 portal.anthropic.com
+portal.qwen.ai
 poseidon.telegram.org
 powersunitedvr.com
 pplx-res.cloudinary.com
@@ -1319,6 +1325,7 @@ translations.telegram.org
 tremendous.com
 trueachievements.com
 trust.anthropic.com
+trust.openrouter.ai
 trycloudflare.com
 ttcdn-us.com
 ttlivecdn.com
@@ -1410,7 +1417,6 @@ www-facebook.com
 www.anthropic.com
 www.livekit.cloud
 www.telegram.com
-www.tiktok.com
 wwwfacebok.com
 wwwfacebook.com
 wwwinstagram.com
