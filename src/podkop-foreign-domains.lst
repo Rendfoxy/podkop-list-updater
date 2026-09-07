@@ -2,6 +2,7 @@
 3os.org
 51g16et00g2.us.sip.livekit.cloud
 5t4n6j0wnrl.sip.livekit.cloud
+a-cdn.anthropic.com
 a2z.org.cn
 ab.chatgpt.com
 aboutfacebook.com
@@ -68,6 +69,7 @@ android.telegram.org
 aniliberty.top
 anthropic.com
 api-docs.telegram.org
+api.anthropic.com
 api.openai.com
 api.t.me
 api.telegram.com
@@ -87,6 +89,7 @@ artstation.com
 asfiovnxocqpcry.com.cn
 askfacebook.net
 askfacebook.org
+assets-proxy.anthropic.com
 assets.telegram.org
 atdmt2.com
 athena.telegram.org
@@ -98,6 +101,7 @@ aurora.telegram.org
 auth-cdn.oaistatic.com
 auth.openai.com
 auth.telegram.org
+auth.windsurf.com
 aws-border.cn
 aws-icp-domain-manager.cn
 aws-iot-hackathon.com
@@ -336,7 +340,6 @@ donate.telegram.org
 dosvid.tk
 dotfacebook.com
 dotfacebook.net
-downloads.claude.ai
 draftjs.org
 dragons.nintendo.net
 drpool.io
@@ -926,6 +929,7 @@ mail.telegram.org
 makeitopen.com
 manager.telegram.org
 manjaro.org
+marketplace.windsurf.com
 markzuckerberg.com
 maximoff.su
 mcp-app-connector-692de805e3ec8191834719067174-f70eb4969c98f266.web-sandbox.oaiusercontent.com
@@ -1067,6 +1071,7 @@ playstationcloud.com
 pluto.telegram.org
 pop.telegram.org
 porkbun.com
+portal.anthropic.com
 portal.qwen.ai
 poseidon.telegram.org
 powersunitedvr.com
@@ -1102,6 +1107,7 @@ redkix.com
 redux.js.org
 report.telegram.org
 resizing.flixster.com
+resources.anthropic.com
 rightmove-co-uk.web-sandbox.oaiusercontent.com
 rockblack.su
 rocksdb.com
@@ -1118,6 +1124,7 @@ ru.telegram.org
 rulet.tv
 russianfood.com
 rutracker.org
+s-cdn.anthropic.com
 s16.byteoversea.com
 sagemaker.com.cn
 sandbox.telegram.org
@@ -1157,6 +1164,9 @@ security.telegram.org
 sentry.hetzner.company
 seriesgraph.com
 servd-anthropic-website.b-cdn.net
+server.enterprise.windsurf.com
+server.self-serve.windsurf.com
+server.windsurf.com
 sg-link.byteoversea.com
 sgali-mcs.byteoversea.com
 shara-mail.com
@@ -1177,6 +1187,8 @@ sportstream.com
 springhealth-hh48msjr.livekit.cloud
 srv.nintendo.net
 ssh.telegram.org
+staging-real-2.windsurf.com
+staging-test.windsurf.com
 staging.telegram.org
 starling-oversea.byteoversea.com
 starling-sg.byteoversea.com
@@ -1300,6 +1312,7 @@ translate.telegram.org
 translations.telegram.org
 tremendous.com
 trueachievements.com
+trust.anthropic.com
 trust.openrouter.ai
 trycloudflare.com
 ttcdn-us.com
@@ -1335,6 +1348,8 @@ tx.me
 ubuntu-touch.io
 updates.telegram.org
 uptime.telegram.org
+url8792.mail.anthropic.com
+usdsjv.tiktok.com
 use.typekit.net
 userbenchmark.com
 usercontent.dev
@@ -1387,6 +1402,7 @@ workplaceusecases.com
 worldhack.com
 wwnd.space
 www-facebook.com
+www.anthropic.com
 www.livekit.cloud
 www.telegram.com
 www.tiktok.com
