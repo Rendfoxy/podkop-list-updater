@@ -67,6 +67,7 @@ android.telegram.org
 aniliberty.top
 anthropic.com
 api-docs.telegram.org
+api.anthropic.com
 api.openai.com
 api.t.me
 api.telegram.com
@@ -81,11 +82,13 @@ ares.telegram.org
 argotunnel.com
 armbian.com
 armbian.de
+art-design.forum.openai.com
 artixlinux.org
 artstation.com
 asfiovnxocqpcry.com.cn
 askfacebook.net
 askfacebook.org
+assets-proxy.anthropic.com
 assets.telegram.org
 atdmt2.com
 athena.telegram.org
@@ -94,7 +97,6 @@ atlasonepoint.com
 atmeta.com
 atscaleconference.com
 aurora.telegram.org
-auth-cdn.oaistatic.com
 auth.openai.com
 auth.telegram.org
 auth.windsurf.com
@@ -170,7 +172,6 @@ cdn-lfs.huggingface.co
 cdn-service.space
 cdn-telegram.org
 cdn.embedly.com
-cdn.oaistatic.com
 cdn.polyhaven.com
 cdn.telegram.org
 cdn.web-global.fds.api.mi-img.com
@@ -314,6 +315,7 @@ dc5.telegram.org
 dcl.dfra1a.production.livekit.cloud
 de.telegram.org
 demo.telegram.org
+democratic-inputs.forum.openai.com
 desec.io
 desktop.telegram.org
 dev.t.me
@@ -351,6 +353,7 @@ elasticbeanstalk.com
 elsevier.com
 elsevier.com.cdn.cloudflare.net
 email.telegram.org
+emerging-talent.forum.openai.com
 emotech-38dj94si.livekit.cloud
 encryptedsni.com
 enterprise.telegram.org
@@ -358,6 +361,7 @@ eshop.nintendo.net
 eu.openrouter.ai
 eu.telegram.com
 every1dns.net
+expert-ai-trainers.forum.openai.com
 expresswifi.com
 ezgif.com
 f8.com
@@ -728,6 +732,7 @@ fscebook.com
 ftp.telegram.org
 fundraisingwithfacebook.com
 funnyfacebook.org
+future-scholars.forum.openai.com
 futureofbusinesssurvey.org
 fwupd.org
 gacebook.com
@@ -736,6 +741,7 @@ gameroom.com
 gather.livekit.cloud
 gecko-sg.byteoversea.com
 geekbench.com
+getstarted.tiktok.com
 gfacecbook.com
 gitlab.com
 gizmochina.com
@@ -756,7 +762,6 @@ hacklang.org
 hades.telegram.org
 health.telegram.org
 heavyfetish.com
-help-center-cdn.oaistatic.com
 help.telegram.org
 helpdesk-static.com
 helpdesk.com
@@ -783,6 +788,7 @@ httpwwwfacebook.com
 htx.com
 htznr.li
 huggingface.co
+human-data.forum.openai.com
 i.org
 i18n.telegram.org
 ibytedtos.com
@@ -927,6 +933,7 @@ manager.telegram.org
 manjaro.org
 marketplace.windsurf.com
 markzuckerberg.com
+math.forum.openai.com
 maximoff.su
 mcp-app-connector-692de805e3ec8191834719067174-f70eb4969c98f266.web-sandbox.oaiusercontent.com
 mcrouter.net
@@ -991,6 +998,7 @@ oaistatsig.com
 oaiusercontent.com
 oashburn1a.turn.livekit.cloud
 oashburn1b.turn.livekit.cloud
+oauth.telegram.org
 ocbase.com
 ochicago1a.turn.livekit.cloud
 ochicago1b.turn.livekit.cloud
@@ -1020,6 +1028,8 @@ oninstagram.com
 online-deals.net
 online-instagram.com
 onlineinstagram.com
+openai-projects.forum.openai.com
+openai-team.forum.openai.com
 openai.com
 openai.com.cdn.cloudflare.net
 openai.qualtrics.com
@@ -1053,7 +1063,6 @@ pc-mon-va.byteoversea.com
 pdfcoffee.com
 peoplemap-l8iwzq7v.livekit.cloud
 periscope.tv
-persistent.oaistatic.com
 pinata.cloud
 ping-admin.com
 ping.telegram.org
@@ -1103,6 +1112,7 @@ redkix.com
 redux.js.org
 report.telegram.org
 resizing.flixster.com
+resources.anthropic.com
 rightmove-co-uk.web-sandbox.oaiusercontent.com
 rockblack.su
 rocksdb.com
@@ -1197,6 +1207,7 @@ strapi.io
 strava.com
 stripe.com
 stripecdn.com
+student-forum.forum.openai.com
 studyinfinland.fi
 studystream.livekit.cloud
 succurity.com
@@ -1339,9 +1350,12 @@ twttr.net
 twvid.com
 tx.me
 ubuntu-touch.io
+ucb-dssj.forum.openai.com
 updates.telegram.org
 uptime.telegram.org
+url8792.mail.anthropic.com
 us.openrouter.ai
+usdsjv.tiktok.com
 use.typekit.net
 userbenchmark.com
 usercontent.dev
@@ -1392,11 +1406,12 @@ workers.dev
 workplace.com
 workplaceusecases.com
 worldhack.com
-ws.chatgpt.com
 wwnd.space
 www-facebook.com
+www.anthropic.com
 www.livekit.cloud
 www.telegram.com
+www.tiktok.com
 wwwfacebok.com
 wwwfacebook.com
 wwwinstagram.com
