@@ -67,6 +67,7 @@ android.telegram.org
 aniliberty.top
 anthropic.com
 api-docs.telegram.org
+api.anthropic.com
 api.openai.com
 api.t.me
 api.telegram.com
@@ -86,6 +87,7 @@ artstation.com
 asfiovnxocqpcry.com.cn
 askfacebook.net
 askfacebook.org
+assets-proxy.anthropic.com
 assets.telegram.org
 atdmt2.com
 athena.telegram.org
@@ -94,8 +96,10 @@ atlasonepoint.com
 atmeta.com
 atscaleconference.com
 aurora.telegram.org
+auth-cdn.oaistatic.com
 auth.openai.com
 auth.telegram.org
+auth.windsurf.com
 aws-border.cn
 aws-icp-domain-manager.cn
 aws-iot-hackathon.com
@@ -168,6 +172,7 @@ cdn-lfs.huggingface.co
 cdn-service.space
 cdn-telegram.org
 cdn.embedly.com
+cdn.oaistatic.com
 cdn.polyhaven.com
 cdn.telegram.org
 cdn.web-global.fds.api.mi-img.com
@@ -754,6 +759,7 @@ hacklang.org
 hades.telegram.org
 health.telegram.org
 heavyfetish.com
+help-center-cdn.oaistatic.com
 help.telegram.org
 helpdesk-static.com
 helpdesk.com
@@ -923,6 +929,7 @@ mail.telegram.org
 makeitopen.com
 manager.telegram.org
 manjaro.org
+marketplace.windsurf.com
 markzuckerberg.com
 maximoff.su
 mcp-app-connector-692de805e3ec8191834719067174-f70eb4969c98f266.web-sandbox.oaiusercontent.com
@@ -988,6 +995,7 @@ oaistatsig.com
 oaiusercontent.com
 oashburn1a.turn.livekit.cloud
 oashburn1b.turn.livekit.cloud
+oauth.telegram.org
 ocbase.com
 ochicago1a.turn.livekit.cloud
 ochicago1b.turn.livekit.cloud
@@ -1050,6 +1058,7 @@ pc-mon-va.byteoversea.com
 pdfcoffee.com
 peoplemap-l8iwzq7v.livekit.cloud
 periscope.tv
+persistent.oaistatic.com
 pinata.cloud
 ping-admin.com
 ping.telegram.org
@@ -1099,6 +1108,7 @@ redkix.com
 redux.js.org
 report.telegram.org
 resizing.flixster.com
+resources.anthropic.com
 rightmove-co-uk.web-sandbox.oaiusercontent.com
 rockblack.su
 rocksdb.com
@@ -1154,6 +1164,9 @@ security.telegram.org
 sentry.hetzner.company
 seriesgraph.com
 servd-anthropic-website.b-cdn.net
+server.enterprise.windsurf.com
+server.self-serve.windsurf.com
+server.windsurf.com
 sg-link.byteoversea.com
 sgali-mcs.byteoversea.com
 shara-mail.com
@@ -1174,6 +1187,8 @@ sportstream.com
 springhealth-hh48msjr.livekit.cloud
 srv.nintendo.net
 ssh.telegram.org
+staging-real-2.windsurf.com
+staging-test.windsurf.com
 staging.telegram.org
 starling-oversea.byteoversea.com
 starling-sg.byteoversea.com
@@ -1332,6 +1347,7 @@ tx.me
 ubuntu-touch.io
 updates.telegram.org
 uptime.telegram.org
+url8792.mail.anthropic.com
 us.openrouter.ai
 usdsjv.tiktok.com
 use.typekit.net
@@ -1387,6 +1403,7 @@ worldhack.com
 ws.chatgpt.com
 wwnd.space
 www-facebook.com
+www.anthropic.com
 www.livekit.cloud
 www.telegram.com
 www.tiktok.com
