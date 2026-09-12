@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-11T20:58:13.219818+00:00",
+  "generated_at": "2026-09-12T04:34:19.321882+00:00",
   "outputs": [
     {
       "name": "podkop-russia-domains",
@@ -40,11 +40,11 @@
     {
       "name": "podkop-foreign-domains",
       "kind": "domain",
-      "domain_count": 1424,
+      "domain_count": 1408,
       "remote_count": 1116,
       "local_count": 255,
       "resolved_count": 0,
-      "discovered_count": 139,
+      "discovered_count": 123,
       "remote_sources": [
         "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Categories/hodca.lst",
         "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Services/cloudflare.lst",
@@ -97,12 +97,15 @@
             "tiktok.com",
             "windsurf.com"
           ],
-          "added_count": 128,
+          "added_count": 123,
           "warnings": [
-            "discovery skipped for openrouter.ai: Failed to fetch https://urlscan.io/api/v1/search/?q=page.apexDomain:openrouter.ai&size=100: The read operation timed out",
-            "discovery skipped for oaistatic.com: Failed to fetch https://urlscan.io/api/v1/search/?q=page.apexDomain:oaistatic.com&size=100: The read operation timed out",
+            "discovery skipped for tiktok.com: Failed to fetch https://urlscan.io/api/v1/search/?q=page.apexDomain:tiktok.com&size=100: The read operation timed out",
             "discovery skipped for anthropic.com: Failed to fetch https://urlscan.io/api/v1/search/?q=page.apexDomain:anthropic.com&size=100: The read operation timed out",
-            "discovery skipped for claude.ai: Failed to fetch https://urlscan.io/api/v1/search/?q=page.apexDomain:claude.ai&size=100: The read operation timed out"
+            "discovery skipped for telegram.com: Failed to fetch https://urlscan.io/api/v1/search/?q=page.apexDomain:telegram.com&size=100: The read operation timed out",
+            "discovery skipped for t.me: Failed to fetch https://urlscan.io/api/v1/search/?q=page.apexDomain:t.me&size=100: The read operation timed out",
+            "discovery skipped for claude.ai: Failed to fetch https://urlscan.io/api/v1/search/?q=page.apexDomain:claude.ai&size=100: The read operation timed out",
+            "discovery skipped for telegram.me: Failed to fetch https://urlscan.io/api/v1/search/?q=page.apexDomain:telegram.me&size=100: The read operation timed out",
+            "discovery skipped for windsurf.com: Failed to fetch https://urlscan.io/api/v1/search/?q=page.apexDomain:windsurf.com&size=100: The read operation timed out"
           ]
         },
         {
@@ -110,18 +113,20 @@
           "roots": [
             "forum.openai.com"
           ],
-          "added_count": 11,
-          "warnings": []
+          "added_count": 0,
+          "warnings": [
+            "discovery skipped for forum.openai.com: Failed to fetch https://crt.sh/?q=%25.forum.openai.com&output=json: HTTP Error 502: Bad Gateway"
+          ]
         }
       ]
     },
     {
       "name": "podkop-foreign-subnets",
       "kind": "subnet",
-      "domain_count": 10584,
+      "domain_count": 10551,
       "remote_count": 9974,
       "local_count": 436,
-      "resolved_count": 202,
+      "resolved_count": 165,
       "discovered_count": 0,
       "remote_sources": [
         "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Subnets/IPv4/cloudfront.lst",
