@@ -67,8 +67,10 @@ android.telegram.org
 aniliberty.top
 anthropic.com
 api-docs.telegram.org
+api.anthropic.com
 api.openai.com
 api.t.me
+api.telegram.com
 api.telegram.org
 api1.telegram.org
 api2.telegram.org
@@ -85,6 +87,7 @@ artstation.com
 asfiovnxocqpcry.com.cn
 askfacebook.net
 askfacebook.org
+assets-proxy.anthropic.com
 assets.telegram.org
 atdmt2.com
 athena.telegram.org
@@ -96,6 +99,7 @@ aurora.telegram.org
 auth-cdn.oaistatic.com
 auth.openai.com
 auth.telegram.org
+auth.windsurf.com
 aws-border.cn
 aws-icp-domain-manager.cn
 aws-iot-hackathon.com
@@ -334,6 +338,7 @@ donate.telegram.org
 dosvid.tk
 dotfacebook.com
 dotfacebook.net
+downloads.claude.ai
 draftjs.org
 dragons.nintendo.net
 drpool.io
@@ -343,6 +348,7 @@ dvprogram.state.gov
 eaaccounts.akamaized.net
 easysimplesolution.net
 echo-dev.livekit.cloud
+edisoninvestor.telegram.com
 edx.org
 elasticbeanstalk.com
 elsevier.com
@@ -353,6 +359,7 @@ encryptedsni.com
 enterprise.telegram.org
 eshop.nintendo.net
 eu.openrouter.ai
+eu.telegram.com
 every1dns.net
 expresswifi.com
 ezgif.com
@@ -732,6 +739,7 @@ gameroom.com
 gather.livekit.cloud
 gecko-sg.byteoversea.com
 geekbench.com
+getstarted.tiktok.com
 gfacecbook.com
 gitlab.com
 gizmochina.com
@@ -922,6 +930,7 @@ mail.telegram.org
 makeitopen.com
 manager.telegram.org
 manjaro.org
+marketplace.windsurf.com
 markzuckerberg.com
 maximoff.su
 mcp-app-connector-692de805e3ec8191834719067174-f70eb4969c98f266.web-sandbox.oaiusercontent.com
@@ -962,6 +971,7 @@ nbabot.net
 netbird.io
 news.telegram.org
 newsfeed.com
+newsletter.telegram.com
 nextcloud.com
 nextdirect.com
 nextstop.com
@@ -1099,6 +1109,7 @@ redkix.com
 redux.js.org
 report.telegram.org
 resizing.flixster.com
+resources.anthropic.com
 rightmove-co-uk.web-sandbox.oaiusercontent.com
 rockblack.su
 rocksdb.com
@@ -1154,6 +1165,9 @@ security.telegram.org
 sentry.hetzner.company
 seriesgraph.com
 servd-anthropic-website.b-cdn.net
+server.enterprise.windsurf.com
+server.self-serve.windsurf.com
+server.windsurf.com
 sg-link.byteoversea.com
 sgali-mcs.byteoversea.com
 shara-mail.com
@@ -1168,11 +1182,14 @@ snikket.org
 sonyentertainmentnetwork.com
 sora.com
 spankbang.com
+specialoffer.telegram.com
 sportsfacebook.com
 sportstream.com
 springhealth-hh48msjr.livekit.cloud
 srv.nintendo.net
 ssh.telegram.org
+staging-real-2.windsurf.com
+staging-test.windsurf.com
 staging.telegram.org
 starling-oversea.byteoversea.com
 starling-sg.byteoversea.com
@@ -1332,6 +1349,7 @@ tx.me
 ubuntu-touch.io
 updates.telegram.org
 uptime.telegram.org
+url8792.mail.anthropic.com
 us.openrouter.ai
 use.typekit.net
 userbenchmark.com
@@ -1386,7 +1404,10 @@ worldhack.com
 ws.chatgpt.com
 wwnd.space
 www-facebook.com
+www.anthropic.com
 www.livekit.cloud
+www.telegram.com
+www.tiktok.com
 wwwfacebok.com
 wwwfacebook.com
 wwwinstagram.com

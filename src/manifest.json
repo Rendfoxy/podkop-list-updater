@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-12T04:34:19.321882+00:00",
+  "generated_at": "2026-09-12T10:46:40.433241+00:00",
   "outputs": [
     {
       "name": "podkop-russia-domains",
@@ -40,11 +40,11 @@
     {
       "name": "podkop-foreign-domains",
       "kind": "domain",
-      "domain_count": 1408,
+      "domain_count": 1429,
       "remote_count": 1116,
       "local_count": 255,
       "resolved_count": 0,
-      "discovered_count": 123,
+      "discovered_count": 144,
       "remote_sources": [
         "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Categories/hodca.lst",
         "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Services/cloudflare.lst",
@@ -97,16 +97,8 @@
             "tiktok.com",
             "windsurf.com"
           ],
-          "added_count": 123,
-          "warnings": [
-            "discovery skipped for tiktok.com: Failed to fetch https://urlscan.io/api/v1/search/?q=page.apexDomain:tiktok.com&size=100: The read operation timed out",
-            "discovery skipped for anthropic.com: Failed to fetch https://urlscan.io/api/v1/search/?q=page.apexDomain:anthropic.com&size=100: The read operation timed out",
-            "discovery skipped for telegram.com: Failed to fetch https://urlscan.io/api/v1/search/?q=page.apexDomain:telegram.com&size=100: The read operation timed out",
-            "discovery skipped for t.me: Failed to fetch https://urlscan.io/api/v1/search/?q=page.apexDomain:t.me&size=100: The read operation timed out",
-            "discovery skipped for claude.ai: Failed to fetch https://urlscan.io/api/v1/search/?q=page.apexDomain:claude.ai&size=100: The read operation timed out",
-            "discovery skipped for telegram.me: Failed to fetch https://urlscan.io/api/v1/search/?q=page.apexDomain:telegram.me&size=100: The read operation timed out",
-            "discovery skipped for windsurf.com: Failed to fetch https://urlscan.io/api/v1/search/?q=page.apexDomain:windsurf.com&size=100: The read operation timed out"
-          ]
+          "added_count": 144,
+          "warnings": []
         },
         {
           "provider": "crtsh",
@@ -123,10 +115,10 @@
     {
       "name": "podkop-foreign-subnets",
       "kind": "subnet",
-      "domain_count": 10551,
-      "remote_count": 9974,
+      "domain_count": 10613,
+      "remote_count": 9975,
       "local_count": 436,
-      "resolved_count": 165,
+      "resolved_count": 231,
       "discovered_count": 0,
       "remote_sources": [
         "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Subnets/IPv4/cloudfront.lst",
