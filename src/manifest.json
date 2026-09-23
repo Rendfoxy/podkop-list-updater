@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-22T21:18:51.748768+00:00",
+  "generated_at": "2026-09-23T04:45:01.968995+00:00",
   "outputs": [
     {
       "name": "podkop-russia-domains",
@@ -98,7 +98,9 @@
             "windsurf.com"
           ],
           "added_count": 143,
-          "warnings": []
+          "warnings": [
+            "discovery skipped for t.me: Failed to fetch https://urlscan.io/api/v1/search/?q=page.apexDomain:t.me&size=100: The read operation timed out"
+          ]
         },
         {
           "provider": "crtsh",
@@ -113,10 +115,10 @@
     {
       "name": "podkop-foreign-subnets",
       "kind": "subnet",
-      "domain_count": 10594,
-      "remote_count": 9983,
+      "domain_count": 10626,
+      "remote_count": 9984,
       "local_count": 436,
-      "resolved_count": 204,
+      "resolved_count": 235,
       "discovered_count": 0,
       "remote_sources": [
         "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Subnets/IPv4/cloudfront.lst",
