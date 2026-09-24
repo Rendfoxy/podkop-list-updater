@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-24T17:11:09.240811+00:00",
+  "generated_at": "2026-09-24T21:30:51.730086+00:00",
   "outputs": [
     {
       "name": "podkop-russia-domains",
@@ -40,11 +40,11 @@
     {
       "name": "podkop-foreign-domains",
       "kind": "domain",
-      "domain_count": 1424,
+      "domain_count": 1433,
       "remote_count": 1118,
       "local_count": 255,
       "resolved_count": 0,
-      "discovered_count": 137,
+      "discovered_count": 146,
       "remote_sources": [
         "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Categories/hodca.lst",
         "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Services/cloudflare.lst",
@@ -97,13 +97,8 @@
             "tiktok.com",
             "windsurf.com"
           ],
-          "added_count": 137,
-          "warnings": [
-            "discovery skipped for qwen.ai: Failed to fetch https://urlscan.io/api/v1/search/?q=page.apexDomain:qwen.ai&size=100: The read operation timed out",
-            "discovery skipped for chatgpt.com: Failed to fetch https://urlscan.io/api/v1/search/?q=page.apexDomain:chatgpt.com&size=100: The read operation timed out",
-            "discovery skipped for claude.ai: Failed to fetch https://urlscan.io/api/v1/search/?q=page.apexDomain:claude.ai&size=100: The read operation timed out",
-            "discovery skipped for openai.com: Failed to fetch https://urlscan.io/api/v1/search/?q=page.apexDomain:openai.com&size=100: The read operation timed out"
-          ]
+          "added_count": 146,
+          "warnings": []
         },
         {
           "provider": "crtsh",
@@ -112,7 +107,7 @@
           ],
           "added_count": 0,
           "warnings": [
-            "discovery skipped for forum.openai.com: Failed to fetch https://crt.sh/?q=%25.forum.openai.com&output=json: The read operation timed out"
+            "discovery skipped for forum.openai.com: Failed to fetch https://crt.sh/?q=%25.forum.openai.com&output=json: HTTP Error 502: Bad Gateway"
           ]
         }
       ]
@@ -120,10 +115,10 @@
     {
       "name": "podkop-foreign-subnets",
       "kind": "subnet",
-      "domain_count": 10620,
-      "remote_count": 9978,
+      "domain_count": 10597,
+      "remote_count": 9980,
       "local_count": 436,
-      "resolved_count": 234,
+      "resolved_count": 210,
       "discovered_count": 0,
       "remote_sources": [
         "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Subnets/IPv4/cloudfront.lst",
