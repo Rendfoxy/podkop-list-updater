@@ -2,6 +2,7 @@
 3os.org
 51g16et00g2.us.sip.livekit.cloud
 5t4n6j0wnrl.sip.livekit.cloud
+a-api.anthropic.com
 a2z.org.cn
 aboutfacebook.com
 abtest-sg-tiktok.byteoversea.com
@@ -70,24 +71,22 @@ api-docs.telegram.org
 api.anthropic.com
 api.openai.com
 api.t.me
+api.telegram.com
 api.telegram.org
 api1.telegram.org
 api2.telegram.org
 api3.telegram.org
-aplus.qwen.ai
 apollo.telegram.org
 archlinux.org
 ares.telegram.org
 argotunnel.com
 armbian.com
 armbian.de
-art-design.forum.openai.com
 artixlinux.org
 artstation.com
 asfiovnxocqpcry.com.cn
 askfacebook.net
 askfacebook.org
-assets.claude.ai
 assets.telegram.org
 atdmt2.com
 athena.telegram.org
@@ -206,7 +205,6 @@ channels.telegram.org
 chat.com
 chat.openai.com
 chat.openai.com.cdn.cloudflare.net
-chat.qwen.ai
 chatgpt.com
 chatgpt.livekit.cloud
 chatgpt.site
@@ -283,7 +281,6 @@ cloudns.net
 clubtv.pro
 cms-twdigitalassets.com
 cochrane.org
-coder.qwen.ai
 coderabbit.ai
 codex.openai.com
 comments.app
@@ -316,7 +313,6 @@ dc5.telegram.org
 dcl.dfra1a.production.livekit.cloud
 de.telegram.org
 demo.telegram.org
-democratic-inputs.forum.openai.com
 desec.io
 desktop.telegram.org
 dev.t.me
@@ -339,7 +335,6 @@ donate.telegram.org
 dosvid.tk
 dotfacebook.com
 dotfacebook.net
-downloads.claude.ai
 draftjs.org
 dragons.nintendo.net
 drpool.io
@@ -349,19 +344,19 @@ dvprogram.state.gov
 eaaccounts.akamaized.net
 easysimplesolution.net
 echo-dev.livekit.cloud
+edisoninvestor.telegram.com
 edx.org
 elasticbeanstalk.com
 elsevier.com
 elsevier.com.cdn.cloudflare.net
 email.telegram.org
-emerging-talent.forum.openai.com
 emotech-38dj94si.livekit.cloud
 encryptedsni.com
 enterprise.telegram.org
 eshop.nintendo.net
 eu.openrouter.ai
+eu.telegram.com
 every1dns.net
-expert-ai-trainers.forum.openai.com
 expresswifi.com
 ezgif.com
 f8.com
@@ -732,7 +727,6 @@ fscebook.com
 ftp.telegram.org
 fundraisingwithfacebook.com
 funnyfacebook.org
-future-scholars.forum.openai.com
 futureofbusinesssurvey.org
 fwupd.org
 gacebook.com
@@ -746,7 +740,6 @@ gitlab.com
 gizmochina.com
 gnome.org
 gopro.com
-gov.chatgpt.com
 grafana.net
 graph-fallback.instagram.com
 graph.instagram.com
@@ -789,7 +782,6 @@ httpwwwfacebook.com
 htx.com
 htznr.li
 huggingface.co
-human-data.forum.openai.com
 i.org
 i18n.telegram.org
 ibytedtos.com
@@ -935,7 +927,6 @@ manager.telegram.org
 manjaro.org
 marketplace.windsurf.com
 markzuckerberg.com
-math.forum.openai.com
 maximoff.su
 mcp-app-connector-692de805e3ec8191834719067174-f70eb4969c98f266.web-sandbox.oaiusercontent.com
 mcrouter.net
@@ -975,6 +966,7 @@ nbabot.net
 netbird.io
 news.telegram.org
 newsfeed.com
+newsletter.telegram.com
 nextcloud.com
 nextdirect.com
 nextstop.com
@@ -1028,8 +1020,6 @@ oninstagram.com
 online-deals.net
 online-instagram.com
 onlineinstagram.com
-openai-projects.forum.openai.com
-openai-team.forum.openai.com
 openai.com
 openai.com.cdn.cloudflare.net
 openai.qualtrics.com
@@ -1079,12 +1069,10 @@ playstationcloud.com
 pluto.telegram.org
 pop.telegram.org
 porkbun.com
-portal.qwen.ai
 poseidon.telegram.org
 powersunitedvr.com
 pplx-res.cloudinary.com
 premium.telegram.org
-privacy-pass-issuer.api.chatgpt.com
 private.telegram.org
 production-openaicom-storage.azureedge.net
 protocol.telegram.org
@@ -1167,7 +1155,6 @@ sdmntprwestus3.oaiusercontent.com
 second-ns.com
 second-ns.de
 security.telegram.org
-seller.tiktok.com
 sentry.hetzner.company
 seriesgraph.com
 servd-anthropic-website.b-cdn.net
@@ -1188,6 +1175,7 @@ snikket.org
 sonyentertainmentnetwork.com
 sora.com
 spankbang.com
+specialoffer.telegram.com
 sportsfacebook.com
 sportstream.com
 springhealth-hh48msjr.livekit.cloud
@@ -1209,7 +1197,6 @@ strapi.io
 strava.com
 stripe.com
 stripecdn.com
-student-forum.forum.openai.com
 studyinfinland.fi
 studystream.livekit.cloud
 succurity.com
@@ -1354,7 +1341,6 @@ twttr.net
 twvid.com
 tx.me
 ubuntu-touch.io
-ucb-dssj.forum.openai.com
 updates.telegram.org
 uptime.telegram.org
 url8792.mail.anthropic.com
@@ -1415,6 +1401,7 @@ www-cdn.anthropic.com
 www-facebook.com
 www.anthropic.com
 www.livekit.cloud
+www.telegram.com
 www.tiktok.com
 wwwfacebok.com
 wwwfacebook.com
