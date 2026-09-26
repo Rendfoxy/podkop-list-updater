@@ -5,8 +5,6 @@
 a-api.anthropic.com
 a2z.org.cn
 aboutfacebook.com
-abtest-sg-tiktok.byteoversea.com
-abtest-va-tiktok.byteoversea.com
 abuse.telegram.org
 accessfacebookfromschool.com
 acclaimedvideogames.com
@@ -130,7 +128,6 @@ awsstatic.com
 awsthinkbox.com
 awstrack.me
 awswaf.com
-bds-sg.byteoversea.com
 beamng.com
 beatmods.com
 beatsaver.com
@@ -688,8 +685,6 @@ ficeboock.com
 figshare.com
 files.oaiusercontent.com
 files.telegram.org
-files07.oaiusercontent.com
-files09.oaiusercontent.com
 filmix.my
 first-ns.de
 flathub.org
@@ -730,7 +725,6 @@ friendfeed-media.com
 friendfeed.com
 friendfeedmedia.com
 friendlyelec.com
-frontier.byteoversea.com
 fsacebok.com
 fscebook.com
 ftp.telegram.org
@@ -743,7 +737,6 @@ gacebook.com
 galaxy.ansible.com
 gameroom.com
 gather.livekit.cloud
-gecko-sg.byteoversea.com
 geekbench.com
 gfacecbook.com
 gitlab.com
@@ -909,7 +902,6 @@ l10n.telegram.org
 lang.telegram.org
 learn.chatgpt.com
 lenso.ai
-lf16-tcc-tos-i18n.byteoversea.com
 libria.fun
 lifeforge.dev
 linkedin.com
@@ -925,7 +917,6 @@ llhost.eu
 lnstagram-help.com
 local.telegram.org
 localsend.org
-log.byteoversea.com
 login-account.net
 login.telegram.org
 lowendtalk.com
@@ -941,7 +932,6 @@ marketplace.windsurf.com
 markzuckerberg.com
 math.forum.openai.com
 maximoff.su
-mcp-app-connector-692de805e3ec8191834719067174-f70eb4969c98f266.web-sandbox.oaiusercontent.com
 mcrouter.net
 mcrouter.org
 mdpi.com
@@ -958,12 +948,10 @@ meta.com
 metrics.telegram.org
 midentsolutions.com
 mirror.chaotic.cx
-mmm.byteoversea.com
 mobile.telegram.org
 mobilefacebook.com
 mock-whatsapp-api.staging.livekit.cloud
 model-assets.openrouter.ai
-mon-va.byteoversea.com
 moneywithfacebook.com
 mongodb.com
 monitor.telegram.org
@@ -984,7 +972,6 @@ nextcloud.com
 nextdirect.com
 nextstop.com
 nexusmods.com
-ngcc.byteoversea.com
 nginxconfig.io
 nicegram.app
 nintendo.com
@@ -1065,7 +1052,6 @@ parse.com
 passport.telegram.org
 pastebin.com
 patterns.dev
-pc-mon-va.byteoversea.com
 pdfcoffee.com
 peoplemap-l8iwzq7v.livekit.cloud
 periscope.tv
@@ -1120,7 +1106,6 @@ redkix.com
 redux.js.org
 report.telegram.org
 resizing.flixster.com
-rightmove-co-uk.web-sandbox.oaiusercontent.com
 rockblack.su
 rocksdb.com
 rocksdb.net
@@ -1136,7 +1121,6 @@ ru.telegram.org
 rulet.tv
 russianfood.com
 rutracker.org
-s16.byteoversea.com
 sagemaker.com.cn
 sandbox.telegram.org
 sb-cd.com
@@ -1145,30 +1129,6 @@ scea.com
 schema.telegram.org
 scira.ai
 scribd.com
-sdfp-sg.byteoversea.com
-sdfp-va.byteoversea.com
-sdmntpraustraliaeast.oaiusercontent.com
-sdmntprbrazilsouth.oaiusercontent.com
-sdmntprcentralindia.oaiusercontent.com
-sdmntprcentralus.oaiusercontent.com
-sdmntprdenmarkeast.oaiusercontent.com
-sdmntprindiasocentral.oaiusercontent.com
-sdmntpritalynorth.oaiusercontent.com
-sdmntprjapaneast.oaiusercontent.com
-sdmntprkoreacentral.oaiusercontent.com
-sdmntprnorthcentralus.oaiusercontent.com
-sdmntprnortheu.oaiusercontent.com
-sdmntprnortheurope.oaiusercontent.com
-sdmntprnznorth.oaiusercontent.com
-sdmntprpolandcentral.oaiusercontent.com
-sdmntprseasia.oaiusercontent.com
-sdmntprsouthcentralus.oaiusercontent.com
-sdmntprsoutheastus3.oaiusercontent.com
-sdmntprukwest.oaiusercontent.com
-sdmntprwestcentralus.oaiusercontent.com
-sdmntprwestus.oaiusercontent.com
-sdmntprwestus2.oaiusercontent.com
-sdmntprwestus3.oaiusercontent.com
 second-ns.com
 second-ns.de
 security.telegram.org
@@ -1178,8 +1138,6 @@ servd-anthropic-website.b-cdn.net
 server.enterprise.windsurf.com
 server.self-serve.windsurf.com
 server.windsurf.com
-sg-link.byteoversea.com
-sgali-mcs.byteoversea.com
 shara-mail.com
 shop.telegram.org
 shopfacebook.com
@@ -1201,8 +1159,6 @@ ssh.telegram.org
 staging-real-2.windsurf.com
 staging-test.windsurf.com
 staging.telegram.org
-starling-oversea.byteoversea.com
-starling-sg.byteoversea.com
 static.telegram.org
 static.wixstatic.com
 stats.telegram.org
@@ -1314,13 +1270,10 @@ tiktokv.us
 tiktokw.eu
 tiktokw.us
 tiny.cloud
-tnc16-useast1a.byteoversea.com
 ton.org
 toncenter.com
 toplayerserver.com
 torg.org
-tos-d-alisg16-up.byteoversea.com
-tos-my16-up.byteoversea.com
 transistor.fm
 translate.telegram.org
 translations.telegram.org
@@ -1331,7 +1284,6 @@ trycloudflare.com
 ttcdn-us.com
 ttlivecdn.com
 ttoverseaus.net
-ttwid-sg.byteoversea.com
 ttwstatic.com
 tunemymusic.com
 turn.livekit.cloud
@@ -1368,8 +1320,6 @@ use.typekit.net
 userbenchmark.com
 usercontent.dev
 utils.docs.rw
-v16-ad.byteoversea.com
-vcs-sg.byteoversea.com
 vecpea.com
 venus.telegram.org
 verify.telegram.org
@@ -1390,7 +1340,6 @@ wbagora.com
 wbgames.com
 wbinsights.com
 web-instagram.net
-web-sandbox.oaiusercontent.com
 web.t.me
 web.telegram.org
 webk.telegram.org
@@ -1410,7 +1359,6 @@ whyfacebook.com
 windows.telegram.org
 windowsupdate.com
 windsurf.com
-wj.byteoversea.com
 workers.dev
 workplace.com
 workplaceusecases.com

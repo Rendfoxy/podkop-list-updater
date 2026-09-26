@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-26T11:24:50.047409+00:00",
+  "generated_at": "2026-09-26T16:23:28.443643+00:00",
   "outputs": [
     {
       "name": "podkop-russia-domains",
@@ -40,11 +40,11 @@
     {
       "name": "podkop-foreign-domains",
       "kind": "domain",
-      "domain_count": 1443,
+      "domain_count": 1391,
       "remote_count": 1118,
       "local_count": 255,
       "resolved_count": 0,
-      "discovered_count": 156,
+      "discovered_count": 104,
       "remote_sources": [
         "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Categories/hodca.lst",
         "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Services/cloudflare.lst",
@@ -97,8 +97,12 @@
             "tiktok.com",
             "windsurf.com"
           ],
-          "added_count": 145,
-          "warnings": []
+          "added_count": 93,
+          "warnings": [
+            "discovery skipped for oaiusercontent.com: Failed to fetch https://urlscan.io/api/v1/search/?q=page.apexDomain:oaiusercontent.com&size=100: The read operation timed out",
+            "discovery skipped for byteoversea.com: Failed to fetch https://urlscan.io/api/v1/search/?q=page.apexDomain:byteoversea.com&size=100: The read operation timed out",
+            "discovery skipped for telegram.me: Failed to fetch https://urlscan.io/api/v1/search/?q=page.apexDomain:telegram.me&size=100: The read operation timed out"
+          ]
         },
         {
           "provider": "crtsh",
@@ -113,10 +117,10 @@
     {
       "name": "podkop-foreign-subnets",
       "kind": "subnet",
-      "domain_count": 10583,
+      "domain_count": 10525,
       "remote_count": 9981,
       "local_count": 436,
-      "resolved_count": 195,
+      "resolved_count": 137,
       "discovered_count": 0,
       "remote_sources": [
         "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Subnets/IPv4/cloudfront.lst",
