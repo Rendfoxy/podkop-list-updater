@@ -5,6 +5,8 @@
 a-api.anthropic.com
 a2z.org.cn
 aboutfacebook.com
+abtest-sg-tiktok.byteoversea.com
+abtest-va-tiktok.byteoversea.com
 abuse.telegram.org
 accessfacebookfromschool.com
 acclaimedvideogames.com
@@ -81,7 +83,6 @@ ares.telegram.org
 argotunnel.com
 armbian.com
 armbian.de
-art-design.forum.openai.com
 artixlinux.org
 artstation.com
 asfiovnxocqpcry.com.cn
@@ -128,6 +129,7 @@ awsstatic.com
 awsthinkbox.com
 awstrack.me
 awswaf.com
+bds-sg.byteoversea.com
 beamng.com
 beatmods.com
 beatsaver.com
@@ -315,7 +317,6 @@ dc5.telegram.org
 dcl.dfra1a.production.livekit.cloud
 de.telegram.org
 demo.telegram.org
-democratic-inputs.forum.openai.com
 desec.io
 desktop.telegram.org
 dev.t.me
@@ -354,7 +355,6 @@ elasticbeanstalk.com
 elsevier.com
 elsevier.com.cdn.cloudflare.net
 email.telegram.org
-emerging-talent.forum.openai.com
 emotech-38dj94si.livekit.cloud
 encryptedsni.com
 enterprise.telegram.org
@@ -362,7 +362,6 @@ eshop.nintendo.net
 eu.openrouter.ai
 eu.telegram.com
 every1dns.net
-expert-ai-trainers.forum.openai.com
 expresswifi.com
 ezgif.com
 f8.com
@@ -685,6 +684,8 @@ ficeboock.com
 figshare.com
 files.oaiusercontent.com
 files.telegram.org
+files07.oaiusercontent.com
+files09.oaiusercontent.com
 filmix.my
 first-ns.de
 flathub.org
@@ -725,25 +726,25 @@ friendfeed-media.com
 friendfeed.com
 friendfeedmedia.com
 friendlyelec.com
+frontier.byteoversea.com
 fsacebok.com
 fscebook.com
 ftp.telegram.org
 fundraisingwithfacebook.com
 funnyfacebook.org
-future-scholars.forum.openai.com
 futureofbusinesssurvey.org
 fwupd.org
 gacebook.com
 galaxy.ansible.com
 gameroom.com
 gather.livekit.cloud
+gecko-sg.byteoversea.com
 geekbench.com
 gfacecbook.com
 gitlab.com
 gizmochina.com
 gnome.org
 gopro.com
-gov.chatgpt.com
 grafana.net
 graph-fallback.instagram.com
 graph.instagram.com
@@ -786,7 +787,6 @@ httpwwwfacebook.com
 htx.com
 htznr.li
 huggingface.co
-human-data.forum.openai.com
 i.org
 i18n.telegram.org
 ibytedtos.com
@@ -900,8 +900,8 @@ klik.me
 kyoceradocumentsolutions.com
 l10n.telegram.org
 lang.telegram.org
-learn.chatgpt.com
 lenso.ai
+lf16-tcc-tos-i18n.byteoversea.com
 libria.fun
 lifeforge.dev
 linkedin.com
@@ -917,6 +917,7 @@ llhost.eu
 lnstagram-help.com
 local.telegram.org
 localsend.org
+log.byteoversea.com
 login-account.net
 login.telegram.org
 lowendtalk.com
@@ -930,8 +931,8 @@ manager.telegram.org
 manjaro.org
 marketplace.windsurf.com
 markzuckerberg.com
-math.forum.openai.com
 maximoff.su
+mcp-app-connector-692de805e3ec8191834719067174-f70eb4969c98f266.web-sandbox.oaiusercontent.com
 mcrouter.net
 mcrouter.org
 mdpi.com
@@ -948,10 +949,12 @@ meta.com
 metrics.telegram.org
 midentsolutions.com
 mirror.chaotic.cx
+mmm.byteoversea.com
 mobile.telegram.org
 mobilefacebook.com
 mock-whatsapp-api.staging.livekit.cloud
 model-assets.openrouter.ai
+mon-va.byteoversea.com
 moneywithfacebook.com
 mongodb.com
 monitor.telegram.org
@@ -972,6 +975,7 @@ nextcloud.com
 nextdirect.com
 nextstop.com
 nexusmods.com
+ngcc.byteoversea.com
 nginxconfig.io
 nicegram.app
 nintendo.com
@@ -1020,8 +1024,6 @@ oninstagram.com
 online-deals.net
 online-instagram.com
 onlineinstagram.com
-openai-projects.forum.openai.com
-openai-team.forum.openai.com
 openai.com
 openai.com.cdn.cloudflare.net
 openai.qualtrics.com
@@ -1052,6 +1054,7 @@ parse.com
 passport.telegram.org
 pastebin.com
 patterns.dev
+pc-mon-va.byteoversea.com
 pdfcoffee.com
 peoplemap-l8iwzq7v.livekit.cloud
 periscope.tv
@@ -1075,7 +1078,6 @@ poseidon.telegram.org
 powersunitedvr.com
 pplx-res.cloudinary.com
 premium.telegram.org
-privacy-pass-issuer.api.chatgpt.com
 private.telegram.org
 production-openaicom-storage.azureedge.net
 protocol.telegram.org
@@ -1106,6 +1108,7 @@ redkix.com
 redux.js.org
 report.telegram.org
 resizing.flixster.com
+rightmove-co-uk.web-sandbox.oaiusercontent.com
 rockblack.su
 rocksdb.com
 rocksdb.net
@@ -1121,6 +1124,7 @@ ru.telegram.org
 rulet.tv
 russianfood.com
 rutracker.org
+s16.byteoversea.com
 sagemaker.com.cn
 sandbox.telegram.org
 sb-cd.com
@@ -1129,6 +1133,30 @@ scea.com
 schema.telegram.org
 scira.ai
 scribd.com
+sdfp-sg.byteoversea.com
+sdfp-va.byteoversea.com
+sdmntpraustraliaeast.oaiusercontent.com
+sdmntprbrazilsouth.oaiusercontent.com
+sdmntprcentralindia.oaiusercontent.com
+sdmntprcentralus.oaiusercontent.com
+sdmntprdenmarkeast.oaiusercontent.com
+sdmntprindiasocentral.oaiusercontent.com
+sdmntpritalynorth.oaiusercontent.com
+sdmntprjapaneast.oaiusercontent.com
+sdmntprkoreacentral.oaiusercontent.com
+sdmntprnorthcentralus.oaiusercontent.com
+sdmntprnortheu.oaiusercontent.com
+sdmntprnortheurope.oaiusercontent.com
+sdmntprnznorth.oaiusercontent.com
+sdmntprpolandcentral.oaiusercontent.com
+sdmntprseasia.oaiusercontent.com
+sdmntprsouthcentralus.oaiusercontent.com
+sdmntprsoutheastus3.oaiusercontent.com
+sdmntprukwest.oaiusercontent.com
+sdmntprwestcentralus.oaiusercontent.com
+sdmntprwestus.oaiusercontent.com
+sdmntprwestus2.oaiusercontent.com
+sdmntprwestus3.oaiusercontent.com
 second-ns.com
 second-ns.de
 security.telegram.org
@@ -1138,6 +1166,8 @@ servd-anthropic-website.b-cdn.net
 server.enterprise.windsurf.com
 server.self-serve.windsurf.com
 server.windsurf.com
+sg-link.byteoversea.com
+sgali-mcs.byteoversea.com
 shara-mail.com
 shop.telegram.org
 shopfacebook.com
@@ -1159,6 +1189,8 @@ ssh.telegram.org
 staging-real-2.windsurf.com
 staging-test.windsurf.com
 staging.telegram.org
+starling-oversea.byteoversea.com
+starling-sg.byteoversea.com
 static.telegram.org
 static.wixstatic.com
 stats.telegram.org
@@ -1170,7 +1202,6 @@ strapi.io
 strava.com
 stripe.com
 stripecdn.com
-student-forum.forum.openai.com
 studyinfinland.fi
 studystream.livekit.cloud
 succurity.com
@@ -1270,10 +1301,13 @@ tiktokv.us
 tiktokw.eu
 tiktokw.us
 tiny.cloud
+tnc16-useast1a.byteoversea.com
 ton.org
 toncenter.com
 toplayerserver.com
 torg.org
+tos-d-alisg16-up.byteoversea.com
+tos-my16-up.byteoversea.com
 transistor.fm
 translate.telegram.org
 translations.telegram.org
@@ -1284,6 +1318,7 @@ trycloudflare.com
 ttcdn-us.com
 ttlivecdn.com
 ttoverseaus.net
+ttwid-sg.byteoversea.com
 ttwstatic.com
 tunemymusic.com
 turn.livekit.cloud
@@ -1311,7 +1346,6 @@ twttr.net
 twvid.com
 tx.me
 ubuntu-touch.io
-ucb-dssj.forum.openai.com
 updates.telegram.org
 uptime.telegram.org
 url8792.mail.anthropic.com
@@ -1320,6 +1354,8 @@ use.typekit.net
 userbenchmark.com
 usercontent.dev
 utils.docs.rw
+v16-ad.byteoversea.com
+vcs-sg.byteoversea.com
 vecpea.com
 venus.telegram.org
 verify.telegram.org
@@ -1340,6 +1376,7 @@ wbagora.com
 wbgames.com
 wbinsights.com
 web-instagram.net
+web-sandbox.oaiusercontent.com
 web.t.me
 web.telegram.org
 webk.telegram.org
@@ -1359,6 +1396,7 @@ whyfacebook.com
 windows.telegram.org
 windowsupdate.com
 windsurf.com
+wj.byteoversea.com
 workers.dev
 workplace.com
 workplaceusecases.com
@@ -1369,6 +1407,7 @@ www-facebook.com
 www.anthropic.com
 www.livekit.cloud
 www.telegram.com
+www.telegram.me
 www.tiktok.com
 wwwfacebok.com
 wwwfacebook.com
