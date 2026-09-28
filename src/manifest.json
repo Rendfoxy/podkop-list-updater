@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-28T05:23:44.994389+00:00",
+  "generated_at": "2026-09-28T13:54:55.851114+00:00",
   "outputs": [
     {
       "name": "podkop-russia-domains",
@@ -40,11 +40,11 @@
     {
       "name": "podkop-foreign-domains",
       "kind": "domain",
-      "domain_count": 1444,
+      "domain_count": 1327,
       "remote_count": 1118,
       "local_count": 255,
       "resolved_count": 0,
-      "discovered_count": 157,
+      "discovered_count": 40,
       "remote_sources": [
         "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Categories/hodca.lst",
         "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Services/cloudflare.lst",
@@ -97,8 +97,17 @@
             "tiktok.com",
             "windsurf.com"
           ],
-          "added_count": 146,
-          "warnings": []
+          "added_count": 29,
+          "warnings": [
+            "discovery skipped for anthropic.com: Failed to fetch https://urlscan.io/api/v1/search/?q=page.apexDomain:anthropic.com&size=100: The read operation timed out",
+            "discovery skipped for qwen.ai: Failed to fetch https://urlscan.io/api/v1/search/?q=page.apexDomain:qwen.ai&size=100: The read operation timed out",
+            "discovery skipped for telegram.org: Failed to fetch https://urlscan.io/api/v1/search/?q=page.apexDomain:telegram.org&size=100: The read operation timed out",
+            "discovery skipped for oaiusercontent.com: Failed to fetch https://urlscan.io/api/v1/search/?q=page.apexDomain:oaiusercontent.com&size=100: The read operation timed out",
+            "discovery skipped for t.me: Failed to fetch https://urlscan.io/api/v1/search/?q=page.apexDomain:t.me&size=100: The read operation timed out",
+            "discovery skipped for byteoversea.com: Failed to fetch https://urlscan.io/api/v1/search/?q=page.apexDomain:byteoversea.com&size=100: The read operation timed out",
+            "discovery skipped for livekit.cloud: Failed to fetch https://urlscan.io/api/v1/search/?q=page.apexDomain:livekit.cloud&size=100: The read operation timed out",
+            "discovery skipped for tiktok.com: Failed to fetch https://urlscan.io/api/v1/search/?q=page.apexDomain:tiktok.com&size=100: The read operation timed out"
+          ]
         },
         {
           "provider": "crtsh",
@@ -113,10 +122,10 @@
     {
       "name": "podkop-foreign-subnets",
       "kind": "subnet",
-      "domain_count": 10635,
-      "remote_count": 9982,
+      "domain_count": 10491,
+      "remote_count": 9984,
       "local_count": 436,
-      "resolved_count": 246,
+      "resolved_count": 100,
       "discovered_count": 0,
       "remote_sources": [
         "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Subnets/IPv4/cloudfront.lst",
