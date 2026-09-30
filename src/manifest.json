@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-29T22:14:58.527328+00:00",
+  "generated_at": "2026-09-30T05:32:33.243340+00:00",
   "outputs": [
     {
       "name": "podkop-russia-domains",
@@ -40,11 +40,11 @@
     {
       "name": "podkop-foreign-domains",
       "kind": "domain",
-      "domain_count": 1438,
+      "domain_count": 1381,
       "remote_count": 1120,
       "local_count": 255,
       "resolved_count": 0,
-      "discovered_count": 149,
+      "discovered_count": 92,
       "remote_sources": [
         "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Categories/hodca.lst",
         "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Services/cloudflare.lst",
@@ -97,8 +97,12 @@
             "tiktok.com",
             "windsurf.com"
           ],
-          "added_count": 149,
-          "warnings": []
+          "added_count": 92,
+          "warnings": [
+            "discovery skipped for livekit.cloud: Failed to fetch https://urlscan.io/api/v1/search/?q=page.apexDomain:livekit.cloud&size=100: The read operation timed out",
+            "discovery skipped for tiktok.com: Failed to fetch https://urlscan.io/api/v1/search/?q=page.apexDomain:tiktok.com&size=100: The read operation timed out",
+            "discovery skipped for t.me: Failed to fetch https://urlscan.io/api/v1/search/?q=page.apexDomain:t.me&size=100: The read operation timed out"
+          ]
         },
         {
           "provider": "crtsh",
@@ -115,10 +119,10 @@
     {
       "name": "podkop-foreign-subnets",
       "kind": "subnet",
-      "domain_count": 10611,
+      "domain_count": 10617,
       "remote_count": 9987,
       "local_count": 436,
-      "resolved_count": 218,
+      "resolved_count": 224,
       "discovered_count": 0,
       "remote_sources": [
         "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Subnets/IPv4/cloudfront.lst",
