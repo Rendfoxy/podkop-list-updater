@@ -73,6 +73,7 @@ api-docs.telegram.org
 api.anthropic.com
 api.openai.com
 api.t.me
+api.telegram.com
 api.telegram.org
 api1.telegram.org
 api2.telegram.org
@@ -360,6 +361,7 @@ encryptedsni.com
 enterprise.telegram.org
 eshop.nintendo.net
 eu.openrouter.ai
+eu.telegram.com
 every1dns.net
 expresswifi.com
 ezgif.com
@@ -683,6 +685,8 @@ ficeboock.com
 figshare.com
 files.oaiusercontent.com
 files.telegram.org
+files07.oaiusercontent.com
+files09.oaiusercontent.com
 filmix.my
 first-ns.de
 flathub.org
@@ -737,6 +741,7 @@ gameroom.com
 gather.livekit.cloud
 gecko-sg.byteoversea.com
 geekbench.com
+getstarted.tiktok.com
 gfacecbook.com
 gitlab.com
 gizmochina.com
@@ -930,6 +935,7 @@ manjaro.org
 marketplace.windsurf.com
 markzuckerberg.com
 maximoff.su
+mcp-app-connector-692de805e3ec8191834719067174-f70eb4969c98f266.web-sandbox.oaiusercontent.com
 mcrouter.net
 mcrouter.org
 mdpi.com
@@ -969,6 +975,7 @@ nbabot.net
 netbird.io
 news.telegram.org
 newsfeed.com
+newsletter.telegram.com
 nextcloud.com
 nextdirect.com
 nextstop.com
@@ -1106,6 +1113,7 @@ redkix.com
 redux.js.org
 report.telegram.org
 resizing.flixster.com
+rightmove-co-uk.web-sandbox.oaiusercontent.com
 rockblack.su
 rocksdb.com
 rocksdb.net
@@ -1133,6 +1141,28 @@ scira.ai
 scribd.com
 sdfp-sg.byteoversea.com
 sdfp-va.byteoversea.com
+sdmntpraustraliaeast.oaiusercontent.com
+sdmntprbrazilsouth.oaiusercontent.com
+sdmntprcentralindia.oaiusercontent.com
+sdmntprcentralus.oaiusercontent.com
+sdmntprdenmarkeast.oaiusercontent.com
+sdmntprindiasocentral.oaiusercontent.com
+sdmntpritalynorth.oaiusercontent.com
+sdmntprjapaneast.oaiusercontent.com
+sdmntprkoreacentral.oaiusercontent.com
+sdmntprnorthcentralus.oaiusercontent.com
+sdmntprnortheu.oaiusercontent.com
+sdmntprnortheurope.oaiusercontent.com
+sdmntprnznorth.oaiusercontent.com
+sdmntprpolandcentral.oaiusercontent.com
+sdmntprseasia.oaiusercontent.com
+sdmntprsouthcentralus.oaiusercontent.com
+sdmntprsoutheastus3.oaiusercontent.com
+sdmntprukwest.oaiusercontent.com
+sdmntprwestcentralus.oaiusercontent.com
+sdmntprwestus.oaiusercontent.com
+sdmntprwestus2.oaiusercontent.com
+sdmntprwestus3.oaiusercontent.com
 second-ns.com
 second-ns.de
 security.telegram.org
@@ -1156,6 +1186,7 @@ snikket.org
 sonyentertainmentnetwork.com
 sora.com
 spankbang.com
+specialoffer.telegram.com
 sportsfacebook.com
 sportstream.com
 springhealth-hh48msjr.livekit.cloud
@@ -1351,6 +1382,7 @@ wbagora.com
 wbgames.com
 wbinsights.com
 web-instagram.net
+web-sandbox.oaiusercontent.com
 web.t.me
 web.telegram.org
 webk.telegram.org
@@ -1380,7 +1412,9 @@ www-cdn.anthropic.com
 www-facebook.com
 www.anthropic.com
 www.livekit.cloud
+www.telegram.com
 www.telegram.me
+www.tiktok.com
 wwwfacebok.com
 wwwfacebook.com
 wwwinstagram.com
