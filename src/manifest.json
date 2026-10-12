@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-11T21:57:53.088008+00:00",
+  "generated_at": "2026-10-12T05:58:03.471955+00:00",
   "outputs": [
     {
       "name": "podkop-russia-domains",
@@ -40,11 +40,11 @@
     {
       "name": "podkop-foreign-domains",
       "kind": "domain",
-      "domain_count": 1356,
+      "domain_count": 1343,
       "remote_count": 1119,
       "local_count": 255,
       "resolved_count": 0,
-      "discovered_count": 68,
+      "discovered_count": 55,
       "remote_sources": [
         "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Categories/hodca.lst",
         "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Services/cloudflare.lst",
@@ -97,7 +97,7 @@
             "tiktok.com",
             "windsurf.com"
           ],
-          "added_count": 57,
+          "added_count": 55,
           "warnings": []
         },
         {
@@ -105,18 +105,20 @@
           "roots": [
             "forum.openai.com"
           ],
-          "added_count": 11,
-          "warnings": []
+          "added_count": 0,
+          "warnings": [
+            "discovery skipped for forum.openai.com: Failed to fetch https://crt.sh/?q=%25.forum.openai.com&output=json: The read operation timed out"
+          ]
         }
       ]
     },
     {
       "name": "podkop-foreign-subnets",
       "kind": "subnet",
-      "domain_count": 10601,
-      "remote_count": 10055,
+      "domain_count": 10594,
+      "remote_count": 10054,
       "local_count": 436,
-      "resolved_count": 136,
+      "resolved_count": 128,
       "discovered_count": 0,
       "remote_sources": [
         "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Subnets/IPv4/cloudfront.lst",
