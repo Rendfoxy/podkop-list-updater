@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-17T20:36:25.730068+00:00",
+  "generated_at": "2026-10-18T04:33:44.715194+00:00",
   "outputs": [
     {
       "name": "podkop-russia-domains",
@@ -40,11 +40,11 @@
     {
       "name": "podkop-foreign-domains",
       "kind": "domain",
-      "domain_count": 1353,
+      "domain_count": 1342,
       "remote_count": 1120,
       "local_count": 255,
       "resolved_count": 0,
-      "discovered_count": 64,
+      "discovered_count": 53,
       "remote_sources": [
         "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Categories/hodca.lst",
         "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Services/cloudflare.lst",
@@ -105,18 +105,20 @@
           "roots": [
             "forum.openai.com"
           ],
-          "added_count": 11,
-          "warnings": []
+          "added_count": 0,
+          "warnings": [
+            "discovery skipped for forum.openai.com: Failed to fetch https://crt.sh/?q=%25.forum.openai.com&output=json: HTTP Error 502: Bad Gateway"
+          ]
         }
       ]
     },
     {
       "name": "podkop-foreign-subnets",
       "kind": "subnet",
-      "domain_count": 10611,
+      "domain_count": 10662,
       "remote_count": 10084,
       "local_count": 436,
-      "resolved_count": 116,
+      "resolved_count": 167,
       "discovered_count": 0,
       "remote_sources": [
         "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Subnets/IPv4/cloudfront.lst",
