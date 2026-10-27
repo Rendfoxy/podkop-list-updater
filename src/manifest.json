@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-27T12:11:09.735644+00:00",
+  "generated_at": "2026-10-27T18:00:03.716684+00:00",
   "outputs": [
     {
       "name": "podkop-russia-domains",
@@ -40,11 +40,11 @@
     {
       "name": "podkop-foreign-domains",
       "kind": "domain",
-      "domain_count": 1423,
+      "domain_count": 1358,
       "remote_count": 1132,
       "local_count": 255,
       "resolved_count": 0,
-      "discovered_count": 122,
+      "discovered_count": 57,
       "remote_sources": [
         "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Categories/hodca.lst",
         "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Services/cloudflare.lst",
@@ -97,8 +97,22 @@
             "tiktok.com",
             "windsurf.com"
           ],
-          "added_count": 122,
-          "warnings": []
+          "added_count": 57,
+          "warnings": [
+            "discovery skipped for chatgpt.com: Failed to fetch https://urlscan.io/api/v1/search/?q=page.apexDomain:chatgpt.com&size=100: The read operation timed out",
+            "discovery skipped for t.me: Failed to fetch https://urlscan.io/api/v1/search/?q=page.apexDomain:t.me&size=100: The read operation timed out",
+            "discovery skipped for openrouter.ai: Failed to fetch https://urlscan.io/api/v1/search/?q=page.apexDomain:openrouter.ai&size=100: The read operation timed out",
+            "discovery skipped for openai.com: Failed to fetch https://urlscan.io/api/v1/search/?q=page.apexDomain:openai.com&size=100: The read operation timed out",
+            "discovery skipped for oaistatic.com: Failed to fetch https://urlscan.io/api/v1/search/?q=page.apexDomain:oaistatic.com&size=100: The read operation timed out",
+            "discovery skipped for byteoversea.com: Failed to fetch https://urlscan.io/api/v1/search/?q=page.apexDomain:byteoversea.com&size=100: The read operation timed out",
+            "discovery skipped for windsurf.com: Failed to fetch https://urlscan.io/api/v1/search/?q=page.apexDomain:windsurf.com&size=100: The read operation timed out",
+            "discovery skipped for claude.ai: Failed to fetch https://urlscan.io/api/v1/search/?q=page.apexDomain:claude.ai&size=100: The read operation timed out",
+            "discovery skipped for telegram.org: Failed to fetch https://urlscan.io/api/v1/search/?q=page.apexDomain:telegram.org&size=100: The read operation timed out",
+            "discovery skipped for telegram.me: Failed to fetch https://urlscan.io/api/v1/search/?q=page.apexDomain:telegram.me&size=100: The read operation timed out",
+            "discovery skipped for telegram.com: Failed to fetch https://urlscan.io/api/v1/search/?q=page.apexDomain:telegram.com&size=100: The read operation timed out",
+            "discovery skipped for copilot.microsoft.com: Failed to fetch https://urlscan.io/api/v1/search/?q=page.apexDomain:copilot.microsoft.com&size=100: The read operation timed out",
+            "discovery skipped for anthropic.com: Failed to fetch https://urlscan.io/api/v1/search/?q=page.apexDomain:anthropic.com&size=100: The read operation timed out"
+          ]
         },
         {
           "provider": "crtsh",
@@ -107,7 +121,7 @@
           ],
           "added_count": 0,
           "warnings": [
-            "discovery skipped for forum.openai.com: Failed to fetch https://crt.sh/?q=%25.forum.openai.com&output=json: HTTP Error 502: Bad Gateway"
+            "discovery skipped for forum.openai.com: Failed to fetch https://crt.sh/?q=%25.forum.openai.com&output=json: The read operation timed out"
           ]
         }
       ]
@@ -115,10 +129,10 @@
     {
       "name": "podkop-foreign-subnets",
       "kind": "subnet",
-      "domain_count": 10705,
-      "remote_count": 10131,
+      "domain_count": 10640,
+      "remote_count": 10133,
       "local_count": 436,
-      "resolved_count": 168,
+      "resolved_count": 95,
       "discovered_count": 0,
       "remote_sources": [
         "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Subnets/IPv4/cloudfront.lst",
