@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-28T12:54:02.318233+00:00",
+  "generated_at": "2026-10-28T22:34:38.761975+00:00",
   "outputs": [
     {
       "name": "podkop-russia-domains",
@@ -40,11 +40,11 @@
     {
       "name": "podkop-foreign-domains",
       "kind": "domain",
-      "domain_count": 1356,
+      "domain_count": 1342,
       "remote_count": 1132,
       "local_count": 255,
       "resolved_count": 0,
-      "discovered_count": 55,
+      "discovered_count": 41,
       "remote_sources": [
         "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Categories/hodca.lst",
         "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Services/cloudflare.lst",
@@ -97,8 +97,13 @@
             "tiktok.com",
             "windsurf.com"
           ],
-          "added_count": 55,
-          "warnings": []
+          "added_count": 41,
+          "warnings": [
+            "discovery skipped for tiktok.com: Failed to fetch https://urlscan.io/api/v1/search/?q=page.apexDomain:tiktok.com&size=100: The read operation timed out",
+            "discovery skipped for qwen.ai: Failed to fetch https://urlscan.io/api/v1/search/?q=page.apexDomain:qwen.ai&size=100: The read operation timed out",
+            "discovery skipped for anthropic.com: Failed to fetch https://urlscan.io/api/v1/search/?q=page.apexDomain:anthropic.com&size=100: The read operation timed out",
+            "discovery skipped for openrouter.ai: Failed to fetch https://urlscan.io/api/v1/search/?q=page.apexDomain:openrouter.ai&size=100: The read operation timed out"
+          ]
         },
         {
           "provider": "crtsh",
@@ -115,10 +120,10 @@
     {
       "name": "podkop-foreign-subnets",
       "kind": "subnet",
-      "domain_count": 10698,
-      "remote_count": 10135,
+      "domain_count": 10688,
+      "remote_count": 10129,
       "local_count": 436,
-      "resolved_count": 152,
+      "resolved_count": 148,
       "discovered_count": 0,
       "remote_sources": [
         "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Subnets/IPv4/cloudfront.lst",
