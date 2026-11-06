@@ -1128,6 +1128,7 @@
         "schema.telegram.org",
         "scira.ai",
         "scribd.com",
+        "sdfedpreastus2.oaiusercontent.com",
         "sdfp-sg.byteoversea.com",
         "sdfp-va.byteoversea.com",
         "sdmntpraustraliaeast.oaiusercontent.com",
@@ -1200,6 +1201,7 @@
         "stripecdn.com",
         "studyinfinland.fi",
         "succurity.com",
+        "support.anthropic.com",
         "support.telegram.org",
         "supportfacebook.com",
         "sxyprn.com",
@@ -1358,7 +1360,6 @@
         "venus.telegram.org",
         "verify.telegram.org",
         "vesta.telegram.org",
-        "vesta.web.telegram.org",
         "videodelivery.net",
         "viewpointsfromfacebook.com",
         "vine.co",
@@ -1427,9 +1428,7 @@
         "zerotier.com",
         "zeus.telegram.org",
         "zuckerberg.com",
-        "zuckerberg.net",
-        "zws2.web.telegram.org",
-        "zws4-1.web.telegram.org"
+        "zuckerberg.net"
       ]
     }
   ]
