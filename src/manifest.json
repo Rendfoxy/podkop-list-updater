@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-11T06:19:50.136433+00:00",
+  "generated_at": "2026-11-11T19:35:00.155905+00:00",
   "outputs": [
     {
       "name": "podkop-russia-domains",
@@ -40,11 +40,11 @@
     {
       "name": "podkop-foreign-domains",
       "kind": "domain",
-      "domain_count": 1420,
+      "domain_count": 1426,
       "remote_count": 1137,
       "local_count": 255,
       "resolved_count": 0,
-      "discovered_count": 114,
+      "discovered_count": 120,
       "remote_sources": [
         "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Categories/hodca.lst",
         "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Services/cloudflare.lst",
@@ -97,10 +97,8 @@
             "tiktok.com",
             "windsurf.com"
           ],
-          "added_count": 114,
-          "warnings": [
-            "discovery skipped for anthropic.com: Failed to fetch https://urlscan.io/api/v1/search/?q=page.apexDomain:anthropic.com&size=100: The read operation timed out"
-          ]
+          "added_count": 120,
+          "warnings": []
         },
         {
           "provider": "crtsh",
@@ -117,10 +115,10 @@
     {
       "name": "podkop-foreign-subnets",
       "kind": "subnet",
-      "domain_count": 10904,
+      "domain_count": 10818,
       "remote_count": 10237,
       "local_count": 436,
-      "resolved_count": 260,
+      "resolved_count": 174,
       "discovered_count": 0,
       "remote_sources": [
         "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Subnets/IPv4/cloudfront.lst",
