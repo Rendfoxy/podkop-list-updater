@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-11T19:35:00.155905+00:00",
+  "generated_at": "2026-11-12T07:09:33.196055+00:00",
   "outputs": [
     {
       "name": "podkop-russia-domains",
@@ -40,11 +40,11 @@
     {
       "name": "podkop-foreign-domains",
       "kind": "domain",
-      "domain_count": 1426,
+      "domain_count": 1355,
       "remote_count": 1137,
       "local_count": 255,
       "resolved_count": 0,
-      "discovered_count": 120,
+      "discovered_count": 49,
       "remote_sources": [
         "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Categories/hodca.lst",
         "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Services/cloudflare.lst",
@@ -97,8 +97,15 @@
             "tiktok.com",
             "windsurf.com"
           ],
-          "added_count": 120,
-          "warnings": []
+          "added_count": 49,
+          "warnings": [
+            "discovery skipped for anthropic.com: Failed to fetch https://urlscan.io/api/v1/search/?q=page.apexDomain:anthropic.com&size=100: The read operation timed out",
+            "discovery skipped for byteoversea.com: Failed to fetch https://urlscan.io/api/v1/search/?q=page.apexDomain:byteoversea.com&size=100: The read operation timed out",
+            "discovery skipped for qwen.ai: Failed to fetch https://urlscan.io/api/v1/search/?q=page.apexDomain:qwen.ai&size=100: The read operation timed out",
+            "discovery skipped for chatgpt.com: Failed to fetch https://urlscan.io/api/v1/search/?q=page.apexDomain:chatgpt.com&size=100: The read operation timed out",
+            "discovery skipped for openai.com: Failed to fetch https://urlscan.io/api/v1/search/?q=page.apexDomain:openai.com&size=100: The read operation timed out",
+            "discovery skipped for oaiusercontent.com: Failed to fetch https://urlscan.io/api/v1/search/?q=page.apexDomain:oaiusercontent.com&size=100: The read operation timed out"
+          ]
         },
         {
           "provider": "crtsh",
@@ -115,10 +122,10 @@
     {
       "name": "podkop-foreign-subnets",
       "kind": "subnet",
-      "domain_count": 10818,
-      "remote_count": 10237,
+      "domain_count": 10745,
+      "remote_count": 10240,
       "local_count": 436,
-      "resolved_count": 174,
+      "resolved_count": 98,
       "discovered_count": 0,
       "remote_sources": [
         "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Subnets/IPv4/cloudfront.lst",
