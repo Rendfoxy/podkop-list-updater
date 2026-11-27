@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-27T08:32:27.255175+00:00",
+  "generated_at": "2026-11-27T21:16:51.116112+00:00",
   "outputs": [
     {
       "name": "podkop-russia-domains",
@@ -107,7 +107,7 @@
           ],
           "added_count": 0,
           "warnings": [
-            "discovery skipped for forum.openai.com: Failed to fetch https://crt.sh/?q=%25.forum.openai.com&output=json: The read operation timed out"
+            "discovery skipped for forum.openai.com: Failed to fetch https://crt.sh/?q=%25.forum.openai.com&output=json: HTTP Error 502: Bad Gateway"
           ]
         }
       ]
@@ -115,10 +115,10 @@
     {
       "name": "podkop-foreign-subnets",
       "kind": "subnet",
-      "domain_count": 10835,
-      "remote_count": 10207,
+      "domain_count": 10864,
+      "remote_count": 10223,
       "local_count": 436,
-      "resolved_count": 223,
+      "resolved_count": 235,
       "discovered_count": 0,
       "remote_sources": [
         "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Subnets/IPv4/cloudfront.lst",
